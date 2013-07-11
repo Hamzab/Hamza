@@ -1,8 +1,5 @@
 /*
- * La classe vise a gerer le temps travaillé d'un employé selon son type, sa nature de travail et les projets
- * La classe prend les données d'un fichier les données d'un fichier Json et remet les resultats dans un autre fichier
- * du meme type. 
- * 
+ * Hamza Belainine
  */
 
 /**
