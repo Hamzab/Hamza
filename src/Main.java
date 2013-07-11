@@ -1,11 +1,7 @@
 /*
- * Hamza Belainine
+ * Hamza Belainine INF2015
  */
 
-/**
- *
- * @author Hamza Farida rim
- */
 import java.util.*;
 import net.sf.json.JSONArray;
 import net.sf.json.JSONObject;
