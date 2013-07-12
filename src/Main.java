@@ -1,5 +1,5 @@
 /*
- * Hamza Belainine INF2015
+ * Hamza Belainine INF6150
  */
 
 import java.util.*;
