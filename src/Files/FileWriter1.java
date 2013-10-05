@@ -8,10 +8,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
 
-/**
- *
- * @author rafik 
- */
+
 public class FileWriter1 {
 
     public static void ecrire(String path) throws IOException, Exception {
