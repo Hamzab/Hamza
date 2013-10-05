@@ -8,11 +8,11 @@ import JSONEntree.LesDonnes;
 import voiture.Voiture;
 
 
-public class VerifierVoiture {
+public class VerificationVoiture {
 
     Voiture uneVoiture;
 
-    public VerifierVoiture(Voiture uneVoiture) {
+    public VerificationVoiture(Voiture uneVoiture) {
         this.uneVoiture = uneVoiture;
     }
     public boolean verifierAnnee(){

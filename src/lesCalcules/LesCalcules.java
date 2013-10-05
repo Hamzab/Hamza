@@ -8,7 +8,7 @@ import conducteur.Conducteur;
 import conducteur.InfoConducteur;
 import contrat.Contrat;
 import java.util.List;
-import verifications.VerifierFormatJSON;
+import verifications.VerificationFormatJSON;
 import voiture.InfoVoiture;
 import voiture.Voiture;
 
