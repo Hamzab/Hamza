@@ -7,7 +7,10 @@ package verifications;
 import conducteur.Conducteur;
 import date.LaDate;
 
-
+/**
+ *
+ * @author Hamza
+ */
 public class VerifierConducteur {
 
     Conducteur conducteur;

@@ -12,7 +12,7 @@ import conducteur.Conducteur;
 import conducteur.InfoConducteur;
 import contrat.Contrat;
 import java.util.List;
-//import lesCalcules.LesCalcules;
+import lesCalcules.LesCalcules;
 import net.sf.json.JSONArray;
 import net.sf.json.JSONObject;
 import verifications.VerifierConducteur;
@@ -21,7 +21,10 @@ import verifications.VerifierVoiture;
 import voiture.InfoVoiture;
 import voiture.Voiture;
 
-
+/**
+ *
+ * @author Hamza
+ */
 public class UnJSON {
 
     public static JSONObject remplir() throws Exception {
@@ -51,6 +54,7 @@ public class UnJSON {
 
         VerifierConducteur vc = new VerifierConducteur(c);
         VerifierVoiture vv = new VerifierVoiture(v);
+        LesCalcules a = new LesCalcules(infov, infoc, con, valeur);
         List formats = VerifierFormatJSON.getResultats(c.getDateDeNaissance(),
                 infoc.getDateFinCoursDeConduite(), c.getSexe(), con.getDureeContrat());
         if (!formats.isEmpty()) {
@@ -61,7 +65,8 @@ public class UnJSON {
         } else {
             if (vc.estAssurable() && vv.estAssurable()) {
                 res.put("est_assurable", vc.estAssurable());
-   
+                res.put("montant_annuel", a.appliquer());
+                res.put("mensualite", a.calculerMontantMensualite());
 
             } else {
                 res.put("est_assurable", vc.estAssurable() && vv.estAssurable());

@@ -12,6 +12,10 @@ import verifications.VerifierFormatJSON;
 import voiture.InfoVoiture;
 import voiture.Voiture;
 
+/**
+ *
+ * @author Hamza
+ */
 public class LesCalcules {
 
     InfoVoiture infoVoiture;

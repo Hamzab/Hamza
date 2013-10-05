@@ -6,6 +6,10 @@ package verifications;
 
 import contrat.Contrat;
 
+/**
+ *
+ * @author Hamza
+ */
 public class VerifierContrat {
 
     Contrat contrat;

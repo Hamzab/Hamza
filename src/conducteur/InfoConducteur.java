@@ -4,7 +4,10 @@
  */
 package conducteur;
 
-      
+/**
+ *
+ * @author Hamza
+ */
 public class InfoConducteur {
 
     Conducteur conducteur;

@@ -8,7 +8,7 @@ import Files.FileWriter1;
 import JSONSortie.UnJSON;
 
 
-public class Main {  
+public class Main {
 
     public static String tmp[] = new String[3];
 

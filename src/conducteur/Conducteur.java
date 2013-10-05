@@ -4,11 +4,14 @@
  */
 package conducteur;
 
-   
+/**
+ *
+ * @author Hamza
+ */
 public class Conducteur {
 
     String dateDeNaissance;
-    String province;     
+    String province;
     String ville;
     String sexe;
 
