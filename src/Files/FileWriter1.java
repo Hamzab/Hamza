@@ -10,7 +10,7 @@ import java.io.PrintWriter;
 
 /**
  *
- * @author Hamza
+ * @author rafik 
  */
 public class FileWriter1 {
 
