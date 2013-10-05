@@ -1,0 +1,194 @@
+[
+    {
+        "année": 2014,
+        "marque": "Porsche",
+        "modèle": "Boxter",
+        "valeur_initiale_du_véhicule": 60000
+    },
+    {
+        "année": 2014,
+        "marque": "Porsche",
+        "modèle": "Boxter S",
+        "valeur_initiale_du_véhicule": 72000
+    },
+    {
+        "année": 2014,
+        "marque": "Porsche",
+        "modèle": "Cayman",
+        "valeur_initiale_du_véhicule": 62000
+    },
+    {
+        "année": 2014,
+        "marque": "Porsche",
+        "modèle": "Cayman S",
+        "valeur_initiale_du_véhicule": 75000
+    },
+    {
+        "année": 2014,
+        "marque": "Porsche",
+        "modèle": "911 Carrera",
+        "valeur_initiale_du_véhicule": 100000
+    },
+    {
+        "année": 2014,
+        "marque": "Porsche",
+        "modèle": "911 Carrera S",
+        "valeur_initiale_du_véhicule": 115000
+    },
+    {
+        "année": 2014,
+        "marque": "Porsche",
+        "modèle": "911 Carrera Cabriolet",
+        "valeur_initiale_du_véhicule": 112000
+    },
+    {
+        "année": 2014,
+        "marque": "Porsche",
+        "modèle": "911 Carrera S Cabriolet",
+        "valeur_initiale_du_véhicule": 129000
+    },
+    {
+        "année": 2014,
+        "marque": "Porsche",
+        "modèle": "911 Carrera 4",
+        "valeur_initiale_du_véhicule": 106000
+    },
+    {
+        "année": 2014,
+        "marque": "Porsche",
+        "modèle": "911 Carrera 4S",
+        "valeur_initiale_du_véhicule": 123000
+    },
+    {
+        "année": 2014,
+        "marque": "Porsche",
+        "modèle": "911 Carrera 4 Cabriolet",
+        "valeur_initiale_du_véhicule": 120000
+    },
+    {
+        "année": 2014,
+        "marque": "Porsche",
+        "modèle": "911 Carrera 4S Cabriolet",
+        "valeur_initiale_du_véhicule": 137000
+    },
+    {
+        "année": 2014,
+        "marque": "Porsche",
+        "modèle": "911 50 ans",
+        "valeur_initiale_du_véhicule": 142000
+    },
+    {
+        "année": 2014,
+        "marque": "Porsche",
+        "modèle": "911 Turbo",
+        "valeur_initiale_du_véhicule": 170000
+    },
+    {
+        "année": 2014,
+        "marque": "Porsche",
+        "modèle": "911 Turbo S",
+        "valeur_initiale_du_véhicule": 207000
+    },
+    {
+        "année": 2014,
+        "marque": "Porsche",
+        "modèle": "911 GT3",
+        "valeur_initiale_du_véhicule": 149000
+    },
+    {
+        "année": 2014,
+        "marque": "Porsche",
+        "modèle": "Panamera",
+        "valeur_initiale_du_véhicule": 90000
+    },
+    {
+        "année": 2014,
+        "marque": "Porsche",
+        "modèle": "Panamera 4",
+        "valeur_initiale_du_véhicule": 95000
+    },
+    {
+        "année": 2014,
+        "marque": "Porsche",
+        "modèle": "Panamera S",
+        "valeur_initiale_du_véhicule": 107000
+    },
+    {
+        "année": 2014,
+        "marque": "Porsche",
+        "modèle": "Panamera S E-Hybride",
+        "valeur_initiale_du_véhicule": 114000
+    },
+    {
+        "année": 2014,
+        "marque": "Porsche",
+        "modèle": "Panamera 4S",
+        "valeur_initiale_du_véhicule": 113000
+    },
+    {
+        "année": 2014,
+        "marque": "Porsche",
+        "modèle": "Panamera 4S Executive",
+        "valeur_initiale_du_véhicule": 144000
+    },
+    {
+        "année": 2014,
+        "marque": "Porsche",
+        "modèle": "Panamera GTS",
+        "valeur_initiale_du_véhicule": 130000
+    },
+    {
+        "année": 2014,
+        "marque": "Porsche",
+        "modèle": "Panamera Turbo",
+        "valeur_initiale_du_véhicule": 162000
+    },
+    {
+        "année": 2014,
+        "marque": "Porsche",
+        "modèle": "Panamera Turbo Executive",
+        "valeur_initiale_du_véhicule": 185000
+    },
+    {
+        "année": 2014,
+        "marque": "Porsche",
+        "modèle": "Cayenne",
+        "valeur_initiale_du_véhicule": 59000
+    },
+    {
+        "année": 2014,
+        "marque": "Porsche",
+        "modèle": "Cayenne Diesel",
+        "valeur_initiale_du_véhicule": 67000
+    },
+    {
+        "année": 2014,
+        "marque": "Porsche",
+        "modèle": "Cayenne S",
+        "valeur_initiale_du_véhicule": 77000
+    },
+    {
+        "année": 2014,
+        "marque": "Porsche",
+        "modèle": "Cayenne S Hybride",
+        "valeur_initiale_du_véhicule": 82000
+    },
+    {
+        "année": 2014,
+        "marque": "Porsche",
+        "modèle": "Cayenne GTS",
+        "valeur_initiale_du_véhicule": 96000
+    },
+    {
+        "année": 2014,
+        "marque": "Porsche",
+        "modèle": "Cayenne Turbo",
+        "valeur_initiale_du_véhicule": 125000
+    },
+    {
+        "année": 2014,
+        "marque": "Porsche",
+        "modèle": "Cayenne Turbo S",
+        "valeur_initiale_du_véhicule": 169000
+    }
+]

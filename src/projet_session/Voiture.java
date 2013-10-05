@@ -29,6 +29,12 @@ public class Voiture {
         this.systemeAlarme = systemeAlarme;
     }
 
+    public Voiture() {
+    }
+    
+    
+    
+
     public int getAnnee() {
         return annee;
     }
