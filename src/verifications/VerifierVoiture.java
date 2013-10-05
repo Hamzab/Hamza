@@ -7,10 +7,7 @@ package verifications;
 import JSONEntree.LesDonnes;
 import voiture.Voiture;
 
-/**
- *
- * @author Hamza
- */
+
 public class VerifierVoiture {
 
     Voiture uneVoiture;

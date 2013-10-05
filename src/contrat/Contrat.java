@@ -4,10 +4,6 @@
  */
 package contrat;
 
-/**
- *
- * @author Hamza
- */
 public class Contrat {
 
     int dureeContrat;
