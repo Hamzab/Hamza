@@ -14,7 +14,7 @@ public class Main {
 
     public static void main(String[] args) throws Exception {
         tmp = args;
-        FileWriter1.ecrire(args[2]);
+        FileWriter1.ecrire(args[1]);
         //System.out.println(UnJSON.remplir());
 
     }
