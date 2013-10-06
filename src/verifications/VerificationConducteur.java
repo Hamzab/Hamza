@@ -7,15 +7,12 @@ package verifications;
 import conducteur.Conducteur;
 import date.LaDate;
 
-/**
- *
- * @author Hamza
- */
-public class VerifierConducteur {
+
+public class VerificationConducteur {
 
     Conducteur conducteur;
 
-    public VerifierConducteur(Conducteur conducteur) {
+    public VerificationConducteur(Conducteur conducteur) {
         this.conducteur = conducteur;
     }
 

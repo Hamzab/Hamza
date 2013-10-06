@@ -7,11 +7,8 @@ package verifications;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- *
- * @author Hamza
- */
-public class VerifierFormatJSON {
+
+public class VerificationFormatJSON {
 
     public static boolean verifierFormatDate(String uneDate) {
         boolean res = true;

@@ -4,10 +4,7 @@
  */
 package voiture;
 
-/**
- *
- * @author Hamza
- */
+
 public class Voiture {
 
     String marque;

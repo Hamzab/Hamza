@@ -6,15 +6,12 @@ package verifications;
 
 import contrat.Contrat;
 
-/**
- *
- * @author Hamza
- */
-public class VerifierContrat {
+
+public class VerificationContrat {
 
     Contrat contrat;
 
-    public VerifierContrat(Contrat contrat) {
+    public VerificationContrat(Contrat contrat) {
         this.contrat = contrat;
     }
 

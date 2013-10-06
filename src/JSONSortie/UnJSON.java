@@ -15,16 +15,13 @@ import java.util.List;
 import lesCalcules.LesCalcules;
 import net.sf.json.JSONArray;
 import net.sf.json.JSONObject;
-import verifications.VerifierConducteur;
-import verifications.VerifierFormatJSON;
-import verifications.VerifierVoiture;
+import verifications.VerificationConducteur;
+import verifications.VerificationFormatJSON;
+import verifications.VerificationVoiture;
 import voiture.InfoVoiture;
 import voiture.Voiture;
 
-/**
- *
- * @author Hamza
- */
+
 public class UnJSON {
 
     public static JSONObject remplir() throws Exception {
@@ -52,10 +49,10 @@ public class UnJSON {
         InfoConducteur infoc = new InfoConducteur(c, dateFinCours, estCAA, estPremier);
         InfoVoiture infov = new InfoVoiture(v, valOption, buriange, garInter, sysAlarm);
 
-        VerifierConducteur vc = new VerifierConducteur(c);
-        VerifierVoiture vv = new VerifierVoiture(v);
+        VerificationConducteur vc = new VerificationConducteur(c);
+        VerificationVoiture vv = new VerificationVoiture(v);
         LesCalcules a = new LesCalcules(infov, infoc, con, valeur);
-        List formats = VerifierFormatJSON.getResultats(c.getDateDeNaissance(),
+        List formats = VerificationFormatJSON.getResultats(c.getDateDeNaissance(),
                 infoc.getDateFinCoursDeConduite(), c.getSexe(), con.getDureeContrat());
         if (!formats.isEmpty()) {
             for (int i = 0; i < formats.size(); i++) {

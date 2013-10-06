@@ -4,10 +4,7 @@
  */
 package conducteur;
 
-/**
- *
- * @author Hamza
- */
+
 public class Conducteur {
 
     String dateDeNaissance;
