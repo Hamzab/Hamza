@@ -8,11 +8,14 @@ import conducteur.Conducteur;
 import conducteur.InfoConducteur;
 import contrat.Contrat;
 import java.util.List;
-import verifications.VerificationFormatJSON;
+import verifications.VerifierFormatJSON;
 import voiture.InfoVoiture;
 import voiture.Voiture;
 
-
+/**
+ *
+ * @author Hamza
+ */
 public class LesCalcules {
 
     InfoVoiture infoVoiture;

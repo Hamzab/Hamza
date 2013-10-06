@@ -7,12 +7,15 @@ package verifications;
 import JSONEntree.LesDonnes;
 import voiture.Voiture;
 
-
-public class VerificationVoiture {
+/**
+ *
+ * @author Hamza
+ */
+public class VerifierVoiture {
 
     Voiture uneVoiture;
 
-    public VerificationVoiture(Voiture uneVoiture) {
+    public VerifierVoiture(Voiture uneVoiture) {
         this.uneVoiture = uneVoiture;
     }
     public boolean verifierAnnee(){
