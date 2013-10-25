@@ -13,10 +13,7 @@ import voiture.InfoMoto;
 import voiture.InfoVoiture;
 import voiture.Voiture;
 
-/**
- *
- * @author Hamza
- */
+
 public class LesCalcules {
 
     InfoVoiture infoVoiture;

@@ -23,10 +23,7 @@ import voiture.Moto;
 import voiture.Vehicule;
 import voiture.Voiture;
 
-/**
- *
- * @author Hamza
- */
+
 public class UnJSON {
     
     public Vehicule getTypeVehicule(String type,int annee ,String marque, String modele){

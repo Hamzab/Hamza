@@ -4,10 +4,7 @@
  */
 package voiture;
 
-/**
- *
- * @author Hamza
- */
+
 public class InfoMoto {
     Moto moto;
     double valeurDesOption;
