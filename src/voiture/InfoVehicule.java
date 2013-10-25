@@ -4,10 +4,7 @@
  */
 package voiture;
 
-/**
- *
- * @author dj791333
- */
+
 public interface InfoVehicule {
 
     public double getValeurDesOption();

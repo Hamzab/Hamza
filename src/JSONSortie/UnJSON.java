@@ -20,10 +20,7 @@ import net.sf.json.JSONArray;
 import net.sf.json.JSONObject;
 import voiture.*;
 
-/**
- *
- * @author Hamza
- */
+
 public class UnJSON {
 
     public Vehicule getTypeVehicule(String type,int annee ,String marque, String modele){

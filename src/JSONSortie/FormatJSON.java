@@ -7,10 +7,7 @@ package JSONSortie;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- *
- * @author Hamza
- */
+
 public class FormatJSON {
 
     public static boolean verifierFormatDate(String uneDate) {
