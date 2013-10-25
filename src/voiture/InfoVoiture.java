@@ -4,7 +4,10 @@
  */
 package voiture;
 
-
+/**
+ *
+ * @author Hamza
+ */
 public class InfoVoiture implements InfoVehicule{
 
     Vehicule voiture;

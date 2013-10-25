@@ -4,6 +4,10 @@
  */
 package voiture;
 
+/**
+ *
+ * @author Hamza
+ */
 public class InfoMoto implements InfoVehicule{
     Vehicule moto;
     double valeurDesOption;

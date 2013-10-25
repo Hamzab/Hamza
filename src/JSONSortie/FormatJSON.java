@@ -6,10 +6,15 @@ package JSONSortie;
 
 import java.util.ArrayList;
 import java.util.List;
+import net.sf.json.JSONArray;
 
+/**
+ *
+ * @author Hamza
+ */
 
 public class FormatJSON {
-
+    
     public static boolean verifierFormatDate(String uneDate) {
         boolean res = true;
         try {
@@ -47,18 +52,18 @@ public class FormatJSON {
         return res;
     }
 
-    public static List<String> getResultats(String dateNaissance,
+    public static JSONArray getResultats(String dateNaissance,
             String dateFinCours, String sexe, int duree) {
-        List res = new ArrayList<String>();
+           JSONArray messages=new JSONArray();
         if (!verifierFormatDate(dateNaissance) || !verifierFormatDate(dateFinCours)) {
-            res.add(" Les dates sont toujours dans le format ISO 8601.");
+           messages.add(" Les dates sont toujours dans le format ISO 8601.");
         }
         if (!verifierLeSexeCond(sexe)) {
-            res.add("Le champ conducteur.sexe n'accepte que les valeurs 'M' et 'F'");
+            messages.add("Le champ conducteur.sexe n'accepte que les valeurs 'M' et 'F'");
         }
         if (!verifierDureeContrat(duree)) {
-            res.add(" Le champ duree_contrat n'accepte que les valeurs 1, 2 et 3.");
+            messages.add(" Le champ duree_contrat n'accepte que les valeurs 1, 2 et 3.");
         }
-        return res;
+        return messages;
     }
 }

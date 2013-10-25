@@ -6,7 +6,10 @@ package voiture;
 
 import JSONEntree.LesDonnes;
 
-
+/**
+ *
+ * @author Hamza
+ */
 public class Voiture implements Vehicule {
 
     String marque;
@@ -81,7 +84,6 @@ public class Voiture implements Vehicule {
 
     @Override
     public boolean estAssurable(int annee,String marque,String modele) {
-       // double valeur = LesDonnes.getValeur(getModele());
         boolean log = false;
         if(estExistAnnee(annee)&& estExistMarque(marque)&& estExistModele(modele)){ 
             log = true;

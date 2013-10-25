@@ -18,9 +18,9 @@ public class Main {
 
     public static void main(String[] args) throws Exception {
         tmp = args;
-       // FileWriter1.ecrire(args[1]);
+        FileWriter1.ecrire("json/sortie5.json");
       //  System.out.println("estAssurable = "+UnJSON.estAssurable(new Voiture(2014, "Maserati","Quattroporte Q4 AWD")));
       //System.out.println("estAssurablePlusieursVoitures() "+UnJSON.estAssurablePlusieursVoitures());
-       System.out.println(UnJSON.remplir());
+      System.out.println(UnJSON.retournerUnJSON());
     }
 }
