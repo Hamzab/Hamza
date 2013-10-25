@@ -3,13 +3,13 @@
         {
             "annee": 2014,
             "marque": "Porsche",
-            "modele": "911 Turbo S",
+            "modele": "911 Carrera Cabriolet",
             "valeur_des_options": 8000,
             "burinage": "PROACTIF",
             "garage_interieur": true,
             "systeme_alarme": false
         },
-        {
+              {
             "annee": 2013,
             "marque": "Ferrari",
             "modele": "FF",
@@ -17,14 +17,24 @@
             "burinage": "Sherlock",
             "garage_interieur": true,
             "systeme_alarme": true
+        },
+        {
+            "annee": 2013,
+            "marque": "Porsche",
+            "modele": "918 Spyder",
+            "valeur_des_options": 20000,
+            "burinage": "Sherlock",
+            "garage_interieur": true,
+            "systeme_alarme": true
         }
+   
     ],
     "motos": [
         {
             "annee": 2013,
             "marque": "Ducati",
-            "modele": "Superbike 1199 Panigale R",
-            "valeur_des_options": 1000,
+            "modele": "Diavel Dark",
+            "valeur_des_options": 2000,
             "burinage": null,
             "garage_interieur": false,
             "systeme_alarme": false

@@ -8,19 +8,25 @@ public class MontantDeLaSoumission {
     double montant;
 
     public MontantDeLaSoumission(double montant) {
-        double valeur=0;
+        
         if(montant>500000){
             montant+=2500;          
         }
+       
         this.montant = montant;
+    
     }
 
     public double getMontant() {
+       
         return montant;
+         
     }
 
     public void setMontant(double montant) {
         this.montant = montant;
+        
+       
     }
    public double getPourcentagePourMontantDeBaseHomme(int age){
        double res=0;
@@ -31,6 +37,7 @@ public class MontantDeLaSoumission {
        }else if(age>=61 && age<=75){
            res=0.12;
        }
+        
        return res;
    }
       public double getPourcentagePourMontantDeBaseFemme(int age){
@@ -44,23 +51,28 @@ public class MontantDeLaSoumission {
        }
        return res;
    }
-    public double getPourcentagePourMontantDeBase(int age,String sexe,int nbrMotos){
+    public double getPourcentagePourMontantDeBase(int age,String sexe,String typeVehiCule){
        double res=0;
        if(sexe.equals("M")){
            res=getPourcentagePourMontantDeBaseHomme(age);
        }else{       
            res=getPourcentagePourMontantDeBaseFemme(age);
        }
-       res+=nbrMotos*0.14;
+       if(typeVehiCule.equals("motos")){
+           res+=0.14;
+       }
+       
+       
        return res;
    }
-    public double calculerMontantDeBase(int dureeContrat,int age,String sexe,int nbrMotos) {
+    public double calculerMontantDeBase(int dureeContrat,int age,String sexe,String typeVehiCule) {
         double res = 0.0;
         double tmp = montant;
         if (dureeContrat == 3) {
             tmp -= tmp * 0.15;
         }
-        res = tmp * getPourcentagePourMontantDeBase(age, sexe,nbrMotos);
+        res = tmp * getPourcentagePourMontantDeBase(age, sexe,typeVehiCule);
+        
         return res;
     }
 
@@ -74,7 +86,7 @@ public class MontantDeLaSoumission {
         if (ville.equals("Montréal") || ville.equals("Longueuil")) {
             montantDeBase += 200.0;
         }
-           
+        
         return montantDeBase;
     }
 
@@ -91,15 +103,16 @@ public class MontantDeLaSoumission {
         if (estInterieur == true) {
             montantDeBase -= 500.0;
         }
-        
+          
         return montantDeBase;
     }
 
     public double retirerMontantSystemAlarme(boolean estSysAlarme, double montantDeBase) {
+
         if (estSysAlarme == true) {
             montantDeBase -= 500.0;
         }
-        
+      
         return montantDeBase;
     }
 
@@ -132,18 +145,22 @@ public class MontantDeLaSoumission {
         if (anneesExperience > 15) {
             montantDeBase -= 400.0;
         }
+        
         return montantDeBase;
+    }
+
+    public double ajouterPuissanceSuperieur1100cc(int nbrCC,double montantDeBase){
+        if(nbrCC>1100){
+             montantDeBase+=1000;
+        }
+        System.out.println(" montantDeBase ="+ montantDeBase);     
+      return montantDeBase;
     }
     public double calculerLeRabaisOrdreIngQuebec(boolean membre_oiq,double montantDeBase){
       if(membre_oiq==true){
           montantDeBase -=montantDeBase*0.10;
       }  
+    
       return montantDeBase;  
-    }
-    public double ajouterPuissanceSuperieur1100cc(int nbrCC,double montantDeBase){
-        if(nbrCC>1100){
-             montantDeBase+=1100;
-        }
-      return montantDeBase;
     }
 }

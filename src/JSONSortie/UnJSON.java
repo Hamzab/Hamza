@@ -18,14 +18,14 @@ import java.util.List;
 import lesCalcules.LesCalcules;
 import net.sf.json.JSONArray;
 import net.sf.json.JSONObject;
-import voiture.InfoVoiture;
-import voiture.Moto;
-import voiture.Vehicule;
-import voiture.Voiture;
+import voiture.*;
 
-
+/**
+ *
+ * @author Hamza
+ */
 public class UnJSON {
-    
+
     public Vehicule getTypeVehicule(String type,int annee ,String marque, String modele){
         Vehicule v=null;
       if(type.equals("voitures")){
@@ -105,6 +105,96 @@ public class UnJSON {
            boolean estConducteur=estAssurableConducteur();
            return estConducteur && estVehicule;
        }
+       
+      public static InfoConducteur getInfoConducteur() throws Exception{
+           String dateNaissance = JSONConducteur.getDateDeNaissance();
+           String province = JSONConducteur.getProvince();
+           String ville = JSONConducteur.getVille();
+           String sexe = JSONConducteur.getSexe();   
+           String dateFinCours = JSONConducteur.getDateFinCoursDeConduite();
+            boolean estCAA = JSONConducteur.estCoursDeConduiteReconnusParCAA();
+            boolean estPremier = JSONConducteur.estPermierContrat();
+            boolean membre_oiq=JSONConducteur.estMembreOiq();
+          Conducteur c = new Conducteur(LaDate.getAnnees(dateNaissance), province, ville, sexe);
+          InfoConducteur infoc = new InfoConducteur(c, dateFinCours, estCAA, estPremier,membre_oiq);
+          return infoc;
+      }
+      public static InfoVehicule getInfoVoiture(int indice) throws Exception{
+             int anneeVoiture = JSONVoiture.getAnnee(indice);
+             String marqueVoiture = JSONVoiture.getMarque(indice);
+             String modeleVoiture = JSONVoiture.getModele(indice);
+              Vehicule v = new Voiture(anneeVoiture,marqueVoiture, modeleVoiture);           
+               double valOptionVoiture = JSONVoiture.getValeurDesOptions(indice);
+               String buriangeVoiture = JSONVoiture.getBuriange(indice);
+               boolean garInterVoiture = JSONVoiture.getGarageInterieur(indice);
+                boolean sysAlarmVoiture = JSONVoiture.getSystemeAlarme(indice);
+              InfoVehicule infov=new InfoVoiture(v, valOptionVoiture,0 ,buriangeVoiture, garInterVoiture, sysAlarmVoiture);
+              return infov;
+      }
+      
+      public static InfoVehicule getInfoMoto(int indice) throws Exception{
+         double valOptionMoto=JSONMotos.getValeurDesOptions(indice);
+          int valeurCC=LesDonnes.getValeurCC(JSONMotos.getModele(indice));
+          String buriangeMoto=JSONMotos.getBuriange(indice);
+          boolean garInterMoto = JSONMotos.getGarageInterieur(indice);
+          boolean sysAlarmMoto = JSONMotos.getSystemeAlarme(indice);
+          Vehicule m=new Moto(JSONMotos.getAnnee(indice),JSONMotos.getMarque(indice),JSONMotos.getModele(indice)); 
+          InfoVehicule infoMoto=new InfoMoto(m, valOptionMoto, valeurCC, buriangeMoto, garInterMoto,sysAlarmMoto);
+          return infoMoto;
+      }
+      public static Contrat getInfoContrat() throws Exception{
+          int dureeContrat = JSONContrat.getDureeContrat();
+          return new Contrat(dureeContrat);
+      }
+      public static double getCalculeVoitures() throws Exception{
+         int taille=JSONVoiture.getVoitures().size();
+         double res=0.0;
+         for(int i=0;i<taille;i++){
+             InfoConducteur infoc = getInfoConducteur();             
+             Contrat con =getInfoContrat(); 
+             InfoVehicule infov=getInfoVoiture(i);
+             double valeurVoiture = LesDonnes.getValeur(JSONVoiture.getModele(i),"voitures");           
+              LesCalcules lesCalcules=new LesCalcules(infov, infoc, con, valeurVoiture);
+              res+=lesCalcules.appliquer("voitures");
+              System.out.println(lesCalcules.appliquer("voitures"));
+         }
+         return res;
+      }
+       public static double getCalculeMotos() throws Exception{
+         int taille=JSONMotos.getMotos().size();
+         double res=0.0;
+         for(int i=0;i<taille;i++){
+             InfoConducteur infoc = getInfoConducteur();             
+             Contrat con =getInfoContrat(); 
+             InfoVehicule infov=getInfoMoto(i);
+             double valeurMotos = LesDonnes.getValeur(JSONMotos.getModele(i),"motos");           
+              LesCalcules lesCalcules=new LesCalcules(infov, infoc, con,valeurMotos);
+              res+=lesCalcules.appliquer("motos");
+              System.out.println(res);
+         }
+         return res;
+      }
+      public static double getCalculeToutVehicules() throws Exception{
+          return getCalculeVoitures()+getCalculeMotos();
+      }
+      public static JSONObject remplir() throws Exception {   
+        JSONObject res = new JSONObject();
+        double valeurVoiture = LesDonnes.getValeur(JSONVoiture.getModele(2),"voitures");
+        double valeurMoto = LesDonnes.getValeur(JSONMotos.getModele(0),"motos");
+        int dureeContrat = JSONContrat.getDureeContrat();       
+        Contrat con = new Contrat(dureeContrat);
+        InfoConducteur infoc = getInfoConducteur();
+        //InfoVoiture infov=getInfoVoiture(2);
+        InfoVehicule infoMoto=getInfoMoto(0);
+        InfoVehicule infov=getInfoVoiture(2);
+        LesCalcules lesCalcules1=new LesCalcules(infov, infoc, con, valeurVoiture);
+         //LesCalcules lesCalcules2=new LesCalcules(infoMoto, infoc, con, valeurMoto);
+        res.put("getCalculeVoitures()", getCalculeVoitures());
+        res.put("getCalculeMotos()", getCalculeMotos());
+        res.put("getCalculeToutVehicules()", getCalculeToutVehicules());
+        return res;
+      }
+       
   /*  
     public static JSONObject remplir() throws Exception {
         JSONObject res = new JSONObject();

@@ -4,15 +4,19 @@
  */
 package voiture;
 
+/**
+ *
+ * @author Hamza
+ */
+public class InfoVoiture implements InfoVehicule{
 
-public class InfoVoiture {
-
-    Voiture voiture;
+    Vehicule voiture;
     double valeurDesOption;
     String burinage;
     boolean garageInterieur;
     boolean systemeAlarme;
-    public InfoVoiture(Voiture voiture, double valeurDesOption, String burinage, boolean garageInterieur, boolean systemeAlarme) {
+
+    public InfoVoiture(Vehicule voiture, double valeurDesOption,int valeurCC, String burinage, boolean garageInterieur, boolean systemeAlarme) {
         this.voiture = voiture;
         this.valeurDesOption = valeurDesOption;
         this.burinage = burinage;
@@ -20,44 +24,33 @@ public class InfoVoiture {
         this.systemeAlarme = systemeAlarme;
     }
 
-    public Voiture getVoiture() {
+
+    public Vehicule getVoiture() {
         return voiture;
     }
 
+    @Override
     public double getValeurDesOption() {
         return valeurDesOption;
     }
 
+    @Override
     public String getBurinage() {
         return burinage;
     }
 
+    @Override
     public boolean isGarageInterieur() {
         return garageInterieur;
     }
 
+    @Override
     public boolean isSystemeAlarme() {
         return systemeAlarme;
     }
 
-
-    public void setVoiture(Voiture voiture) {
-        this.voiture = voiture;
-    }
-
-    public void setValeurDesOption(double valeurDesOption) {
-        this.valeurDesOption = valeurDesOption;
-    }
-
-    public void setBurinage(String burinage) {
-        this.burinage = burinage;
-    }
-
-    public void setGarageInterieur(boolean garageInterieur) {
-        this.garageInterieur = garageInterieur;
-    }
-
-    public void setSystemeAlarme(boolean systemeAlarme) {
-        this.systemeAlarme = systemeAlarme;
+      @Override
+    public int getValeurCC() {
+        return 0;
     }
 }

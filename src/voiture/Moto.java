@@ -4,7 +4,10 @@
  */
 package voiture;
 
-
+/**
+ *
+ * @author Hamza
+ */
 public class Moto implements Vehicule{
     String marque;
     int annee;

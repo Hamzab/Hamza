@@ -44,4 +44,7 @@ public class JSONConducteur {
     public static boolean estPermierContrat() throws Exception {
         return getConducteur().getBoolean("premier_contrat");
     }
+    public static boolean estMembreOiq() throws Exception{
+       return getConducteur().getBoolean("membre_oiq"); 
+    }
 }

@@ -4,23 +4,25 @@
  */
 package conducteur;
 
-
+/**
+ *
+ * @author Hamza
+ */
 public class InfoConducteur {
 
     Conducteur conducteur;
     String dateFinCoursDeConduite;
-    int nombreMotos;
+ 
     boolean estReconnusParCAA;
     boolean premierContrat;
     boolean membre_oiq;
     public InfoConducteur(Conducteur conducteur, String dateFinCoursDeConduite,
-            int nombreMotos,boolean estReconnusParCAA, boolean premierContrat,
-            boolean membre_oiq) {
+            boolean estReconnusParCAA, boolean premierContrat,boolean membre_oiq) {
         this.conducteur = conducteur;
         this.dateFinCoursDeConduite = dateFinCoursDeConduite;
         this.estReconnusParCAA = estReconnusParCAA;
         this.premierContrat = premierContrat;
-        this.nombreMotos=nombreMotos;
+        this.membre_oiq=membre_oiq;
     }
 
     public Conducteur getConducteur() {
@@ -30,9 +32,7 @@ public class InfoConducteur {
     public String getDateFinCoursDeConduite() {
         return dateFinCoursDeConduite;
     }
-    public int getNombreMotos(){
-        return nombreMotos;
-    }
+
     public boolean estReconnusParCAA() {
         return estReconnusParCAA;
     }

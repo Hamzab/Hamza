@@ -9,6 +9,10 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
 
+/**
+ *
+ * @author Hamza
+ */
 public class FileWriter1 {
 
     public static void ecrire(String path) throws IOException, Exception {
@@ -16,7 +20,7 @@ public class FileWriter1 {
 
         try {
             write = new PrintWriter(new FileWriter(path));
-          //  write.print(UnJSON.remplir());
+            write.print(UnJSON.remplir());
             write.flush();
             write.close();
         }//try

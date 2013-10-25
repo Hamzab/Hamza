@@ -7,7 +7,10 @@ package JSONEntree;
 import Files.FileReader;
 import main.Main;
 
-
+/**
+ *
+ * @author Hamza
+ */
 public class JSON {
 
     public static String getJsonInfo() throws Exception {

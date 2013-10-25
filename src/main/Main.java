@@ -21,6 +21,6 @@ public class Main {
        // FileWriter1.ecrire(args[1]);
       //  System.out.println("estAssurable = "+UnJSON.estAssurable(new Voiture(2014, "Maserati","Quattroporte Q4 AWD")));
       //System.out.println("estAssurablePlusieursVoitures() "+UnJSON.estAssurablePlusieursVoitures());
-       System.out.println(UnJSON.estAssurableToutLesVehicules());
+       System.out.println(UnJSON.remplir());
     }
 }

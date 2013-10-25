@@ -6,12 +6,15 @@ package voiture;
 
 import JSONEntree.LesDonnes;
 
-
+/**
+ *
+ * @author Hamza
+ */
 public class Voiture implements Vehicule {
 
     String marque;
     int annee;
-    double valeurInitial;  
+    double valeurInitial;
     String modele;
 
     public Voiture(int annee,String marque,String modele) {
@@ -20,18 +23,22 @@ public class Voiture implements Vehicule {
         this.modele = modele;
     }
 
+    @Override
     public String getMarque() {
         return marque;
     }
 
+    @Override
     public int getAnnee() {
         return annee;
     }
 
+    @Override
     public String getModele() {
         return modele;
     }
 
+    @Override
     public double getValeurInitiale() {
 
         return valeurInitial;
@@ -49,6 +56,7 @@ public class Voiture implements Vehicule {
         this.modele = modele;
     }
 
+    @Override
     public boolean estExistAnnee(int annee) {
         boolean res = false;
         if (this.annee == annee) {
@@ -57,6 +65,7 @@ public class Voiture implements Vehicule {
         return res;
     }
 
+    @Override
     public boolean estExistMarque(String marque) {
         boolean res = false;
         if ((this.marque).equals(marque)) {
@@ -64,6 +73,7 @@ public class Voiture implements Vehicule {
         }
         return res;
     }
+    @Override
     public boolean estExistModele(String modele){
          boolean res = false;
         if ((this.modele).equals(modele)) {
@@ -72,6 +82,7 @@ public class Voiture implements Vehicule {
         return res;  
     }
 
+    @Override
     public boolean estAssurable(int annee,String marque,String modele) {
        // double valeur = LesDonnes.getValeur(getModele());
         boolean log = false;
