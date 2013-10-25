@@ -8,10 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 import net.sf.json.JSONArray;
 
-/**
- *
- * @author Hamza
- */
+
 
 public class FormatJSON {
     

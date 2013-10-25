@@ -14,10 +14,7 @@ import voiture.InfoVehicule;
 import voiture.InfoVoiture;
 import voiture.Voiture;
 
-/**
- *
- * @author Hamza
- */
+
 public class LesCalcules {
 
     InfoVehicule infoVoiture;

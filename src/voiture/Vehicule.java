@@ -4,10 +4,7 @@
  */
 package voiture;
 
-/**
- *
- * @author Hamza
- */
+
 public interface Vehicule {
     public String getMarque();
     public int getAnnee();
