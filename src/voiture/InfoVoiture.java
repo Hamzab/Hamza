@@ -13,7 +13,8 @@ public class InfoVoiture {
     Voiture voiture;
     double valeurDesOption;
     String burinage;
-
+    boolean garageInterieur;
+    boolean systemeAlarme;
     public InfoVoiture(Voiture voiture, double valeurDesOption, String burinage, boolean garageInterieur, boolean systemeAlarme) {
         this.voiture = voiture;
         this.valeurDesOption = valeurDesOption;
@@ -41,8 +42,7 @@ public class InfoVoiture {
     public boolean isSystemeAlarme() {
         return systemeAlarme;
     }
-    boolean garageInterieur;
-    boolean systemeAlarme;
+
 
     public void setVoiture(Voiture voiture) {
         this.voiture = voiture;

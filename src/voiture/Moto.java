@@ -60,7 +60,6 @@ public class Moto implements Vehicule{
         return res;  
     }
        public boolean estAssurable(int annee,String marque,String modele) {
-       // double valeur = LesDonnes.getValeur(getModele());
         boolean log = false;
         if(estExistAnnee(annee)&& estExistMarque(marque)&& estExistModele(modele)){ 
             log = true;

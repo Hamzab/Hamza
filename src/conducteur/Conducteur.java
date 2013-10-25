@@ -5,10 +5,6 @@
 package conducteur;
 
 
-/**
- *
- * @author Hamza
- */
 public class Conducteur {
 
     int age;

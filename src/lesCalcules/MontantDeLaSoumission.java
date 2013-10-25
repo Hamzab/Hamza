@@ -44,22 +44,23 @@ public class MontantDeLaSoumission {
        }
        return res;
    }
-    public double getPourcentagePourMontantDeBase(int age,String sexe){
+    public double getPourcentagePourMontantDeBase(int age,String sexe,int nbrMotos){
        double res=0;
        if(sexe.equals("M")){
            res=getPourcentagePourMontantDeBaseHomme(age);
        }else{       
            res=getPourcentagePourMontantDeBaseFemme(age);
        }
+       res+=nbrMotos*0.14;
        return res;
    }
-    public double calculerMontantDeBase(int dureeContrat,int age,String sexe) {
+    public double calculerMontantDeBase(int dureeContrat,int age,String sexe,int nbrMotos) {
         double res = 0.0;
         double tmp = montant;
         if (dureeContrat == 3) {
             tmp -= tmp * 0.15;
         }
-        res = tmp * getPourcentagePourMontantDeBase(age, sexe);
+        res = tmp * getPourcentagePourMontantDeBase(age, sexe,nbrMotos);
         return res;
     }
 
@@ -138,5 +139,11 @@ public class MontantDeLaSoumission {
           montantDeBase -=montantDeBase*0.10;
       }  
       return montantDeBase;  
+    }
+    public double ajouterPuissanceSuperieur1100cc(int nbrCC,double montantDeBase){
+        if(nbrCC>1100){
+             montantDeBase+=1100;
+        }
+      return montantDeBase;
     }
 }

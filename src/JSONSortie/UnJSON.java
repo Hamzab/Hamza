@@ -6,6 +6,7 @@ package JSONSortie;
 
 import JSONEntree.JSONConducteur;
 import JSONEntree.JSONContrat;
+import JSONEntree.JSONMotos;
 import JSONEntree.JSONVoiture;
 import JSONEntree.LesDonnes;
 import conducteur.Conducteur;
@@ -40,35 +41,32 @@ public class UnJSON {
     public static int getSizeVehicules(String type) throws Exception{
         int size=0;
         if(type.equals("voitures")){
-           size=LesDonnes.getDataVoitures().size(); 
+           size=LesDonnes.getDataVihecules(type).size(); 
         }else if(type.equals("motos")){
-            //size=LesDonnes.getDataMotos().size();
+            size=LesDonnes.getDataVihecules(type).size();
         }
         return size;
     }
-    public static boolean estAssurableUneVoiture(String type,Vehicule v) throws Exception{
+    public static boolean estAssurableUneVehicule(String type,Vehicule v) throws Exception{
         
         int length= getSizeVehicules(type);
         System.out.println("length="+length);
         boolean res=false;
         for(int i=0;i<length;i++){
-            if(v.estAssurable(LesDonnes.getAnnees().get(i)
-                    ,LesDonnes.getMarques().get(i),LesDonnes.getModeles().get(i))){
+            if(v.estAssurable(LesDonnes.getAnnees(type).get(i)
+                    ,LesDonnes.getMarques(type).get(i),LesDonnes.getModeles(type).get(i))){
                 res=true;
             }
         }
        return res;
         
     }
-      public static boolean estAssurablePlusieursVoitures(List<Vehicule> vehicules) throws Exception{
+      public static boolean estAssurablePlusieursVehicules(String type,List<Vehicule> vehicules) throws Exception{
           boolean res=true;
           for(int i=0;i<vehicules.size();i++){
-              if(!estAssurableUneVoiture("voitures",vehicules.get(i))){
+              if(!estAssurableUneVehicule(type,vehicules.get(i))){
                   res=false;                  
               }
-          //    if(!estAssurableUneVoiture("motos",vehicules.get(i))){
-          //       res=false;                  
-          //    }
           }
           return res;
       }
@@ -80,8 +78,36 @@ public class UnJSON {
                        ,JSONVoiture.getModele(i));
               voitures.add(v);                        
           }
-         return estAssurablePlusieursVoitures(voitures);
+         return estAssurablePlusieursVehicules("voitures",voitures);
       }
+       public static boolean estAssurablePlusieursMotos() throws Exception{
+          List<Vehicule> motos=new ArrayList<Vehicule>();
+          int length =JSONMotos.getMotos().size();
+          for(int i=0;i<length;i++){
+              Vehicule v=new Moto(JSONMotos.getAnnee(i),JSONMotos.getMarque(i)
+                       ,JSONMotos.getModele(i));
+              motos.add(v);                        
+          }
+         return estAssurablePlusieursVehicules("motos",motos);
+      }
+         public static boolean estAssurableToutLesVehicules() throws Exception{
+         boolean estVoitures=estAssurablePlusieursVoitures();
+         boolean estMotos=estAssurablePlusieursMotos();
+         return estVoitures && estMotos;
+      }
+       public static boolean estAssurableConducteur() throws Exception{
+           int age=LaDate.getAnnees(JSONConducteur.getDateDeNaissance());
+           String sexe=JSONConducteur.getSexe();
+           String provence=JSONConducteur.getProvince();
+           String ville=JSONConducteur.getVille();
+           Conducteur cond=new Conducteur(age,provence,ville,sexe);
+           return cond.estAssurable();
+       }
+       public static boolean estAssurable() throws Exception{
+           boolean estVehicule=estAssurableToutLesVehicules();
+           boolean estConducteur=estAssurableConducteur();
+           return estConducteur && estVehicule;
+       }
   /*  
     public static JSONObject remplir() throws Exception {
         JSONObject res = new JSONObject();
