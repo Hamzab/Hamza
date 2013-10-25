@@ -11,7 +11,7 @@ public class Voiture implements Vehicule {
 
     String marque;
     int annee;
-    double valeurInitial;
+    double valeurInitial;  
     String modele;
 
     public Voiture(int annee,String marque,String modele) {
