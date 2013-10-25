@@ -5,7 +5,10 @@
 package main;
 
 import Files.FileWriter1;
+import JSONEntree.JSONVoiture;
+import JSONEntree.LesDonnes;
 import JSONSortie.UnJSON;
+import voiture.Voiture;
 
 
 public class Main {
@@ -14,7 +17,8 @@ public class Main {
 
     public static void main(String[] args) throws Exception {
         tmp = args;
-        FileWriter1.ecrire(args[1]);
-
+       // FileWriter1.ecrire(args[1]);
+      //  System.out.println("estAssurable = "+UnJSON.estAssurable(new Voiture(2014, "Maserati","Quattroporte Q4 AWD")));
+      System.out.println("estAssurablePlusieursVoitures() "+UnJSON.estAssurablePlusieursVoitures());
     }
 }

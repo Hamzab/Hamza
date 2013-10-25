@@ -2,13 +2,16 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package verifications;
+package JSONSortie;
 
 import java.util.ArrayList;
 import java.util.List;
 
-
-public class VerificationFormatJSON {
+/**
+ *
+ * @author Hamza
+ */
+public class FormatJSON {
 
     public static boolean verifierFormatDate(String uneDate) {
         boolean res = true;

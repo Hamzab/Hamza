@@ -6,7 +6,10 @@ package date;
 
 import java.util.Date;
 
-
+/**
+ *
+ * @author Hamza
+ */
 public class LaDate {
 
     public static int getAnnees(String dateDeNaissance) {

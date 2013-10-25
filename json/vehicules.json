@@ -190,5 +190,125 @@
         "marque": "Porsche",
         "modèle": "Cayenne Turbo S",
         "valeur_initiale_du_véhicule": 169000
+    },
+    {
+        "année": 2014,
+        "marque": "Maserati",
+        "modèle": "Quattroporte Q4 AWD",
+        "valeur_initiale_du_véhicule": 119000
+    },
+    {
+        "année": 2014,
+        "marque": "Maserati",
+        "modèle": "Quattroporte GTS",
+        "valeur_initiale_du_véhicule": 148000
+    },
+    {
+        "année": 2013,
+        "marque": "Maserati",
+        "modèle": "GranTurismo Sport",
+        "valeur_initiale_du_véhicule": 140000
+    },
+    {
+        "année": 2012,
+        "marque": "Maserati",
+        "modèle": "GranTurismo S - MC SportLine",
+        "valeur_initiale_du_véhicule": 130000
+    },
+    {
+        "année": 2012,
+        "marque": "Maserati",
+        "modèle": "GranTurismo MC Stradale",
+        "valeur_initiale_du_véhicule": 145000
+    },
+    {
+        "année": 2011,
+        "marque": "Maserati",
+        "modèle": "GranTurismo S Convertible",
+        "valeur_initiale_du_véhicule": 127000
+    },
+    {
+        "année": 2013,
+        "marque": "Ferrari",
+        "modèle": "FF",
+        "valeur_initiale_du_véhicule": 340000
+    },
+    {
+        "année": 2013,
+        "marque": "Ferrari",
+        "modèle": "California F1",
+        "valeur_initiale_du_véhicule": 246000
+    },
+    {
+        "année": 2012,
+        "marque": "Ferrari",
+        "modèle": "458 Spider F1",
+        "valeur_initiale_du_véhicule": 343000
+    },
+    {
+        "année": 2012,
+        "marque": "Ferrari",
+        "modèle": "458 Italia F1",
+        "valeur_initiale_du_véhicule": 300000
+    },
+    {
+        "année": 2012,
+        "marque": "Ferrari",
+        "modèle": "California F1",
+        "valeur_initiale_du_véhicule": 223000
+    },
+    {
+        "année": 2010,
+        "marque": "Ferrari",
+        "modèle": "599GTB Fiorano F1",
+        "valeur_initiale_du_véhicule": 250000
+    },
+    {
+        "année": 2010,
+        "marque": "Ferrari",
+        "modèle": "California F1",
+        "valeur_initiale_du_véhicule": 189000
+    },
+    {
+        "année": 2009,
+        "marque": "Ferrari",
+        "modèle": "Scuderia 16M Spider F1",
+        "valeur_initiale_du_véhicule": 280000
+    },
+    {
+        "année": 2009,
+        "marque": "Ferrari",
+        "modèle": "F430 Spider F1",
+        "valeur_initiale_du_véhicule": 180000
+    },
+    {
+        "année": 2006,
+        "marque": "Ferrari",
+        "modèle": "F430 Challenge F1",
+        "valeur_initiale_du_véhicule": 150000
+    },
+    {
+        "année": 2003,
+        "marque": "Ferrari",
+        "modèle": "575M Maranello F1",
+        "valeur_initiale_du_véhicule": 93000
+    },
+    {
+        "année": 1993,
+        "marque": "Ferrari",
+        "modèle": "348TS Speciale-Limited Edition",
+        "valeur_initiale_du_véhicule": 80000
+    },
+    {
+        "année": 1970,
+        "marque": "Ferrari",
+        "modèle": "365 GT 2+2",
+        "valeur_initiale_du_véhicule": 170000
+    },
+    {
+        "année": 2013,
+        "marque": "Porsche",
+        "modèle": "918 Spyder",
+        "valeur_initiale_du_véhicule": 845000
     }
 ]

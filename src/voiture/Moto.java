@@ -4,25 +4,21 @@
  */
 package voiture;
 
-import JSONEntree.LesDonnes;
-
 /**
  *
  * @author Hamza
  */
-public class Voiture implements Vehicule {
-
+public class Moto implements Vehicule{
     String marque;
     int annee;
     double valeurInitial;
     String modele;
-
-    public Voiture(int annee,String marque,String modele) {
-        this.marque = marque;
-        this.annee = annee;
-        this.modele = modele;
+    double cc;
+   public Moto(int annee,String marque,String modele){
+     this.annee=annee;
+     this.marque=marque;
+     this.modele=modele;
     }
-
     public String getMarque() {
         return marque;
     }
@@ -34,25 +30,14 @@ public class Voiture implements Vehicule {
     public String getModele() {
         return modele;
     }
-
-    public double getValeurInitiale() {
-
+    public double getValeurInitiale(){
+        
         return valeurInitial;
     }
-
-    public void setMarque(String marque) {
-        this.marque = marque;
+    public double getCC(){        
+        return cc;
     }
-
-    public void setAnnee(int annee) {
-        this.annee = annee;
-    }
-
-    public void setModele(String modele) {
-        this.modele = modele;
-    }
-
-    public boolean estExistAnnee(int annee) {
+        public boolean estExistAnnee(int annee) {
         boolean res = false;
         if (this.annee == annee) {
             res = true;
@@ -74,8 +59,7 @@ public class Voiture implements Vehicule {
         }
         return res;  
     }
-
-    public boolean estAssurable(int annee,String marque,String modele) {
+       public boolean estAssurable(int annee,String marque,String modele) {
        // double valeur = LesDonnes.getValeur(getModele());
         boolean log = false;
         if(estExistAnnee(annee)&& estExistMarque(marque)&& estExistModele(modele)){ 

@@ -8,6 +8,10 @@ public class MontantDeLaSoumission {
     double montant;
 
     public MontantDeLaSoumission(double montant) {
+        double valeur=0;
+        if(montant>500000){
+            montant+=2500;          
+        }
         this.montant = montant;
     }
 
@@ -18,15 +22,44 @@ public class MontantDeLaSoumission {
     public void setMontant(double montant) {
         this.montant = montant;
     }
-
-    public double calculerMontantDeBase(int dureeContrat) {
+   public double getPourcentagePourMontantDeBaseHomme(int age){
+       double res=0;
+       if(age>=25 && age<=35){
+           res=0.15;
+       }else if(age>=36 && age<=60){
+           res=0.12;
+       }else if(age>=61 && age<=75){
+           res=0.12;
+       }
+       return res;
+   }
+      public double getPourcentagePourMontantDeBaseFemme(int age){
+       double res=0;
+       if(age>=21 && age<=40){
+           res=0.11;
+       }else if(age>=41 && age<=65){
+           res=0.09;
+       }else if(age>=66 && age<=75){
+           res=0.155;
+       }
+       return res;
+   }
+    public double getPourcentagePourMontantDeBase(int age,String sexe){
+       double res=0;
+       if(sexe.equals("M")){
+           res=getPourcentagePourMontantDeBaseHomme(age);
+       }else{       
+           res=getPourcentagePourMontantDeBaseFemme(age);
+       }
+       return res;
+   }
+    public double calculerMontantDeBase(int dureeContrat,int age,String sexe) {
         double res = 0.0;
         double tmp = montant;
         if (dureeContrat == 3) {
             tmp -= tmp * 0.15;
         }
-        res = tmp * 0.09;
-      
+        res = tmp * getPourcentagePourMontantDeBase(age, sexe);
         return res;
     }
 
@@ -52,13 +85,6 @@ public class MontantDeLaSoumission {
         return montantDeBase;
     }
 
-    public double retirerMontantFemme(String sexe, double montantDeBase) {
-        if (sexe.equals("F")) {
-            montantDeBase -= 1000.0;
-        }
-         
-        return montantDeBase;
-    }
 
     public double retirerMontantGarageInterieur(boolean estInterieur, double montantDeBase) {
         if (estInterieur == true) {
@@ -83,16 +109,15 @@ public class MontantDeLaSoumission {
         
         return montantDeBase;
     }
-
+/*
     public double ajouterMontantMoins35(String sexe,String dateDeNaissance, double montantDeBase) {
         int age = LaDate.getAnnees(dateDeNaissance);
         if (age < 35 && sexe.equals("M")) {
             montantDeBase += 1000.0;
-        }
-      
+        } 
         return montantDeBase;
     }
-
+*/
     public double ajouterMontantPremierContrat(boolean estPremierContrat, double montantDeBase) {
         if (estPremierContrat == true) {
             montantDeBase += 2000.0;
@@ -107,5 +132,11 @@ public class MontantDeLaSoumission {
             montantDeBase -= 400.0;
         }
         return montantDeBase;
+    }
+    public double calculerLeRabaisOrdreIngQuebec(boolean membre_oiq,double montantDeBase){
+      if(membre_oiq==true){
+          montantDeBase -=montantDeBase*0.10;
+      }  
+      return montantDeBase;  
     }
 }

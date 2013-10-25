@@ -4,19 +4,22 @@
  */
 package conducteur;
 
-
+/**
+ *
+ * @author Hamza
+ */
 public class InfoConducteur {
 
     Conducteur conducteur;
     String dateFinCoursDeConduite;
-    boolean coursDeConduiteReconnusParCAA;
+    boolean estReconnusParCAA;
     boolean premierContrat;
-
+    boolean membre_oiq;
     public InfoConducteur(Conducteur conducteur, String dateFinCoursDeConduite,
-            boolean coursDeConduiteReconnusParCAA, boolean premierContrat) {
+            boolean estReconnusParCAA, boolean premierContrat,boolean membre_oiq) {
         this.conducteur = conducteur;
         this.dateFinCoursDeConduite = dateFinCoursDeConduite;
-        this.coursDeConduiteReconnusParCAA = coursDeConduiteReconnusParCAA;
+        this.estReconnusParCAA = estReconnusParCAA;
         this.premierContrat = premierContrat;
     }
 
@@ -28,8 +31,8 @@ public class InfoConducteur {
         return dateFinCoursDeConduite;
     }
 
-    public boolean isCoursDeConduiteReconnusParCAA() {
-        return coursDeConduiteReconnusParCAA;
+    public boolean estReconnusParCAA() {
+        return estReconnusParCAA;
     }
 
     public boolean isPremierContrat() {
@@ -44,11 +47,14 @@ public class InfoConducteur {
         this.dateFinCoursDeConduite = dateFinCoursDeConduite;
     }
 
-    public void setCoursDeConduiteReconnusParCAA(boolean coursDeConduiteReconnusParCAA) {
-        this.coursDeConduiteReconnusParCAA = coursDeConduiteReconnusParCAA;
+    public void estReconnusParCAA(boolean estReconnusParCAA) {
+        this.estReconnusParCAA = estReconnusParCAA;
     }
 
     public void setPremierContrat(boolean premierContrat) {
         this.premierContrat = premierContrat;
+    }
+    public boolean estUnMembre_oiq(){
+      return membre_oiq;  
     }
 }
