@@ -3,52 +3,35 @@
         {
             "annee": 2014,
             "marque": "Porsche",
-            "modele": "911 Carrera Cabriolet",
-            "valeur_des_options": 8000,
-            "burinage": "PROACTIF",
+            "modele": "Cayenne S",
+            "valeur_des_options": 5000,
+            "burinage": "Sherlock",
             "garage_interieur": true,
             "systeme_alarme": false
-        },
-              {
-            "annee": 2013,
-            "marque": "Ferrari",
-            "modele": "FF",
-            "valeur_des_options": 12000,
-            "burinage": "Sherlock",
-            "garage_interieur": true,
-            "systeme_alarme": true
-        },
-        {
-            "annee": 2013,
-            "marque": "Porsche",
-            "modele": "918 Spyder",
-            "valeur_des_options": 20000,
-            "burinage": "Sherlock",
-            "garage_interieur": true,
-            "systeme_alarme": true
-        }
+        }, 
    
     ],
     "motos": [
         {
             "annee": 2013,
             "marque": "Ducati",
-            "modele": "Diavel Dark",
+            "modele": "Monster 1100 Evo",
             "valeur_des_options": 2000,
             "burinage": null,
             "garage_interieur": false,
             "systeme_alarme": false
         }
+        
     ],
     "conducteur": {
         "date_de_naissance": "1988-01-15",
         "province": "Qu\u00e9bec",
         "ville": "Montr\u00e9al",
-        "sexe": "F",
+        "sexe": "M",
         "date_fin_cours_de_conduite": "1990-12-01",
         "cours_de_conduite_reconnus_par_CAA": true,
         "premier_contrat": true,
         "membre_oiq": true
     },
-    "duree_contrat": 2
+    "duree_contrat": 3
 }

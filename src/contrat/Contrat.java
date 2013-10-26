@@ -1,6 +1,4 @@
-
 package contrat;
-
 
 public class Contrat {
 
@@ -14,10 +12,7 @@ public class Contrat {
         return dureeContrat;
     }
 
-    public void setDureeContrat(int dureeContrat) {
-        this.dureeContrat = dureeContrat;
-    }
-      public boolean verifierDureeContrat() {
+    public boolean verifierDureeContrat() {
         boolean res = true;
         if (getDureeContrat() < 1 || getDureeContrat() > 3) {
             res = false;

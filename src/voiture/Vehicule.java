@@ -1,13 +1,7 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
+
+
 package voiture;
 
-/**
- *
- * @author Hamza
- */
 public interface Vehicule {
     public String getMarque();
     public int getAnnee();

@@ -1,4 +1,4 @@
-package lesCalcules;
+package montantDeLaSoumission;
 
 import date.LaDate;
 
@@ -11,18 +11,12 @@ public class MontantDeLaSoumission {
             montant += 2500;
         }    
         this.montant = montant;
-
+   
     }
 
     public double getMontant() {
 
         return montant;
-
-    }
-
-    public void setMontant(double montant) {
-        this.montant = montant;
-
 
     }
 
@@ -50,7 +44,10 @@ public class MontantDeLaSoumission {
         }
         return res;
     }
-
+    /*
+     * . Le pourcentage du montant de base est calculé en fonction de 
+     *      l'âge et du sexe de l'assuré.
+     */
     public double getPourcentagePourMontantDeBase(int age, String sexe, String typeVehiCule) {
         double res = 0;
         if (sexe.equals("M")) {
@@ -71,7 +68,6 @@ public class MontantDeLaSoumission {
             tmp -= tmp * 0.15;
         }
         res = tmp * getPourcentagePourMontantDeBase(age, sexe, typeVehiCule);
-      
         return res;
     }
 
@@ -81,76 +77,76 @@ public class MontantDeLaSoumission {
         return montantDeBase;
     }
    
-    public double ajouterMontantVille(String ville, double montantDeBase) {
+    public double ajouterMontantVille(String ville, double montantDeSoumission) {
        if (ville.equals("Montréal") || ville.equals("Longueuil")) {
-            montantDeBase += 200.0;
+            montantDeSoumission += 200.0;
         }
        
-        return montantDeBase;
+        return montantDeSoumission;
     }
 
-    public double retirerMontantBurinage(String burinage, double montantDeBase) {
+    public double retirerMontantBurinage(String burinage, double montantDeSoumission) {
         if (burinage.equals("Sherlock")) {
-            montantDeBase -= 250.0;
+            montantDeSoumission -= 250.0;
         }
        
-        return montantDeBase;
+        return montantDeSoumission;
     }
 
-    public double retirerMontantGarageInterieur(boolean estInterieur, double montantDeBase) {
+    public double retirerMontantGarageInterieur(boolean estInterieur, double montantDeSoumission) {
         if (estInterieur == true) {
-            montantDeBase -= 500.0;
+            montantDeSoumission -= 500.0;
         }
          
-        return montantDeBase;
+        return montantDeSoumission;
     }
 
-    public double retirerMontantSystemAlarme(boolean estSysAlarme, double montantDeBase) {
+    public double retirerMontantSystemAlarme(boolean estSysAlarme, double montantDeSoumission) {
 
         if (estSysAlarme == true) {
-            montantDeBase -= 500.0;
+            montantDeSoumission -= 500.0;
         }
        
-        return montantDeBase;
+        return montantDeSoumission;
     }
 
-    public double retirerMontantCoursCAA(boolean estCoursCAA, double montantDeBase) {
+    public double retirerMontantCoursCAA(boolean estCoursCAA, double montantDeSoumission) {
         if (estCoursCAA == true) {
-            montantDeBase -= 100.0;
+            montantDeSoumission -= 100.0;
         }
        
-        return montantDeBase;
+        return montantDeSoumission;
     }
 
-    public double ajouterMontantPremierContrat(boolean estPremierContrat, double montantDeBase) {
+    public double ajouterMontantPremierContrat(boolean estPremierContrat, double montantDeSoumission) {
         if (estPremierContrat == true) {
-            montantDeBase += 2000.0;
+            montantDeSoumission += 2000.0;
         }
      
-        return montantDeBase;
+        return montantDeSoumission;
     }
 
-    public double retirerMontantExperience15Ans(String dateFinCours, double montantDeBase) {
+    public double retirerMontantExperience15Ans(String dateFinCours, double montantDeSoumission) {
         int anneesExperience = LaDate.getAnnees(dateFinCours);
         if (anneesExperience > 15) {
-            montantDeBase -= 400.0;
+            montantDeSoumission -= 400.0;
         }
          
-        return montantDeBase;
+        return montantDeSoumission;
     }
 
-    public double ajouterPuissanceSuperieur1100cc(int nbrCC, double montantDeBase) {
+    public double ajouterPuissanceSuperieur1100cc(int nbrCC, double montantDeSoumission) {
         if (nbrCC > 1100) {
-            montantDeBase += 1000;
+            montantDeSoumission += 1000;
         }
-        return montantDeBase;
+        return montantDeSoumission;
     }
 
-    public double calculerLeRabaisOrdreIngQuebec(boolean membre_oiq, double montantDeBase) {
+    public double calculerLeRabaisOrdreIngQuebec(boolean membre_oiq, double montantDeSoumission) {
         if (membre_oiq == true) {
-            montantDeBase -= montantDeBase * 0.10;
+            montantDeSoumission -= montantDeSoumission * 0.10;
         }
 
-        return montantDeBase;
+        return montantDeSoumission;
     }
 }

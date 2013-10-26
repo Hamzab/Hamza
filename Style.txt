@@ -1,0 +1,47 @@
+Style:
+
+But et stratégie:
+Le but de notre projet est de réaliser un logiciel qui calculera des demandes de soumission d'assurance automobile pour des voitures et des motos de luxe., 
+
+
+
+
+
+
+Pour ce, le programme commence par valider les entrées. C'est évident que ce n'est pas la peine de continuer si les données ne sont pas exacts tel que: 
+Les valeurs monétaires ne sont pas des nombres réels, Les dates ne sont pas toujours dans le format ISO 8601, Le champ conducteur.sexe ne sont pas les valeurs "M" et "F"
+,Le champ duree_contrat ne sont pas les valeurs 1, 2 et 3.
+
+
+
+  Les variables et constantes: 
+Notre équipe a choisi tout les types des variable (local, global, constant ...).
+   Les noms de variables locales sont choisi en français et doivent être significatifs.Ils peuvent contenir deux ou  
+trois mots séparés par le première lette en majuscule de chaque mot.
+
+Les méthodes:
+Les noms sont choisi en français et quelque mots connus en anglais comme get ,set  et reflètent la fonction de la méthode. Tout comme pour les variables peuvent contenir deux ou trois mots séparés par le première lette en majuscule de chaque mot. Pour faciliter la lisibilité et la compréhension.
+Dans la mesure du possible, les lignes ne doivent pas être trop longues.
+Les méthodes ne doivent pas être trop longue.
+Chaque méthode fait une seule fonction et une seule: "Une fonction doit faire une seule chose. elle doit la faire bien et ne faire qu'elle"
+Éviter les redondances: quand deux ou plusieurs méthodes répètent la même chose. Notre équipe a choisi de la mettre dans une méthode et lui faire appel  à chaque fois qu'on  en a  besoin.
+Nos méthodes ne devraient pas dépasser 10 lignes de code sans compter la permiere ligne et la derinere ligne.
+Les classes:
+Comme classe voiture et moto ils ons memes attributs, notre équipe a choisi d,utiliser  des intefaces pour évéter la redondance.
+Notre équipe a utilisé les classe statics et non statics
+Les packages:
+Notre équipe a choisi d'utilisé les pakcage pour faciliter la lisibilté du code.
+Structure:
+Toujours dans le même but de faciliter la lisibilité du programme, on s'est mis d'accord sur le fait de respecter "la règle de décroissance", c'est-à-dire, le programme doit se lire de haut en bas. "Chaque fonction doit être suivie de fonction de niveau d'abstraction meilleur
+
+Exigence:
+Notre équipe s'est mis d'accord sur les exigence suivantes:
+•	Un seul return par méthode;
+•	Pas de break;
+•	pas de continue;
+•	pas de goto
+
+Commentaires: 
+"Des commentaires à jour, pertinents et justes"
+En outre, on s'est mis d'accord d'essayer d'être le plus clair possible dans le code que de l'expliquer avec des commentaires.  Car trop de commentaires donnent un code malpropre et illisible.
+Cependant, les commentaires doivent être en langue française, bref et pertinents.

@@ -1,15 +1,9 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package date;
 
 import java.util.Date;
 
-/**
- *
- * @author Hamza
- */
+
 public class LaDate {
     static Date maintenant ;
     static int ceMois;

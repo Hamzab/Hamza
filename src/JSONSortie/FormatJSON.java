@@ -1,14 +1,9 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package JSONSortie;
+import contrat.Contrat;
 import net.sf.json.JSONArray;
 
-/**
- *
- * @author Hamza
- */
+
 public class FormatJSON {
 
     public static boolean estRespecterLaNormeISO(String uneDate) {
@@ -56,14 +51,11 @@ public class FormatJSON {
     }
 
     public static boolean verifierDureeContrat(int duree) {
-        boolean res = true;
-        if (duree < 1 || duree > 3) {
-            res = false;
-        }
-        return res;
+        Contrat c=new Contrat(duree);
+        return c.verifierDureeContrat();
     }
 
-    public static JSONArray getResultats(String dateNaissance,String dateFinCours,String sexe,int duree) {
+    public static JSONArray getMessagesErreures(String dateNaissance,String dateFinCours,String sexe,int duree) {
         JSONArray messages = new JSONArray();
         if (!verifierFormatDate(dateNaissance) || !verifierFormatDate(dateFinCours)) {
             messages.add(" Les dates sont toujours dans le format ISO 8601.");

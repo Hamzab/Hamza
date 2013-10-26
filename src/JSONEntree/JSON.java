@@ -1,16 +1,8 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
-package JSONEntree;
 
+package JSONEntree;
 import Files.FileReader;
 import main.Main;
 
-/**
- *
- * @author Hamza
- */
 public class JSON {
 
     public static String getJsonInfo() throws Exception {

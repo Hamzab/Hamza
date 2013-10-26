@@ -13,22 +13,12 @@ import java.text.DecimalFormat;
 import java.text.DecimalFormatSymbols;
 import java.util.ArrayList;
 import java.util.List;
-import lesCalcules.LesCalcules;
+import montantDeLaSoumission.LesCalcules;
 import net.sf.json.JSONArray;
 import net.sf.json.JSONObject;
 import voiture.*;
 
 public class UnJSON {
-
-    public Vehicule getTypeVehicule(String type, int annee, String marque, String modele) {
-        Vehicule v = null;
-        if (type.equals("voitures")) {
-            v = new Voiture(annee, marque, modele);
-        } else if (type.equals("motos")) {
-            v = new Moto(annee, marque, modele);
-        }
-        return v;
-    }
 
     public static int getSizeVehicules(String type) throws Exception {
         int size = 0;
@@ -189,7 +179,7 @@ public class UnJSON {
         String sexe = JSONConducteur.getSexe();
         String dateFinCours = JSONConducteur.getDateFinCoursDeConduite();
         int duree = JSONContrat.getDureeContrat();
-        return FormatJSON.getResultats(dateNaissance, dateFinCours, sexe, duree);
+        return FormatJSON.getMessagesErreures(dateNaissance, dateFinCours, sexe, duree);
     }
 
     public static JSONObject remplirUnJSON(boolean estAssurable) throws Exception {
@@ -220,9 +210,10 @@ public class UnJSON {
     public static JSONObject retournerUnJSON() throws Exception {
         JSONObject res = new JSONObject();
         JSONArray messages = getMessagesValidationJSON();
-        if (messages.size() == 0) {
-            res =getResultat();
+        if (messages.isEmpty()) {
+            res = getResultat();
         } else {
+            res.put("est_assurable", false);
             res.put("messages", messages); // un json n'est pas valide
         }
         return res;

@@ -1,15 +1,9 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package voiture;
 
 import JSONEntree.LesDonnes;
 
-/**
- *
- * @author Hamza
- */
+
 public class Voiture implements Vehicule {
 
     String marque;

@@ -1,7 +1,4 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package JSONEntree;
 
 import static JSONEntree.JSONVoiture.getVoitures;
@@ -9,10 +6,7 @@ import net.sf.json.JSONArray;
 import net.sf.json.JSONObject;
 import net.sf.json.JSONSerializer;
 
-/**
- *
- * @author Hamza
- */
+
 public class JSONMotos {
       public static JSONArray getMotos() throws Exception {
         JSONObject unObjet = (JSONObject) JSONSerializer.toJSON(JSON.getJsonInfo());

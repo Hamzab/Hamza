@@ -1,5 +1,5 @@
 
-package lesCalcules;
+package montantDeLaSoumission;
 import conducteur.InfoConducteur;
 import contrat.Contrat;
 import voiture.InfoMoto;

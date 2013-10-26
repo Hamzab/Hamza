@@ -1,10 +1,5 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
-package JSONEntree;
 
-import main.Main;
+package JSONEntree;
 import net.sf.json.JSONObject;
 import net.sf.json.JSONSerializer;
 
