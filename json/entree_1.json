@@ -41,11 +41,11 @@
         }
     ],
     "conducteur": {
-        "date_de_naissance": "1988-01-15",
+        "date_de_naissance": "1977-01-15",
         "province": "Qu\u00e9bec",
         "ville": "Montr\u00e9al",
-        "sexe": "F",
-        "date_fin_cours_de_conduite": "1990-12-01",
+        "sexe": "M",
+        "date_fin_cours_de_conduite": "2000-12-01",
         "cours_de_conduite_reconnus_par_CAA": true,
         "premier_contrat": true,
         "membre_oiq": true

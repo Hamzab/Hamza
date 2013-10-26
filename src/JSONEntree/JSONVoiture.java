@@ -16,7 +16,7 @@ public class JSONVoiture {
     }
 
     public static int getAnnee(int indice) throws Exception {
-        return getVoitures().getJSONObject(indice).getInt("annee");         ///("annee");
+        return getVoitures().getJSONObject(indice).getInt("annee"); 
     }
 
     public static String getMarque(int indice) throws Exception {

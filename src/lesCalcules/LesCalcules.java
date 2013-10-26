@@ -1,18 +1,9 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
-package lesCalcules;
 
-import conducteur.Conducteur;
+package lesCalcules;
 import conducteur.InfoConducteur;
 import contrat.Contrat;
-import java.util.List;
-//import JSONSortie.FormatJSON;
 import voiture.InfoMoto;
 import voiture.InfoVehicule;
-import voiture.InfoVoiture;
-import voiture.Voiture;
 
 
 public class LesCalcules {
@@ -47,19 +38,29 @@ public class LesCalcules {
   public boolean estMemebre_oiq(){
       return infoConducteur.estUnMembre_oiq();
   }
-
+  public  MontantDeLaSoumission getMont(){
+     return  new MontantDeLaSoumission(montant);
+  }
+  /*
+   * On est dévisé la méthode appliquer en 2 pour réspecter
+   * la norme de la limite des nombres de ligne par méthode
+   */
+  public double appliquer1(String typeVehicule){
+       double leMontant = getMont().calculerMontantDeBase(getDuree(),getAge(),getSexe(),typeVehicule);   
+        leMontant = getMont().ajouterValeursDesOptions(infoVehicule.getValeurDesOption(), leMontant);
+        leMontant = getMont().ajouterMontantVille(infoConducteur.getConducteur().getVille(), leMontant);
+        leMontant = getMont().retirerMontantBurinage(infoVehicule.getBurinage(), leMontant);
+        leMontant = getMont().retirerMontantGarageInterieur(infoVehicule.isGarageInterieur(), leMontant);
+        leMontant = getMont().retirerMontantSystemAlarme(infoVehicule.isSystemeAlarme(), leMontant);  
+      return leMontant;
+  }
   public double appliquer(String typeVehicule) {
-        MontantDeLaSoumission m = new MontantDeLaSoumission(montant);
-        double leMontant = m.calculerMontantDeBase(getDuree(),getAge(),getSexe(),typeVehicule);   
-        leMontant = m.ajouterValeursDesOptions(infoVehicule.getValeurDesOption(), leMontant);
-        leMontant = m.ajouterMontantVille(infoConducteur.getConducteur().getVille(), leMontant);
-        leMontant = m.retirerMontantBurinage(infoVehicule.getBurinage(), leMontant);
-        leMontant = m.retirerMontantGarageInterieur(infoVehicule.isGarageInterieur(), leMontant);
-        leMontant = m.retirerMontantSystemAlarme(infoVehicule.isSystemeAlarme(), leMontant);
-        leMontant = m.retirerMontantCoursCAA(infoConducteur.estReconnusParCAA(), leMontant);
-        leMontant = m.ajouterMontantPremierContrat(infoConducteur.isPremierContrat(), leMontant);
-        leMontant = m.retirerMontantExperience15Ans(getDateFinCours(), leMontant);
-        leMontant=m.calculerLeRabaisOrdreIngQuebec(estMemebre_oiq(), leMontant); 
+        double leMontant =appliquer1(typeVehicule);
+        leMontant = getMont().retirerMontantCoursCAA(infoConducteur.estReconnusParCAA(), leMontant);
+        leMontant = getMont().ajouterMontantPremierContrat(infoConducteur.isPremierContrat(), leMontant);
+        leMontant = getMont().retirerMontantExperience15Ans(getDateFinCours(), leMontant);
+        leMontant= getMont().ajouterPuissanceSuperieur1100cc(infoVehicule.getValeurCC(),leMontant);
+        leMontant=getMont().calculerLeRabaisOrdreIngQuebec(estMemebre_oiq(), leMontant); 
         return leMontant;
     }
 }

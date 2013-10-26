@@ -4,9 +4,11 @@
  */
 package voiture;
 
-
+/**
+ *
+ * @author dj791333
+ */
 public interface InfoVehicule {
-
     public double getValeurDesOption();
     public String getBurinage() ;
     public boolean isGarageInterieur();

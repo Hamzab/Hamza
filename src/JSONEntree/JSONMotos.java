@@ -9,7 +9,10 @@ import net.sf.json.JSONArray;
 import net.sf.json.JSONObject;
 import net.sf.json.JSONSerializer;
 
-
+/**
+ *
+ * @author Hamza
+ */
 public class JSONMotos {
       public static JSONArray getMotos() throws Exception {
         JSONObject unObjet = (JSONObject) JSONSerializer.toJSON(JSON.getJsonInfo());
@@ -18,7 +21,7 @@ public class JSONMotos {
     }
 
     public static int getAnnee(int indice) throws Exception {
-        return getMotos().getJSONObject(indice).getInt("annee");         ///("annee");
+        return getMotos().getJSONObject(indice).getInt("annee");
     }
 
     public static String getMarque(int indice) throws Exception {

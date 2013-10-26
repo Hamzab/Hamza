@@ -4,7 +4,10 @@
  */
 package voiture;
 
-
+/**
+ *
+ * @author Hamza
+ */
 public class InfoMoto implements InfoVehicule{
     Vehicule moto;
     double valeurDesOption;
@@ -18,8 +21,7 @@ public class InfoMoto implements InfoVehicule{
         this.valeurCC = valeurCC;
         this.burinage = burinage;
         this.garageInterieur = garageInterieur;
-        this.systemeAlarme = systemeAlarme;
-       
+        this.systemeAlarme = systemeAlarme;      
     }
 
 

@@ -9,9 +9,11 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
 
-
+/**
+ *
+ * @author Hamza
+ */
 public class FileWriter1 {
- 
     public static void creerPrinter(String path) throws IOException, Exception{
        PrintWriter write;
        write = new PrintWriter(new FileWriter(path));

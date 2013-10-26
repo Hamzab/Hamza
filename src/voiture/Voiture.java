@@ -6,7 +6,10 @@ package voiture;
 
 import JSONEntree.LesDonnes;
 
-
+/**
+ *
+ * @author Hamza
+ */
 public class Voiture implements Vehicule {
 
     String marque;

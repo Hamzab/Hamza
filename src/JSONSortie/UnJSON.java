@@ -1,4 +1,3 @@
-
 package JSONSortie;
 
 import JSONEntree.JSONConducteur;
@@ -19,8 +18,8 @@ import net.sf.json.JSONArray;
 import net.sf.json.JSONObject;
 import voiture.*;
 
-
 public class UnJSON {
+
     public Vehicule getTypeVehicule(String type, int annee, String marque, String modele) {
         Vehicule v = null;
         if (type.equals("voitures")) {
@@ -207,16 +206,24 @@ public class UnJSON {
         return res;
     }
 
-    public static JSONObject retournerUnJSON() throws Exception {
+    public static JSONObject getResultat() throws Exception {
         JSONObject res = new JSONObject();
         boolean estAssurable = estAssurable();
+        if (estAssurable) {
+            res = remplirUnJSON(estAssurable);
+        } else {
+            res.put("est_assurable", estAssurable);
+        }
+        return res;
+    }
+
+    public static JSONObject retournerUnJSON() throws Exception {
+        JSONObject res = new JSONObject();
         JSONArray messages = getMessagesValidationJSON();
         if (messages.size() == 0) {
-            if (estAssurable) {
-                res = remplirUnJSON(estAssurable);
-            }
+            res =getResultat();
         } else {
-            res.put("messages", messages);
+            res.put("messages", messages); // un json n'est pas valide
         }
         return res;
     }

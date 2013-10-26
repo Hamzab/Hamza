@@ -11,7 +11,6 @@ import net.sf.json.JSONSerializer;
 public class JSONConducteur {
 
     public static JSONObject getConducteur() throws Exception {
-
         JSONObject unObjet = (JSONObject) JSONSerializer.toJSON(JSON.getJsonInfo());
         JSONObject unConducteur = unObjet.getJSONObject("conducteur");
         return unConducteur;
