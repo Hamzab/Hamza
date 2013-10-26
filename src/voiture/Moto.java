@@ -1,4 +1,3 @@
-
 package voiture;
 
 public class Moto implements Vehicule {

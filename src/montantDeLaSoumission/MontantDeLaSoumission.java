@@ -9,9 +9,9 @@ public class MontantDeLaSoumission {
     public MontantDeLaSoumission(double montant) {
         if (montant > 500000) {
             montant += 2500;
-        }    
+        }
         this.montant = montant;
-   
+
     }
 
     public double getMontant() {
@@ -48,6 +48,7 @@ public class MontantDeLaSoumission {
      * . Le pourcentage du montant de base est calculé en fonction de 
      *      l'âge et du sexe de l'assuré.
      */
+
     public double getPourcentagePourMontantDeBase(int age, String sexe, String typeVehiCule) {
         double res = 0;
         if (sexe.equals("M")) {
@@ -73,15 +74,15 @@ public class MontantDeLaSoumission {
 
     public double ajouterValeursDesOptions(double valeurDesOptions, double montantDeBase) {
         montantDeBase += (valeurDesOptions * 0.10);
-           
+
         return montantDeBase;
     }
-   
+
     public double ajouterMontantVille(String ville, double montantDeSoumission) {
-       if (ville.equals("Montréal") || ville.equals("Longueuil")) {
+        if (ville.equals("Montréal") || ville.equals("Longueuil")) {
             montantDeSoumission += 200.0;
         }
-       
+
         return montantDeSoumission;
     }
 
@@ -89,7 +90,7 @@ public class MontantDeLaSoumission {
         if (burinage.equals("Sherlock")) {
             montantDeSoumission -= 250.0;
         }
-       
+
         return montantDeSoumission;
     }
 
@@ -97,7 +98,7 @@ public class MontantDeLaSoumission {
         if (estInterieur == true) {
             montantDeSoumission -= 500.0;
         }
-         
+
         return montantDeSoumission;
     }
 
@@ -106,7 +107,7 @@ public class MontantDeLaSoumission {
         if (estSysAlarme == true) {
             montantDeSoumission -= 500.0;
         }
-       
+
         return montantDeSoumission;
     }
 
@@ -114,7 +115,7 @@ public class MontantDeLaSoumission {
         if (estCoursCAA == true) {
             montantDeSoumission -= 100.0;
         }
-       
+
         return montantDeSoumission;
     }
 
@@ -122,7 +123,7 @@ public class MontantDeLaSoumission {
         if (estPremierContrat == true) {
             montantDeSoumission += 2000.0;
         }
-     
+
         return montantDeSoumission;
     }
 
@@ -131,7 +132,7 @@ public class MontantDeLaSoumission {
         if (anneesExperience > 15) {
             montantDeSoumission -= 400.0;
         }
-         
+
         return montantDeSoumission;
     }
 

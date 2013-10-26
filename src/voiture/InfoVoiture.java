@@ -8,7 +8,7 @@ package voiture;
  *
  * @author Hamza
  */
-public class InfoVoiture implements InfoVehicule{
+public class InfoVoiture implements InfoVehicule {
 
     Vehicule voiture;
     double valeurDesOption;
@@ -16,14 +16,13 @@ public class InfoVoiture implements InfoVehicule{
     boolean garageInterieur;
     boolean systemeAlarme;
 
-    public InfoVoiture(Vehicule voiture, double valeurDesOption,int valeurCC, String burinage, boolean garageInterieur, boolean systemeAlarme) {
+    public InfoVoiture(Vehicule voiture, double valeurDesOption, int valeurCC, String burinage, boolean garageInterieur, boolean systemeAlarme) {
         this.voiture = voiture;
         this.valeurDesOption = valeurDesOption;
         this.burinage = burinage;
         this.garageInterieur = garageInterieur;
         this.systemeAlarme = systemeAlarme;
     }
-
 
     public Vehicule getVoiture() {
         return voiture;
@@ -49,7 +48,7 @@ public class InfoVoiture implements InfoVehicule{
         return systemeAlarme;
     }
 
-      @Override
+    @Override
     public int getValeurCC() {
         return 0;
     }

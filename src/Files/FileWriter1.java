@@ -1,4 +1,3 @@
-
 package Files;
 
 import JSONSortie.UnJSON;
@@ -7,16 +6,18 @@ import java.io.IOException;
 import java.io.PrintWriter;
 
 public class FileWriter1 {
-    public static void creerPrinter(String path) throws IOException, Exception{
-       PrintWriter write;
-       write = new PrintWriter(new FileWriter(path));
-       write.print(UnJSON.retournerUnJSON());
-       write.flush();
-       write.close();
+
+    public static void creerPrinter(String path) throws IOException, Exception {
+        PrintWriter write;
+        write = new PrintWriter(new FileWriter(path));
+        write.print(UnJSON.retournerUnJSON());
+        write.flush();
+        write.close();
     }
+
     public static void ecrire(String path) throws IOException, Exception {
         try {
-           creerPrinter(path);
+            creerPrinter(path);
         }//try
         catch (NullPointerException a) {
             System.out.println("Erreur : pointeur null");

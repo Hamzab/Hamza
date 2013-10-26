@@ -1,7 +1,4 @@
-
-
 package conducteur;
-
 
 public class Conducteur {
 
@@ -48,7 +45,8 @@ public class Conducteur {
     public void setSexe(String sexe) {
         this.sexe = sexe;
     }
-        public boolean estResideAuQuebec() {
+
+    public boolean estResideAuQuebec() {
         String pro = getProvince();
         boolean res = false;
         if (pro.equals("Québec")) {

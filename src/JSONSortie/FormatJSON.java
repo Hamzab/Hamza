@@ -1,8 +1,7 @@
-
 package JSONSortie;
+
 import contrat.Contrat;
 import net.sf.json.JSONArray;
-
 
 public class FormatJSON {
 
@@ -51,11 +50,11 @@ public class FormatJSON {
     }
 
     public static boolean verifierDureeContrat(int duree) {
-        Contrat c=new Contrat(duree);
+        Contrat c = new Contrat(duree);
         return c.verifierDureeContrat();
     }
 
-    public static JSONArray getMessagesErreures(String dateNaissance,String dateFinCours,String sexe,int duree) {
+    public static JSONArray getMessagesErreures(String dateNaissance, String dateFinCours, String sexe, int duree) {
         JSONArray messages = new JSONArray();
         if (!verifierFormatDate(dateNaissance) || !verifierFormatDate(dateFinCours)) {
             messages.add(" Les dates sont toujours dans le format ISO 8601.");

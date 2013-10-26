@@ -1,5 +1,5 @@
-
 package JSONEntree;
+
 import net.sf.json.JSONArray;
 import net.sf.json.JSONObject;
 import net.sf.json.JSONSerializer;
@@ -13,7 +13,7 @@ public class JSONVoiture {
     }
 
     public static int getAnnee(int indice) throws Exception {
-        return getVoitures().getJSONObject(indice).getInt("annee"); 
+        return getVoitures().getJSONObject(indice).getInt("annee");
     }
 
     public static String getMarque(int indice) throws Exception {

@@ -1,314 +1,353 @@
-[
-    {
-        "année": 2014,
-        "marque": "Porsche",
-        "modèle": "Boxter",
-        "valeur_initiale_du_véhicule": 60000
-    },
-    {
-        "année": 2014,
-        "marque": "Porsche",
-        "modèle": "Boxter S",
-        "valeur_initiale_du_véhicule": 72000
-    },
-    {
-        "année": 2014,
-        "marque": "Porsche",
-        "modèle": "Cayman",
-        "valeur_initiale_du_véhicule": 62000
-    },
-    {
-        "année": 2014,
-        "marque": "Porsche",
-        "modèle": "Cayman S",
-        "valeur_initiale_du_véhicule": 75000
-    },
-    {
-        "année": 2014,
-        "marque": "Porsche",
-        "modèle": "911 Carrera",
-        "valeur_initiale_du_véhicule": 100000
-    },
-    {
-        "année": 2014,
-        "marque": "Porsche",
-        "modèle": "911 Carrera S",
-        "valeur_initiale_du_véhicule": 115000
-    },
-    {
-        "année": 2014,
-        "marque": "Porsche",
-        "modèle": "911 Carrera Cabriolet",
-        "valeur_initiale_du_véhicule": 112000
-    },
-    {
-        "année": 2014,
-        "marque": "Porsche",
-        "modèle": "911 Carrera S Cabriolet",
-        "valeur_initiale_du_véhicule": 129000
-    },
-    {
-        "année": 2014,
-        "marque": "Porsche",
-        "modèle": "911 Carrera 4",
-        "valeur_initiale_du_véhicule": 106000
-    },
-    {
-        "année": 2014,
-        "marque": "Porsche",
-        "modèle": "911 Carrera 4S",
-        "valeur_initiale_du_véhicule": 123000
-    },
-    {
-        "année": 2014,
-        "marque": "Porsche",
-        "modèle": "911 Carrera 4 Cabriolet",
-        "valeur_initiale_du_véhicule": 120000
-    },
-    {
-        "année": 2014,
-        "marque": "Porsche",
-        "modèle": "911 Carrera 4S Cabriolet",
-        "valeur_initiale_du_véhicule": 137000
-    },
-    {
-        "année": 2014,
-        "marque": "Porsche",
-        "modèle": "911 50 ans",
-        "valeur_initiale_du_véhicule": 142000
-    },
-    {
-        "année": 2014,
-        "marque": "Porsche",
-        "modèle": "911 Turbo",
-        "valeur_initiale_du_véhicule": 170000
-    },
-    {
-        "année": 2014,
-        "marque": "Porsche",
-        "modèle": "911 Turbo S",
-        "valeur_initiale_du_véhicule": 207000
-    },
-    {
-        "année": 2014,
-        "marque": "Porsche",
-        "modèle": "911 GT3",
-        "valeur_initiale_du_véhicule": 149000
-    },
-    {
-        "année": 2014,
-        "marque": "Porsche",
-        "modèle": "Panamera",
-        "valeur_initiale_du_véhicule": 90000
-    },
-    {
-        "année": 2014,
-        "marque": "Porsche",
-        "modèle": "Panamera 4",
-        "valeur_initiale_du_véhicule": 95000
-    },
-    {
-        "année": 2014,
-        "marque": "Porsche",
-        "modèle": "Panamera S",
-        "valeur_initiale_du_véhicule": 107000
-    },
-    {
-        "année": 2014,
-        "marque": "Porsche",
-        "modèle": "Panamera S E-Hybride",
-        "valeur_initiale_du_véhicule": 114000
-    },
-    {
-        "année": 2014,
-        "marque": "Porsche",
-        "modèle": "Panamera 4S",
-        "valeur_initiale_du_véhicule": 113000
-    },
-    {
-        "année": 2014,
-        "marque": "Porsche",
-        "modèle": "Panamera 4S Executive",
-        "valeur_initiale_du_véhicule": 144000
-    },
-    {
-        "année": 2014,
-        "marque": "Porsche",
-        "modèle": "Panamera GTS",
-        "valeur_initiale_du_véhicule": 130000
-    },
-    {
-        "année": 2014,
-        "marque": "Porsche",
-        "modèle": "Panamera Turbo",
-        "valeur_initiale_du_véhicule": 162000
-    },
-    {
-        "année": 2014,
-        "marque": "Porsche",
-        "modèle": "Panamera Turbo Executive",
-        "valeur_initiale_du_véhicule": 185000
-    },
-    {
-        "année": 2014,
-        "marque": "Porsche",
-        "modèle": "Cayenne",
-        "valeur_initiale_du_véhicule": 59000
-    },
-    {
-        "année": 2014,
-        "marque": "Porsche",
-        "modèle": "Cayenne Diesel",
-        "valeur_initiale_du_véhicule": 67000
-    },
-    {
-        "année": 2014,
-        "marque": "Porsche",
-        "modèle": "Cayenne S",
-        "valeur_initiale_du_véhicule": 77000
-    },
-    {
-        "année": 2014,
-        "marque": "Porsche",
-        "modèle": "Cayenne S Hybride",
-        "valeur_initiale_du_véhicule": 82000
-    },
-    {
-        "année": 2014,
-        "marque": "Porsche",
-        "modèle": "Cayenne GTS",
-        "valeur_initiale_du_véhicule": 96000
-    },
-    {
-        "année": 2014,
-        "marque": "Porsche",
-        "modèle": "Cayenne Turbo",
-        "valeur_initiale_du_véhicule": 125000
-    },
-    {
-        "année": 2014,
-        "marque": "Porsche",
-        "modèle": "Cayenne Turbo S",
-        "valeur_initiale_du_véhicule": 169000
-    },
-    {
-        "année": 2014,
-        "marque": "Maserati",
-        "modèle": "Quattroporte Q4 AWD",
-        "valeur_initiale_du_véhicule": 119000
-    },
-    {
-        "année": 2014,
-        "marque": "Maserati",
-        "modèle": "Quattroporte GTS",
-        "valeur_initiale_du_véhicule": 148000
-    },
-    {
-        "année": 2013,
-        "marque": "Maserati",
-        "modèle": "GranTurismo Sport",
-        "valeur_initiale_du_véhicule": 140000
-    },
-    {
-        "année": 2012,
-        "marque": "Maserati",
-        "modèle": "GranTurismo S - MC SportLine",
-        "valeur_initiale_du_véhicule": 130000
-    },
-    {
-        "année": 2012,
-        "marque": "Maserati",
-        "modèle": "GranTurismo MC Stradale",
-        "valeur_initiale_du_véhicule": 145000
-    },
-    {
-        "année": 2011,
-        "marque": "Maserati",
-        "modèle": "GranTurismo S Convertible",
-        "valeur_initiale_du_véhicule": 127000
-    },
-    {
-        "année": 2013,
-        "marque": "Ferrari",
-        "modèle": "FF",
-        "valeur_initiale_du_véhicule": 340000
-    },
-    {
-        "année": 2013,
-        "marque": "Ferrari",
-        "modèle": "California F1",
-        "valeur_initiale_du_véhicule": 246000
-    },
-    {
-        "année": 2012,
-        "marque": "Ferrari",
-        "modèle": "458 Spider F1",
-        "valeur_initiale_du_véhicule": 343000
-    },
-    {
-        "année": 2012,
-        "marque": "Ferrari",
-        "modèle": "458 Italia F1",
-        "valeur_initiale_du_véhicule": 300000
-    },
-    {
-        "année": 2012,
-        "marque": "Ferrari",
-        "modèle": "California F1",
-        "valeur_initiale_du_véhicule": 223000
-    },
-    {
-        "année": 2010,
-        "marque": "Ferrari",
-        "modèle": "599GTB Fiorano F1",
-        "valeur_initiale_du_véhicule": 250000
-    },
-    {
-        "année": 2010,
-        "marque": "Ferrari",
-        "modèle": "California F1",
-        "valeur_initiale_du_véhicule": 189000
-    },
-    {
-        "année": 2009,
-        "marque": "Ferrari",
-        "modèle": "Scuderia 16M Spider F1",
-        "valeur_initiale_du_véhicule": 280000
-    },
-    {
-        "année": 2009,
-        "marque": "Ferrari",
-        "modèle": "F430 Spider F1",
-        "valeur_initiale_du_véhicule": 180000
-    },
-    {
-        "année": 2006,
-        "marque": "Ferrari",
-        "modèle": "F430 Challenge F1",
-        "valeur_initiale_du_véhicule": 150000
-    },
-    {
-        "année": 2003,
-        "marque": "Ferrari",
-        "modèle": "575M Maranello F1",
-        "valeur_initiale_du_véhicule": 93000
-    },
-    {
-        "année": 1993,
-        "marque": "Ferrari",
-        "modèle": "348TS Speciale-Limited Edition",
-        "valeur_initiale_du_véhicule": 80000
-    },
-    {
-        "année": 1970,
-        "marque": "Ferrari",
-        "modèle": "365 GT 2+2",
-        "valeur_initiale_du_véhicule": 170000
-    },
-    {
-        "année": 2013,
-        "marque": "Porsche",
-        "modèle": "918 Spyder",
-        "valeur_initiale_du_véhicule": 845000
-    }
-]
+{
+    "voitures": [
+        {
+            "année": 2014,
+            "marque": "Porsche",
+            "modèle": "Boxter",
+            "valeur_initiale_du_véhicule": 60000
+        },
+        {
+            "année": 2014,
+            "marque": "Porsche",
+            "modèle": "Boxter S",
+            "valeur_initiale_du_véhicule": 72000
+        },
+        {
+            "année": 2014,
+            "marque": "Porsche",
+            "modèle": "Cayman",
+            "valeur_initiale_du_véhicule": 62000
+        },
+        {
+            "année": 2014,
+            "marque": "Porsche",
+            "modèle": "Cayman S",
+            "valeur_initiale_du_véhicule": 75000
+        },
+        {
+            "année": 2014,
+            "marque": "Porsche",
+            "modèle": "911 Carrera",
+            "valeur_initiale_du_véhicule": 100000
+        },
+        {
+            "année": 2014,
+            "marque": "Porsche",
+            "modèle": "911 Carrera S",
+            "valeur_initiale_du_véhicule": 115000
+        },
+        {
+            "année": 2014,
+            "marque": "Porsche",
+            "modèle": "911 Carrera Cabriolet",
+            "valeur_initiale_du_véhicule": 112000
+        },
+        {
+            "année": 2014,
+            "marque": "Porsche",
+            "modèle": "911 Carrera S Cabriolet",
+            "valeur_initiale_du_véhicule": 129000
+        },
+        {
+            "année": 2014,
+            "marque": "Porsche",
+            "modèle": "911 Carrera 4",
+            "valeur_initiale_du_véhicule": 106000
+        },
+        {
+            "année": 2014,
+            "marque": "Porsche",
+            "modèle": "911 Carrera 4S",
+            "valeur_initiale_du_véhicule": 123000
+        },
+        {
+            "année": 2014,
+            "marque": "Porsche",
+            "modèle": "911 Carrera 4 Cabriolet",
+            "valeur_initiale_du_véhicule": 120000
+        },
+        {
+            "année": 2014,
+            "marque": "Porsche",
+            "modèle": "911 Carrera 4S Cabriolet",
+            "valeur_initiale_du_véhicule": 137000
+        },
+        {
+            "année": 2014,
+            "marque": "Porsche",
+            "modèle": "911 50 ans",
+            "valeur_initiale_du_véhicule": 142000
+        },
+        {
+            "année": 2014,
+            "marque": "Porsche",
+            "modèle": "911 Turbo",
+            "valeur_initiale_du_véhicule": 170000
+        },
+        {
+            "année": 2014,
+            "marque": "Porsche",
+            "modèle": "911 Turbo S",
+            "valeur_initiale_du_véhicule": 207000
+        },
+        {
+            "année": 2014,
+            "marque": "Porsche",
+            "modèle": "911 GT3",
+            "valeur_initiale_du_véhicule": 149000
+        },
+        {
+            "année": 2014,
+            "marque": "Porsche",
+            "modèle": "Panamera",
+            "valeur_initiale_du_véhicule": 90000
+        },
+        {
+            "année": 2014,
+            "marque": "Porsche",
+            "modèle": "Panamera 4",
+            "valeur_initiale_du_véhicule": 95000
+        },
+        {
+            "année": 2014,
+            "marque": "Porsche",
+            "modèle": "Panamera S",
+            "valeur_initiale_du_véhicule": 107000
+        },
+        {
+            "année": 2014,
+            "marque": "Porsche",
+            "modèle": "Panamera S E-Hybride",
+            "valeur_initiale_du_véhicule": 114000
+        },
+        {
+            "année": 2014,
+            "marque": "Porsche",
+            "modèle": "Panamera 4S",
+            "valeur_initiale_du_véhicule": 113000
+        },
+        {
+            "année": 2014,
+            "marque": "Porsche",
+            "modèle": "Panamera 4S Executive",
+            "valeur_initiale_du_véhicule": 144000
+        },
+        {
+            "année": 2014,
+            "marque": "Porsche",
+            "modèle": "Panamera GTS",
+            "valeur_initiale_du_véhicule": 130000
+        },
+        {
+            "année": 2014,
+            "marque": "Porsche",
+            "modèle": "Panamera Turbo",
+            "valeur_initiale_du_véhicule": 162000
+        },
+        {
+            "année": 2014,
+            "marque": "Porsche",
+            "modèle": "Panamera Turbo Executive",
+            "valeur_initiale_du_véhicule": 185000
+        },
+        {
+            "année": 2014,
+            "marque": "Porsche",
+            "modèle": "Cayenne",
+            "valeur_initiale_du_véhicule": 59000
+        },
+        {
+            "année": 2014,
+            "marque": "Porsche",
+            "modèle": "Cayenne Diesel",
+            "valeur_initiale_du_véhicule": 67000
+        },
+        {
+            "année": 2014,
+            "marque": "Porsche",
+            "modèle": "Cayenne S",
+            "valeur_initiale_du_véhicule": 77000
+        },
+        {
+            "année": 2014,
+            "marque": "Porsche",
+            "modèle": "Cayenne S Hybride",
+            "valeur_initiale_du_véhicule": 82000
+        },
+        {
+            "année": 2014,
+            "marque": "Porsche",
+            "modèle": "Cayenne GTS",
+            "valeur_initiale_du_véhicule": 96000
+        },
+        {
+            "année": 2014,
+            "marque": "Porsche",
+            "modèle": "Cayenne Turbo",
+            "valeur_initiale_du_véhicule": 125000
+        },
+        {
+            "année": 2014,
+            "marque": "Porsche",
+            "modèle": "Cayenne Turbo S",
+            "valeur_initiale_du_véhicule": 169000
+        },
+        {
+            "année": 2014,
+            "marque": "Maserati",
+            "modèle": "Quattroporte Q4 AWD",
+            "valeur_initiale_du_véhicule": 119000
+        },
+        {
+            "année": 2014,
+            "marque": "Maserati",
+            "modèle": "Quattroporte GTS",
+            "valeur_initiale_du_véhicule": 148000
+        },
+        {
+            "année": 2013,
+            "marque": "Maserati",
+            "modèle": "GranTurismo Sport",
+            "valeur_initiale_du_véhicule": 140000
+        },
+        {
+            "année": 2012,
+            "marque": "Maserati",
+            "modèle": "GranTurismo S - MC SportLine",
+            "valeur_initiale_du_véhicule": 130000
+        },
+        {
+            "année": 2012,
+            "marque": "Maserati",
+            "modèle": "GranTurismo MC Stradale",
+            "valeur_initiale_du_véhicule": 145000
+        },
+        {
+            "année": 2011,
+            "marque": "Maserati",
+            "modèle": "GranTurismo S Convertible",
+            "valeur_initiale_du_véhicule": 127000
+        },
+        {
+            "année": 2013,
+            "marque": "Ferrari",
+            "modèle": "FF",
+            "valeur_initiale_du_véhicule": 340000
+        },
+        {
+            "année": 2013,
+            "marque": "Ferrari",
+            "modèle": "California F1",
+            "valeur_initiale_du_véhicule": 246000
+        },
+        {
+            "année": 2012,
+            "marque": "Ferrari",
+            "modèle": "458 Spider F1",
+            "valeur_initiale_du_véhicule": 343000
+        },
+        {
+            "année": 2012,
+            "marque": "Ferrari",
+            "modèle": "458 Italia F1",
+            "valeur_initiale_du_véhicule": 300000
+        },
+        {
+            "année": 2012,
+            "marque": "Ferrari",
+            "modèle": "California F1",
+            "valeur_initiale_du_véhicule": 223000
+        },
+        {
+            "année": 2010,
+            "marque": "Ferrari",
+            "modèle": "599GTB Fiorano F1",
+            "valeur_initiale_du_véhicule": 250000
+        },
+        {
+            "année": 2010,
+            "marque": "Ferrari",
+            "modèle": "California F1",
+            "valeur_initiale_du_véhicule": 189000
+        },
+        {
+            "année": 2009,
+            "marque": "Ferrari",
+            "modèle": "Scuderia 16M Spider F1",
+            "valeur_initiale_du_véhicule": 280000
+        },
+        {
+            "année": 2009,
+            "marque": "Ferrari",
+            "modèle": "F430 Spider F1",
+            "valeur_initiale_du_véhicule": 180000
+        },
+        {
+            "année": 2006,
+            "marque": "Ferrari",
+            "modèle": "F430 Challenge F1",
+            "valeur_initiale_du_véhicule": 150000
+        },
+        {
+            "année": 2003,
+            "marque": "Ferrari",
+            "modèle": "575M Maranello F1",
+            "valeur_initiale_du_véhicule": 93000
+        },
+        {
+            "année": 1993,
+            "marque": "Ferrari",
+            "modèle": "348TS Speciale-Limited Edition",
+            "valeur_initiale_du_véhicule": 80000
+        },
+        {
+            "année": 1970,
+            "marque": "Ferrari",
+            "modèle": "365 GT 2+2",
+            "valeur_initiale_du_véhicule": 170000
+        },
+        {
+            "année": 2013,
+            "marque": "Porsche",
+            "modèle": "918 Spyder",
+            "valeur_initiale_du_véhicule": 845000
+        }
+    ],
+    "motos": [
+        {
+            "année": 2013,
+            "marque": "Ducati",
+            "modèle": "Diavel Dark",
+            "CC": 1198.4,
+            "valeur_initiale_du_véhicule": 19000
+        },
+        {
+            "année": 2013,
+            "marque": "Ducati",
+            "modèle": "Hypermotard SP",
+            "CC": 821.1,
+            "valeur_initiale_du_véhicule": 16000
+        },
+        {
+            "année": 2013,
+            "marque": "Ducati",
+            "modèle": "Monster 1100 Evo",
+            "CC": 1078,
+            "valeur_initiale_du_véhicule": 13500
+        },
+        {
+            "année": 2013,
+            "marque": "Ducati",
+            "modèle": "Streetfighter 848",
+            "CC": 849,
+            "valeur_initiale_du_véhicule": 14300
+        },
+        {
+            "année": 2013,
+            "marque": "Ducati",
+            "modèle": "Superbike 1199 Panigale R",
+            "CC": 1198,
+            "valeur_initiale_du_véhicule": 32000
+        }
+    ]
+}
