@@ -1,6 +1,6 @@
 package montantDeLaSoumission;
 
-import date.Date1;
+import dateContrat.Date1;
 
 public class MontantSoumission {
 

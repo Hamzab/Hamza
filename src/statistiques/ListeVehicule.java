@@ -72,10 +72,9 @@ public class ListeVehicule {
         JSONObject unjson=new JSONObject();
         unjson.put("assurables", putListe());
         if(existeJson()){
-             unjson.put("assurables", putListe());
+            // unjson.put("assurables", putListe());
            FileWriter1.ecrire("json/liste.json", unjson);
-        }else if(Main.tmp[0].equals("-L")){
-            unjson.put("assurables",new JSONArray()); 
+        }else {
             FileWriter1.ecrire("json/liste.json", unjson);
         }
         return unjson;

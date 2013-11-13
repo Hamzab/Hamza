@@ -9,7 +9,7 @@ import jsonInput.JSONMotos;
 import conducteur.Conducteur;
 import conducteur.InfoConducteur;
 import contrat.Contrat;
-import date.Date1;
+import dateContrat.Date1;
 import java.text.DecimalFormat;
 import java.text.DecimalFormatSymbols;
 import java.util.ArrayList;

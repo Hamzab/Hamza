@@ -53,34 +53,7 @@ public class Statistiques {
         return tab;
     }
             
-    public JSONObject creerUnJsonStat() throws IOException, Exception{
-       /*
-        *  "vehicules_par_marque": [
-        {
-            "marque": "Porsche",
-            "nombre": 1
-        },
-        {
-            "marque": "Maserati",
-            "nombre": 0
-        },
-        {
-            "marque": "Ferrari",
-            "nombre": 1
-        },
-        {
-            "marque": "Ducati",
-            "nombre": 1
-        }
-    ]
-
-        */
-        
-        
-        
-        
-        
-        if(Main.tmp[0].equals("-S")){
+    public JSONObject creerUnJsonStat() throws IOException, Exception{   
         unObjet.put("nombre_de_soumissions", 0);                      
         unObjet.put("nombre_de_soumissions_non_assurables",0);
         unObjet.put("nombre_de_soumissions_assurables",0);
@@ -91,11 +64,11 @@ public class Statistiques {
         unObjet.put("nombre_de_motos_assurables",0);     
         unObjet.put("vehicules_par_marque", getVehiculeParMarque());
         FileWriter1.ecrire("json/stats.json", unObjet);
-        }else if(existeJson()){
+
             unObjet=unjson.getStats();
        
          FileWriter1.ecrire("json/stats.json", unObjet);
-        }
+        
         
         return unObjet;
     }
