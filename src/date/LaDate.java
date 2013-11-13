@@ -4,37 +4,40 @@ import java.util.Date;
 
 public class LaDate {
 
-    static Date maintenant;
-    static int ceMois;
-    static int cetteAnnee;
-    static int annees;
-
-    public static int getAnneeDeNaissance(String dateDeNaissance) {
+     Date maintenant;
+     int ceMois;
+     int cetteAnnee;
+     int annees;
+    String dateDeNaissance;
+    public LaDate(String dateDeNaissance){
+        this.dateDeNaissance=dateDeNaissance;
+    }
+    public int getAnneeDeNaissance() {
         return Integer.parseInt(dateDeNaissance.substring(0, 4));
     }
 
-    public static int getMoisDeNaissance(String dateDeNaissance) {
+    public  int getMoisDeNaissance() {
         return Integer.parseInt(dateDeNaissance.substring(5, 7));
     }
 
-    public static int getJourDeNaissance(String dateDeNaissance) {
+    public int getJourDeNaissance() {
         return Integer.parseInt(dateDeNaissance.substring(8, 10));
     }
 
-    public static void getParametreDeDate(String dateDeNaissance) {
+    public void getParametreDeDate() {
         maintenant = new Date();
         ceMois = maintenant.getMonth() + 1;
         cetteAnnee = maintenant.getYear() + 1900;
-        annees = cetteAnnee - getAnneeDeNaissance(dateDeNaissance);
+        annees = cetteAnnee - getAnneeDeNaissance();
     }
 
-    public static int getAnnees(String dateDeNaissance) {
-        getParametreDeDate(dateDeNaissance);
-        if (getMoisDeNaissance(dateDeNaissance) > ceMois) {
+    public  int getAnnees() {
+        getParametreDeDate();
+        if (getMoisDeNaissance() > ceMois) {
             annees--;
-        } else if (getMoisDeNaissance(dateDeNaissance) == ceMois) {
+        } else if (getMoisDeNaissance() == ceMois) {
             int aujourdhui = maintenant.getDate();
-            if (getJourDeNaissance(dateDeNaissance) > aujourdhui) {
+            if (getJourDeNaissance() > aujourdhui) {
                 annees--;
             }
         }
