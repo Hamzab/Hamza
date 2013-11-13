@@ -13,4 +13,6 @@ public interface InfoVehicule {
     public int getValeurCC();
    
     public boolean estAssurable(int annee, String marque, String modele,double valeur);
+    
+    public Vehicule getVehicule();
 }

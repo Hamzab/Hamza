@@ -1,5 +1,6 @@
 package voiture;
 
+
 public interface Vehicule {
 
     public String getMarque();
@@ -17,4 +18,5 @@ public interface Vehicule {
     public boolean estExistModele(String modele);
 
     public boolean estAssurable(int annee, String marque, String modele);
+    
 }

@@ -16,7 +16,8 @@ public class InfoVoiture implements InfoVehicule {
         this.systemeAlarme = systemeAlarme;
     }
 
-    public Vehicule getVoiture() {
+    @Override
+    public Vehicule getVehicule() {
         return voiture;
     }
 

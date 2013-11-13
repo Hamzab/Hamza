@@ -16,8 +16,7 @@ public class JSONConducteur {
             unObjet = (JSONObject) JSONSerializer.toJSON((new JSON_Input()).getJsonInfo());
           }catch(Exception e){
               
-          }
-  
+          }  
     }
 
     public JSONObject getConducteur() {

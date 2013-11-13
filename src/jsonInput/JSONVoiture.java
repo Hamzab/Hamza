@@ -30,7 +30,7 @@ public class JSONVoiture {
         try{
           annee=getVoitures().getJSONObject(indice).getInt("annee");  
         }catch(Exception e){
-            messagesErreurs.add("Erreur fromat json ,la voiture ne contient pas l'annee");
+            messagesErreurs.add("Erreur fromat json ,la voiture de l'indice "+indice+" ne contient pas l'annee");
         }
         return annee;
     }
@@ -40,7 +40,7 @@ public class JSONVoiture {
         try{
             marque= getVoitures().getJSONObject(indice).getString("marque");
         }catch(Exception e){
-             messagesErreurs.add("Erreur fromat json ,la voiture ne contient pas la marque");
+             messagesErreurs.add("Erreur fromat json ,la voiture de l'indice "+indice+" ne contient pas la marque");
         }
         return marque;
     }
@@ -50,7 +50,7 @@ public class JSONVoiture {
         try{
             modele=getVoitures().getJSONObject(indice).getString("modele"); 
         }catch(Exception e){
-            messagesErreurs.add("Erreur fromat json ,la voiture ne contient pas le modele");
+            messagesErreurs.add("Erreur fromat json ,la voiture de l'indice "+indice+" ne contient pas le modele");
         }
         return modele;
     }
@@ -60,7 +60,7 @@ public class JSONVoiture {
         try{
           valeur= getVoitures().getJSONObject(indice).getDouble("valeur_des_options") ;
         }catch(Exception e){
-             messagesErreurs.add("Erreur fromat json ,la voiture ne contient pas la valeur des options"); 
+             messagesErreurs.add("Erreur fromat json ,la voiture de l'indice "+indice+" ne contient pas la valeur des options"); 
         }
         return valeur;
     }
@@ -70,7 +70,7 @@ public class JSONVoiture {
         try{
             burinage=  getVoitures().getJSONObject(indice).getString("burinage");
         }catch(Exception e){
-             messagesErreurs.add("Erreur fromat json ,la voiture ne contient pas le burinage"); 
+             messagesErreurs.add("Erreur fromat json ,la voiture de l'indice "+indice+" ne contient pas le burinage"); 
         }
         return burinage;
     }
@@ -80,7 +80,7 @@ public class JSONVoiture {
         try{
           garageInter= getVoitures().getJSONObject(indice).getBoolean("garage_interieur"); 
         }catch(Exception e){
-              messagesErreurs.add("Erreur fromat json ,la voiture ne contient pas s'il y a un garage interieur");  
+              messagesErreurs.add("Erreur fromat json ,la voiture de l'indice "+indice+" ne contient pas s'il y a un garage interieur");  
         }
         return garageInter;
     }
@@ -90,7 +90,7 @@ public class JSONVoiture {
         try{
           systemAlarm= getVoitures().getJSONObject(indice).getBoolean("systeme_alarme"); 
         }catch(Exception e){
-            messagesErreurs.add("Erreur fromat json ,la voiture ne contient pas s'il y a un system d'alarme");  
+            messagesErreurs.add("Erreur fromat json ,la voiture de l'indice "+indice+" ne contient pas s'il y a un system d'alarme");  
         }
         return systemAlarm;
     }

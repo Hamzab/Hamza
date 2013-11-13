@@ -1,82 +1,53 @@
 package statistiques;
 
 import Files.FileWriter1;
-import jsonInput.JSON_Input;
+import java.io.IOException;
+import jsonInput.Donnes;
 import jsonInput.JSONMotos;
 import jsonInput.JSONVoiture;
-import jsonOutput.JSON_Output;
-import main.Main;
 import net.sf.json.JSONArray;
 import net.sf.json.JSONObject;
-import net.sf.json.JSONSerializer;
 
 public class ListeVehicule {
-   static JSONMotos jsonMotos=new JSONMotos();
-   static JSONVoiture jsonVoiture=new JSONVoiture();
-   public static boolean existeJson(){
-       boolean res=true;
-       try{
-         JSONObject unObjet=new JSONObject();
-            unObjet = ( JSONObject) JSONSerializer.toJSON((new JSON_Input()).getJsonListe());  
- 
-       }catch(Exception e){
-           res=false;
-       }
-      return res;
+   public  ListeVehicule(){
+       
    }
-    public static JSONArray getListe() throws Exception {
-        JSONArray uneliste=new JSONArray();
-        if(existeJson()){
-        JSONObject unObjet = ( JSONObject) JSONSerializer.toJSON((new JSON_Input()).getJsonListe());
-        uneliste= unObjet.getJSONArray("assurables");
-        }
+    static JSONMotos jsonMotos = new JSONMotos();
+    static JSONVoiture jsonVoiture = new JSONVoiture();
+
+
+    public JSONObject ajouterVehicule(String marque,String modele,int annee,String type){
+        JSONObject jo=new JSONObject();
+        jo.put("marque",marque);
+        jo.put("modele", modele);
+        jo.put("annee",annee);
+        jo.put("type",type);        
+        return jo;
+    }
+    public  JSONArray getListeVehicules(String type) throws Exception {
+        JSONArray uneliste = new JSONArray();
+        Donnes d=new Donnes();
+       JSONArray voitures= d.getDataVihecules(type);       
+            for(int i=0;i<voitures.size();i++){
+              String marque= d.getMarques(type).get(i); 
+              String modele= d.getModeles(type).get(i);
+              int annee= d.getAnnees(type).get(i);
+              uneliste.add(ajouterVehicule(marque,modele,annee,type));
+            }
         return uneliste;
     }
-
-    public static JSONArray getListeAssurableVoiture() throws Exception {
-        JSONArray unjson =getListe();
-        boolean estAssurable = (new JSON_Input()).getJsonSortie().getBoolean("assurable");;
-        if (estAssurable) {
-            for (int i = 0; i < jsonVoiture.getVoitures().size(); i++) {
-                JSONObject unObjet = new JSONObject();
-                unObjet.put("marque", jsonVoiture.getMarque(i));
-                unObjet.put("modele", jsonVoiture.getModele(i));
-                unObjet.put("annee", jsonVoiture.getAnnee(i));
-                unObjet.put("type", "voiture");
-                unjson.add(unObjet);
-            }
-        }
-        return unjson;
-    }
-
-    public static JSONArray getListeAssurableMoto() throws Exception {
-        JSONArray unjson = getListeAssurableVoiture();
-        boolean estAssurable =(new JSON_Input()).getJsonSortie().getBoolean("assurable");
-        if (estAssurable) {
-            for (int i = 0; i < jsonMotos.getMotos().size(); i++) {
-                JSONObject unObjet = new JSONObject();
-                unObjet.put("marque", jsonMotos.getMarque(i));
-                unObjet.put("modele", jsonMotos.getModele(i));
-                unObjet.put("annee", jsonMotos.getAnnee(i));
-                unObjet.put("type", "moto");
-                unjson.add(unObjet);
-            }
-        }
-        return unjson;
-    }
-    public static JSONArray putListe() throws Exception{
-        JSONArray unjson=getListeAssurableMoto();
-        return unjson;
-    }
-    public static JSONObject putObjetJson() throws Exception{
-        JSONObject unjson=new JSONObject();
-        unjson.put("assurables", putListe());
-        if(existeJson()){
-            // unjson.put("assurables", putListe());
-           FileWriter1.ecrire("json/liste.json", unjson);
-        }else {
-            FileWriter1.ecrire("json/liste.json", unjson);
-        }
-        return unjson;
-    }
+   public JSONObject getListe() throws Exception{
+      JSONArray liste =getListeVehicules("voitures");
+      JSONArray listeTmp=getListeVehicules("motos"); 
+      JSONObject jo=new JSONObject();
+      for(int i=0;i<listeTmp.size();i++){
+          liste.add(listeTmp.get(i));
+      }
+      jo.put("assurables",liste);
+      return jo;
+   }
+      public  void ecrireListe(String path) throws IOException, Exception {
+        JSONObject ob =getListe();
+        FileWriter1.ecrire(path, ob);
+    }         
 }

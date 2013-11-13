@@ -11,7 +11,6 @@ public class FileWriter1 {
     public static void creerPrinter(String path, JSONObject unObjet) throws IOException, Exception {
         PrintWriter write;
         write = new PrintWriter(new FileWriter(path));
-        //write.print(JSON_Output.retournerUnJSON());
         write.print(unObjet);
         write.flush();
         write.close();

@@ -18,7 +18,7 @@ public class InfoMoto implements InfoVehicule {
         this.systemeAlarme = systemeAlarme;
     }
 
-    public Vehicule getMoto() {
+    public Vehicule getVehicule() {
         return moto;
     }
 

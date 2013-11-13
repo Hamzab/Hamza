@@ -67,9 +67,9 @@ public class MontantSoumission {
             tmp -= tmp * 0.15;
         }
         res = tmp * getPourcentagePourMontantDeBase(age, sexe, typeVehiCule);
-         if (montant > 500000) {
-             res += 2500;
-        } 
+        if (montant > 500000) {
+            res += 2500;
+        }
         return res;
     }
 
@@ -129,7 +129,7 @@ public class MontantSoumission {
     }
 
     public double retirerMontantExperience15Ans(String dateFinCours, double montantDeSoumission) {
-        Date1 date=new Date1(dateFinCours);
+        Date1 date = new Date1(dateFinCours);
         int anneesExperience = date.getAnnees();
         if (anneesExperience > 15) {
             montantDeSoumission -= 400.0;
@@ -155,7 +155,7 @@ public class MontantSoumission {
 
     public double calculerLeRabaisDuNovembre(int jour, int mois, double montantDeSoumission) {
         if (mois == 11 && (jour >= 1 && jour <= 15)) {
-            
+
             montantDeSoumission -= montantDeSoumission * 0.1;
         }
         return montantDeSoumission;
@@ -165,8 +165,8 @@ public class MontantSoumission {
         if (mois == 2 && (jour >= 14 && jour <= 29)) {
             montantDeSoumission -= montantDeSoumission * 0.05;
         }
-        if(mois == 3 && (jour >= 1 && jour <= 3)){
-           montantDeSoumission -= montantDeSoumission * 0.05;  
+        if (mois == 3 && (jour >= 1 && jour <= 3)) {
+            montantDeSoumission -= montantDeSoumission * 0.05;
         }
         return montantDeSoumission;
     }

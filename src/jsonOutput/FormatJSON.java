@@ -70,10 +70,14 @@ public class FormatJSON {
         return c.verifierDureeContrat();
     }
 
-    public JSONArray valider() {
+    public boolean estValide() {
+        return !verifierFormatDate(jscont.getDateDebut()) || !verifierFormatDate(jscond.getDateFinCoursDeConduite())
+                || !verifierFormatDate(jscond.getDateDeNaissance());
+    }
+
+    public JSONArray getMessagesValidation() {
         JSONArray messages = new JSONArray();
-        if (!verifierFormatDate(jscont.getDateDebut()) || !verifierFormatDate(jscond.getDateFinCoursDeConduite())
-                || !verifierFormatDate(jscond.getDateDeNaissance())) {
+        if (estValide()) {
             messages.add(" Les dates sont toujours dans le format ISO 8601.");
         }
         if (!verifierLeSexeCond(jscond.getSexe())) {
@@ -102,37 +106,34 @@ public class FormatJSON {
         jscont.getDureeContrat();
         return jscont.getMessagesErreurs();
     }
-   public JSONArray getMessagesMotos(){
-      int size=jsmotos.getMotos().size();
-      for(int i=0;i<size;i++){
-          jsmotos.getAnnee(i);
-          jsmotos.getBuriange(i);
-          jsmotos.getGarageInterieur(i);
-          jsmotos.getModele(i);
-          jsmotos.getMarque(i);
-          jsmotos.getSystemeAlarme(i);
-          jsmotos.getValeurDesOptions(i);
-          jsmotos.getValeurCC(i);
-      }
-      return jsmotos.getMessagesErreures();
-   }
-   
-     public JSONArray getMessagesVoitures(){
-      int size=jsvoit.getVoitures().size();
-      for(int i=0;i<size;i++){
-          jsvoit.getAnnee(i);
-          jsvoit.getBuriange(i);
-          jsvoit.getGarageInterieur(i);
-          jsvoit.getModele(i);
-          jsvoit.getMarque(i);
-          jsvoit.getSystemeAlarme(i);
-          jsvoit.getValeurDesOptions(i);
-      }
-      return jsvoit.getMessagesErreures();
-   } 
-   
-   
-   
+
+    public JSONArray getMessagesMotos() {
+        for (int i = 0; i < jsmotos.getMotos().size(); i++) {
+            jsmotos.getAnnee(i);
+            jsmotos.getBuriange(i);
+            jsmotos.getGarageInterieur(i);
+            jsmotos.getModele(i);
+            jsmotos.getMarque(i);
+            jsmotos.getSystemeAlarme(i);
+            jsmotos.getValeurDesOptions(i);
+        }
+        return jsmotos.getMessagesErreures();
+    }
+
+    public JSONArray getMessagesVoitures() {
+        int size = jsvoit.getVoitures().size();
+        for (int i = 0; i < size; i++) {
+            jsvoit.getAnnee(i);
+            jsvoit.getBuriange(i);
+            jsvoit.getGarageInterieur(i);
+            jsvoit.getModele(i);
+            jsvoit.getMarque(i);
+            jsvoit.getSystemeAlarme(i);
+            jsvoit.getValeurDesOptions(i);
+        }
+        return jsvoit.getMessagesErreures();
+    }
+
     public JSONArray ajouter(JSONArray liste, JSONArray listeAjoutee) {
         for (int i = 0; i < listeAjoutee.size(); i++) {
             liste.add(listeAjoutee.get(i));
@@ -141,13 +142,10 @@ public class FormatJSON {
     }
 
     public JSONArray getMessagesErreures() {
-        JSONArray listes = new JSONArray();
-        JSONArray messagesCond = getMessagesConducteur();
-        JSONArray messagesCont = getMessagesContrat();
-        JSONArray messagesMotos=getMessagesMotos();
-        JSONArray messagesVoitures=getMessagesVoitures();
+        JSONArray listes = new JSONArray(), messagesCond = getMessagesConducteur(), messagesCont = getMessagesContrat();
+        JSONArray messagesMotos = getMessagesMotos(), messagesVoitures = getMessagesVoitures();
         if (messagesCond.isEmpty() && messagesCont.isEmpty() && messagesMotos.isEmpty() && messagesVoitures.isEmpty()) {
-            ajouter(listes, valider());
+            ajouter(listes, getMessagesValidation());
         } else {
             ajouter(listes, messagesCond);
             ajouter(listes, messagesCont);

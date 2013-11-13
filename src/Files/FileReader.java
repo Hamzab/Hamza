@@ -16,13 +16,17 @@
 package Files;
 
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.IOException;
 import org.apache.commons.io.IOUtils;
 
 public class FileReader {
 
-    public static String loadFileIntoString(String filePath, String fileEncoding) throws FileNotFoundException, IOException {
-        return IOUtils.toString(new FileInputStream(filePath), fileEncoding);
+    public static String loadFileIntoString(String filePath, String fileEncoding){
+        String contenu="";
+        try{
+            contenu=IOUtils.toString(new FileInputStream(filePath), fileEncoding);
+        }catch(Exception e){
+            System.out.println("Erreur, le fichier "+filePath+" n'existe pas");
+        }      
+        return contenu;
     }
 }

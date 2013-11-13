@@ -1,5 +1,7 @@
 package voiture;
 
+import net.sf.json.JSONArray;
+
 public class Moto implements Vehicule {
 
     String marque;
@@ -7,7 +9,7 @@ public class Moto implements Vehicule {
     double valeurInitial;
     String modele;
     double cc;
-
+   JSONArray messages=new JSONArray();
     public Moto(int annee, String marque, String modele) {
         this.annee = annee;
         this.marque = marque;
@@ -57,6 +59,7 @@ public class Moto implements Vehicule {
         return res;
     }
 
+    @Override
     public boolean estExistModele(String modele) {
         boolean res = false;
         if ((this.modele).equals(modele)) {
@@ -73,4 +76,5 @@ public class Moto implements Vehicule {
         }
         return log;
     }
+  
 }

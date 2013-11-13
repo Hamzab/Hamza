@@ -28,12 +28,11 @@ public class JSON_Input {
     public String getJsonListe()  {
         String jsonTxt ="";
       try{
-         jsonTxt = FileReader.loadFileIntoString("json/liste.json", "UTF-8");
+         jsonTxt = FileReader.loadFileIntoString("json/tmpliste.json", "UTF-8");
          estValideListe=true;
       }catch(Exception e){
           estValideListe=false;
       }
-
         return jsonTxt;
     }
 
@@ -41,11 +40,8 @@ public class JSON_Input {
         JSONObject unObjet = new JSONObject();
         try {
             estValideStats = true;
-
-            String jsonTxt = FileReader.loadFileIntoString("json/stats.json", "UTF-8");
+            String jsonTxt = FileReader.loadFileIntoString("json/tmpstats.json", "UTF-8");
             unObjet = (JSONObject) JSONSerializer.toJSON(jsonTxt);
-
-
         } catch (Exception e) {
             estValideStats = false;
                 
@@ -60,8 +56,12 @@ public class JSON_Input {
         return estValideListe;
     }
     public JSONObject getJsonSortie() throws Exception {
-        String jsonTxt = FileReader.loadFileIntoString("json/sortie1.json", "UTF-8");
-        JSONObject unObjet = (JSONObject) JSONSerializer.toJSON(jsonTxt);
+        String jsonTxt = "";
+        JSONObject unObjet =new JSONObject();
+        if(!Main.tmp[0].equals("-S") && !Main.tmp[0].equals("-L")){
+           jsonTxt = FileReader.loadFileIntoString(Main.tmp[1], "UTF-8");
+           unObjet = (JSONObject) JSONSerializer.toJSON(jsonTxt);
+        }
         return unObjet;
     }
 }

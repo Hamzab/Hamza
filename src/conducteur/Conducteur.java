@@ -1,5 +1,7 @@
 package conducteur;
 
+import net.sf.json.JSONArray;
+
 public class Conducteur {
 
     int age;
@@ -87,5 +89,27 @@ public class Conducteur {
             res = false;
         }
         return res;
+    }
+
+    public JSONArray getMessageAssurableAge() {
+        JSONArray messages = new JSONArray();
+        if (estUnHommeMoins25()) {
+            messages.add("Le conducteure est un homme a " + age + ", il est moin de 25 ans");
+        }
+        if (estUneFemmeMoins21()) {
+            messages.add("Le conducteure est une femme a " + age + ", elle est moin de 21 ans");
+        }
+        if (estUnePersonnePlus75()) {
+            messages.add("Le conducteure est une personne a " + age + ", il est plus de 75 ans");
+        }
+        return messages;
+    }
+
+    public JSONArray getMessageAssurable() {
+        JSONArray messages = getMessageAssurableAge();
+        if (!estResideAuQuebec()) {
+            messages.add("Le conducteure est une personne reside à " + province + ", il ne reside pas au Quebec");
+        }
+        return messages;
     }
 }

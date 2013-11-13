@@ -1,6 +1,6 @@
 package voiture;
 
-import jsonInput.Donnes;
+import net.sf.json.JSONArray;
 
 public class Voiture implements Vehicule {
 
@@ -8,7 +8,7 @@ public class Voiture implements Vehicule {
     int annee;
     double valeurInitial;
     String modele;
-
+    JSONArray messages=new JSONArray();
     public Voiture(int annee, String marque, String modele) {
         this.marque = marque;
         this.annee = annee;
@@ -61,6 +61,7 @@ public class Voiture implements Vehicule {
     public boolean estExistMarque(String marque) {
         boolean res = false;
         if ((this.marque).equals(marque)) {
+
             res = true;
         }
         return res;
@@ -78,9 +79,10 @@ public class Voiture implements Vehicule {
     @Override
     public boolean estAssurable(int annee, String marque, String modele) {
         boolean log = false;
-        if (estExistAnnee(annee) && estExistMarque(marque) && estExistModele(modele)) {
+        if (estExistAnnee(annee) && estExistMarque(marque) && estExistModele(modele)) {          
             log = true;
-        }
+        }        
         return log;
     }
+  
 }
