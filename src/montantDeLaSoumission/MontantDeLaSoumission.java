@@ -150,4 +150,23 @@ public class MontantDeLaSoumission {
 
         return montantDeSoumission;
     }
+
+    public double calculerLeRabaisDuNovembre(int jour, int mois, double montantDeSoumission) {
+        System.out.println("jour="+jour);
+        if (mois == 11 && (jour >= 1 && jour <= 15)) {
+            
+            montantDeSoumission -= montantDeSoumission * 0.1;
+        }
+        return montantDeSoumission;
+    }
+
+    public double calculerLeRabaisDuFevrier(int jour, int mois, double montantDeSoumission) {
+        if (mois == 2 && (jour >= 14 && jour <= 29)) {
+            montantDeSoumission -= montantDeSoumission * 0.05;
+        }
+        if(mois == 3 && (jour >= 1 && jour <= 3)){
+           montantDeSoumission -= montantDeSoumission * 0.05;  
+        }
+        return montantDeSoumission;
+    }
 }

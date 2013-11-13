@@ -54,9 +54,10 @@ public class FormatJSON {
         return c.verifierDureeContrat();
     }
 
-    public static JSONArray getMessagesErreures(String dateNaissance, String dateFinCours, String sexe, int duree) {
+    public static JSONArray getMessagesErreures(String dateDebut,String dateNaissance, String dateFinCours, String sexe, int duree) {
         JSONArray messages = new JSONArray();
-        if (!verifierFormatDate(dateNaissance) || !verifierFormatDate(dateFinCours)) {
+        if (!verifierFormatDate(dateDebut) || !verifierFormatDate(dateFinCours)
+                || !verifierFormatDate(dateNaissance)) {
             messages.add(" Les dates sont toujours dans le format ISO 8601.");
         }
         if (!verifierLeSexeCond(sexe)) {

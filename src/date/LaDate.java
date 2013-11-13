@@ -14,11 +14,11 @@ public class LaDate {
     }
 
     public static int getMoisDeNaissance(String dateDeNaissance) {
-        return Integer.parseInt(dateDeNaissance.substring(6, 7));
+        return Integer.parseInt(dateDeNaissance.substring(5, 7));
     }
 
     public static int getJourDeNaissance(String dateDeNaissance) {
-        return Integer.parseInt(dateDeNaissance.substring(9, 10));
+        return Integer.parseInt(dateDeNaissance.substring(8, 10));
     }
 
     public static void getParametreDeDate(String dateDeNaissance) {

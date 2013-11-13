@@ -30,12 +30,13 @@ public class UnJSON {
         return size;
     }
 
-    public static boolean estAssurableUneVehicule(String type, Vehicule v) throws Exception {
-
+    public static boolean estAssurableUneVehicule(String type, InfoVehicule v) throws Exception {
         int length = getSizeVehicules(type);
         boolean res = false;
         for (int i = 0; i < length; i++) {
-            if (v.estAssurable(LesDonnes.getAnnees(type).get(i), LesDonnes.getMarques(type).get(i), LesDonnes.getModeles(type).get(i))) {
+            String unModele = LesDonnes.getModeles(type).get(i);
+            if (v.estAssurable(LesDonnes.getAnnees(type).get(i), LesDonnes.getMarques(type).get(i), unModele,
+                    LesDonnes.getValeur(unModele, type))) {
                 res = true;
             }
         }
@@ -43,7 +44,7 @@ public class UnJSON {
 
     }
 
-    public static boolean estAssurablePlusieursVehicules(String type, List<Vehicule> vehicules) throws Exception {
+    public static boolean estAssurablePlusieursVehicules(String type, List<InfoVehicule> vehicules) throws Exception {
         boolean res = true;
         for (int i = 0; i < vehicules.size(); i++) {
             if (!estAssurableUneVehicule(type, vehicules.get(i))) {
@@ -54,23 +55,31 @@ public class UnJSON {
     }
 
     public static boolean estAssurablePlusieursVoitures() throws Exception {
-        List<Vehicule> voitures = new ArrayList<Vehicule>();
+        List<InfoVehicule> infovoitures = new ArrayList<InfoVehicule>();
         int length = JSONVoiture.getVoitures().size();
         for (int i = 0; i < length; i++) {
             Vehicule v = new Voiture(JSONVoiture.getAnnee(i), JSONVoiture.getMarque(i), JSONVoiture.getModele(i));
-            voitures.add(v);
+            InfoVehicule infov = new InfoVoiture(v, JSONVoiture.getValeurDesOptions(i),
+                    0, JSONVoiture.getBuriange(i), JSONVoiture.getGarageInterieur(i),
+                    JSONVoiture.getSystemeAlarme(i));
+            infovoitures.add(infov);
         }
-        return estAssurablePlusieursVehicules("voitures", voitures);
+        return estAssurablePlusieursVehicules("voitures", infovoitures);
     }
 
     public static boolean estAssurablePlusieursMotos() throws Exception {
-        List<Vehicule> motos = new ArrayList<Vehicule>();
+        List<InfoVehicule> infomotos = new ArrayList<InfoVehicule>();
         int length = JSONMotos.getMotos().size();
         for (int i = 0; i < length; i++) {
-            Vehicule v = new Moto(JSONMotos.getAnnee(i), JSONMotos.getMarque(i), JSONMotos.getModele(i));
-            motos.add(v);
+            String modele=JSONMotos.getModele(i);
+            int valeurCC=LesDonnes.getValeurCC(modele);
+            Vehicule v = new Moto(JSONMotos.getAnnee(i), JSONMotos.getMarque(i), modele);
+            InfoVehicule infom = new InfoMoto(v, JSONMotos.getValeurDesOptions(i),
+                    valeurCC, JSONMotos.getBuriange(i), JSONMotos.getGarageInterieur(i),
+                    JSONMotos.getSystemeAlarme(i));
+            infomotos.add(infom);
         }
-        return estAssurablePlusieursVehicules("motos", motos);
+        return estAssurablePlusieursVehicules("motos", infomotos);
     }
 
     public static boolean estAssurableToutLesVehicules() throws Exception {
@@ -134,7 +143,9 @@ public class UnJSON {
 
     public static Contrat getInfoContrat() throws Exception {
         int dureeContrat = JSONContrat.getDureeContrat();
-        return new Contrat(dureeContrat);
+        int jourDebut=LaDate.getJourDeNaissance(JSONContrat.getDateDebut());
+        int moisDebut=LaDate.getMoisDeNaissance(JSONContrat.getDateDebut());
+        return new Contrat(dureeContrat,jourDebut,moisDebut);
     }
 
     public static double getCalculeVoitures() throws Exception {
@@ -178,8 +189,9 @@ public class UnJSON {
         String dateNaissance = JSONConducteur.getDateDeNaissance();
         String sexe = JSONConducteur.getSexe();
         String dateFinCours = JSONConducteur.getDateFinCoursDeConduite();
+        String dateDebut=JSONContrat.getDateDebut();
         int duree = JSONContrat.getDureeContrat();
-        return FormatJSON.getMessagesErreures(dateNaissance, dateFinCours, sexe, duree);
+        return FormatJSON.getMessagesErreures(dateDebut,dateNaissance, dateFinCours, sexe, duree);
     }
 
     public static JSONObject remplirUnJSON(boolean estAssurable) throws Exception {

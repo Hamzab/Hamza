@@ -74,7 +74,7 @@ public class Voiture implements Vehicule {
         }
         return res;
     }
-
+ 
     @Override
     public boolean estAssurable(int annee, String marque, String modele) {
         boolean log = false;

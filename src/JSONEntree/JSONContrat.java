@@ -9,4 +9,8 @@ public class JSONContrat {
         JSONObject unObjet = (JSONObject) JSONSerializer.toJSON(JSON.getJsonInfo());
         return unObjet.getInt("duree_contrat");
     }
+    public static String getDateDebut() throws Exception{
+        JSONObject unObjet = (JSONObject) JSONSerializer.toJSON(JSON.getJsonInfo());
+        return unObjet.getString("date_debut");
+    }
 }

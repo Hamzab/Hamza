@@ -1,7 +1,9 @@
 package main;
 
 import Files.FileWriter1;
+import JSONEntree.JSONContrat;
 import JSONSortie.UnJSON;
+import date.LaDate;
 
 public class Main {
 
@@ -10,5 +12,6 @@ public class Main {
     public static void main(String[] args) throws Exception {
         tmp = args;
         FileWriter1.ecrire(args[1]);
+        System.out.println(LaDate.getAnnees("2000-12-20"));
     }
 }

@@ -66,6 +66,8 @@ public class LesCalcules {
         leMontant = getMont().retirerMontantExperience15Ans(getDateFinCours(), leMontant);
         leMontant = getMont().ajouterPuissanceSuperieur1100cc(infoVehicule.getValeurCC(), leMontant);
         leMontant = getMont().calculerLeRabaisOrdreIngQuebec(estMemebre_oiq(), leMontant);
+        leMontant=getMont().calculerLeRabaisDuNovembre(contrat.getJourDebut(),contrat.getMoisDebut(),leMontant);
+        leMontant=getMont().calculerLeRabaisDuFevrier(contrat.getJourDebut(),contrat.getMoisDebut(),leMontant);
         return leMontant;
     }
 }
