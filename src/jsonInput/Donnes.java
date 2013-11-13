@@ -1,4 +1,4 @@
-package JSONEntree;
+package jsonInput;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -6,11 +6,11 @@ import net.sf.json.JSONArray;
 import net.sf.json.JSONObject;
 import net.sf.json.JSONSerializer;
 
-public class LesDonnes {
+public class Donnes {
     JSONObject unObjet;
-    public LesDonnes(){
+    public Donnes(){
         try{
-      unObjet = (JSONObject) JSONSerializer.toJSON((new JSON()).getJsonData()); 
+      unObjet = (JSONObject) JSONSerializer.toJSON((new JSON_Input()).getJsonData()); 
         }catch(Exception e){
             
         }

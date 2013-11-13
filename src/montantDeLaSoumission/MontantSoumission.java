@@ -1,12 +1,12 @@
 package montantDeLaSoumission;
 
-import date.LaDate;
+import date.Date1;
 
-public class MontantDeLaSoumission {
+public class MontantSoumission {
 
     double montant;
 
-    public MontantDeLaSoumission(double montant) {
+    public MontantSoumission(double montant) {
 
         this.montant = montant;
 
@@ -129,7 +129,7 @@ public class MontantDeLaSoumission {
     }
 
     public double retirerMontantExperience15Ans(String dateFinCours, double montantDeSoumission) {
-        LaDate date=new LaDate(dateFinCours);
+        Date1 date=new Date1(dateFinCours);
         int anneesExperience = date.getAnnees();
         if (anneesExperience > 15) {
             montantDeSoumission -= 400.0;

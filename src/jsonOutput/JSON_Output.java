@@ -1,27 +1,32 @@
-package JSONSortie;
+package jsonOutput;
 
-import JSONEntree.*;
+import jsonInput.JSONConducteur;
+import jsonInput.JSONContrat;
+import jsonInput.JSONVoiture;
+import jsonInput.Donnes;
+import jsonInput.JSON_Input;
+import jsonInput.JSONMotos;
 import conducteur.Conducteur;
 import conducteur.InfoConducteur;
 import contrat.Contrat;
-import date.LaDate;
+import date.Date1;
 import java.text.DecimalFormat;
 import java.text.DecimalFormatSymbols;
 import java.util.ArrayList;
 import java.util.List;
-import montantDeLaSoumission.LesCalcules;
+import montantDeLaSoumission.Calcules;
 import net.sf.json.JSONArray;
 import net.sf.json.JSONObject;
 import statistiques.Statistiques;
 import voiture.*;
 
-public class UnJSON {
-   JSONConducteur jsonCond=new JSONConducteur();
+public class JSON_Output {
+    JSONConducteur jsonCond=new JSONConducteur();
    JSONContrat jsonContrat=new JSONContrat();
     JSONVoiture jsonVoiture=new JSONVoiture();
     JSONMotos jsonMotos=new JSONMotos();
     static Statistiques stats = new Statistiques();
-    LesDonnes lesdonnees=new LesDonnes();
+    Donnes lesdonnees=new Donnes();
     static int nombreSoumission = 0;
     static int nombreSoumissionNonAssurable = 0;
     static int nombreSoumissionAssurable = 0;
@@ -41,12 +46,13 @@ public class UnJSON {
     static int nombreMaserati=0;
     static int nombreDucati=0;
     static int nombreFerrari=0;
-    public UnJSON(){
+    public JSON_Output(){
         
     }
     public  void initialiser() {
-        JSONObject ob = (new JSON()).getJsonStats();      
-        if ((new JSON()).validerFichier()) {
+        JSON_Input jsinput=new JSON_Input();
+        JSONObject ob = jsinput.getJsonStats();   
+        if (jsinput.validerStats()) {
             nombreSoumission = ob.getInt("nombre_de_soumissions");
             nombreSoumissionNonAssurable = ob.getInt("nombre_de_soumissions_non_assurables");
             nombreSoumissionAssurable = ob.getInt("nombre_de_soumissions_assurables");
@@ -162,7 +168,7 @@ public class UnJSON {
     }
 
     public  boolean estAssurableConducteur() throws Exception {
-        LaDate date=new LaDate(jsonCond.getDateDeNaissance());
+        Date1 date=new Date1(jsonCond.getDateDeNaissance());
         int age = date.getAnnees( );
         String sexe =  jsonCond.getSexe();
         if (sexe.equals("M")) {
@@ -180,9 +186,6 @@ public class UnJSON {
     public  boolean estAssurable() throws Exception {
         boolean estVehicule = estAssurableToutLesVehicules();
         nombreDeVehicules+=tmpNombreDeVehicules;  
-         if(estVehicule){
-           //nombreDeVehicules+=tmpNombreDeVehicules;  
-         }
         return estVehicule;
     }
 
@@ -191,7 +194,7 @@ public class UnJSON {
         String province =  jsonCond.getProvince();
         String ville =  jsonCond.getVille();
         String sexe =  jsonCond.getSexe();
-        LaDate date=new LaDate(dateNaissance);
+        Date1 date=new Date1(dateNaissance);
         String dateFinCours = jsonCond.getDateFinCoursDeConduite();
         boolean estCAA = jsonCond.estCoursDeConduiteReconnusParCAA();
         boolean estPremier = jsonCond.estPermierContrat();
@@ -228,7 +231,7 @@ public class UnJSON {
 
     public  Contrat getInfoContrat() throws Exception {
         int dureeContrat = jsonContrat.getDureeContrat();
-        LaDate date=new LaDate(jsonContrat.getDateDebut());
+        Date1 date=new Date1(jsonContrat.getDateDebut());
         int jourDebut = date.getJourDeNaissance();
         int moisDebut = date.getMoisDeNaissance();
         return new Contrat(dureeContrat, jourDebut, moisDebut);
@@ -242,7 +245,7 @@ public class UnJSON {
             Contrat con = getInfoContrat();
             InfoVehicule infov = getInfoVoiture(i);
             double valeurVoiture = lesdonnees.getValeur(jsonVoiture.getModele(i), "voitures");
-            LesCalcules lesCalcules = new LesCalcules(infov, infoc, con, valeurVoiture);
+            Calcules lesCalcules = new Calcules(infov, infoc, con, valeurVoiture);
             res += lesCalcules.appliquer("voitures");
         }
         return res;
@@ -256,7 +259,7 @@ public class UnJSON {
             Contrat con = getInfoContrat();
             InfoVehicule infov = getInfoMoto(i);
             double valeurMotos = lesdonnees.getValeur(jsonMotos.getModele(i), "motos");
-            LesCalcules lesCalcules = new LesCalcules(infov, infoc, con, valeurMotos);
+            Calcules lesCalcules = new Calcules(infov, infoc, con, valeurMotos);
             res += lesCalcules.appliquer("motos");
         }
         return res;
@@ -341,11 +344,9 @@ public class UnJSON {
         statsModifer.put("nombre_de_soumissions_hommes", nombreSoumissionHomme);
         statsModifer.put("nombre_de_soumissions_femmes", nombreSoumissionFemme);
         statsModifer.put("nombre_de_vehicules", nombreDeVehicules);
-         statsModifer.put("nombre_de_voitures_assurables", nombreVoituresAssurable);
-         statsModifer.put("nombre_de_motos_assurables", nombreMotosAssurable);
-         statsModifer.put("vehicules_par_marque",listeMarques);
-        
+        statsModifer.put("nombre_de_voitures_assurables", nombreVoituresAssurable);
+        statsModifer.put("nombre_de_motos_assurables", nombreMotosAssurable);
+        statsModifer.put("vehicules_par_marque",listeMarques);        
         return statsModifer;
     }
-    // }
 }

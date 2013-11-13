@@ -5,7 +5,7 @@ import contrat.Contrat;
 import voiture.InfoMoto;
 import voiture.InfoVehicule;
 
-public class LesCalcules {
+public class Calcules {
 
     InfoVehicule infoVoiture;
     InfoVehicule infoVehicule;
@@ -14,7 +14,7 @@ public class LesCalcules {
     Contrat contrat;
     double montant;
 
-    public LesCalcules(InfoVehicule infoVehicule, InfoConducteur infoConducteur, Contrat contrat, double montant) {
+    public Calcules(InfoVehicule infoVehicule, InfoConducteur infoConducteur, Contrat contrat, double montant) {
         this.infoConducteur = infoConducteur;
         this.contrat = contrat;
         this.montant = montant;
@@ -41,8 +41,8 @@ public class LesCalcules {
         return infoConducteur.estUnMembre_oiq();
     }
 
-    public MontantDeLaSoumission getMont() {
-        return new MontantDeLaSoumission(montant);
+    public MontantSoumission getMont() {
+        return new MontantSoumission(montant);
     }
     /*
      * On est dévisé la méthode appliquer en 2 pour réspecter

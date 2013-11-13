@@ -1,4 +1,4 @@
-package JSONEntree;
+package jsonInput;
 
 import net.sf.json.JSONArray;
 import net.sf.json.JSONObject;
@@ -9,9 +9,8 @@ public class JSONContrat {
     JSONArray liste=new JSONArray();
     public JSONContrat(){
         try{
-        unObjet = (JSONObject) JSONSerializer.toJSON((new JSON()).getJsonInfo());
+        unObjet = (JSONObject) JSONSerializer.toJSON((new JSON_Input()).getJsonInfo());
         }catch(Exception e){
-            
         }
     }
     public int getDureeContrat()  {

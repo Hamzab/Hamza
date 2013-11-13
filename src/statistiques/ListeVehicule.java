@@ -1,20 +1,24 @@
 package statistiques;
 
-import JSONEntree.JSON;
-import JSONEntree.JSONMotos;
-import JSONEntree.JSONVoiture;
-import JSONSortie.UnJSON;
+import Files.FileWriter1;
+import jsonInput.JSON_Input;
+import jsonInput.JSONMotos;
+import jsonInput.JSONVoiture;
+import jsonOutput.JSON_Output;
+import main.Main;
 import net.sf.json.JSONArray;
 import net.sf.json.JSONObject;
 import net.sf.json.JSONSerializer;
 
-public class ListeDeVehicule {
+public class ListeVehicule {
    static JSONMotos jsonMotos=new JSONMotos();
    static JSONVoiture jsonVoiture=new JSONVoiture();
    public static boolean existeJson(){
        boolean res=true;
        try{
-         JSONObject unObjet = ( JSONObject) JSONSerializer.toJSON((new JSON()).getJsonListe());  
+         JSONObject unObjet=new JSONObject();
+            unObjet = ( JSONObject) JSONSerializer.toJSON((new JSON_Input()).getJsonListe());  
+ 
        }catch(Exception e){
            res=false;
        }
@@ -23,7 +27,7 @@ public class ListeDeVehicule {
     public static JSONArray getListe() throws Exception {
         JSONArray uneliste=new JSONArray();
         if(existeJson()){
-        JSONObject unObjet = ( JSONObject) JSONSerializer.toJSON((new JSON()).getJsonListe());
+        JSONObject unObjet = ( JSONObject) JSONSerializer.toJSON((new JSON_Input()).getJsonListe());
         uneliste= unObjet.getJSONArray("assurables");
         }
         return uneliste;
@@ -31,7 +35,7 @@ public class ListeDeVehicule {
 
     public static JSONArray getListeAssurableVoiture() throws Exception {
         JSONArray unjson =getListe();
-        boolean estAssurable = (new JSON()).getJsonSortie().getBoolean("assurable");;
+        boolean estAssurable = (new JSON_Input()).getJsonSortie().getBoolean("assurable");;
         if (estAssurable) {
             for (int i = 0; i < jsonVoiture.getVoitures().size(); i++) {
                 JSONObject unObjet = new JSONObject();
@@ -47,7 +51,7 @@ public class ListeDeVehicule {
 
     public static JSONArray getListeAssurableMoto() throws Exception {
         JSONArray unjson = getListeAssurableVoiture();
-        boolean estAssurable =(new JSON()).getJsonSortie().getBoolean("assurable");
+        boolean estAssurable =(new JSON_Input()).getJsonSortie().getBoolean("assurable");
         if (estAssurable) {
             for (int i = 0; i < jsonMotos.getMotos().size(); i++) {
                 JSONObject unObjet = new JSONObject();
@@ -67,6 +71,13 @@ public class ListeDeVehicule {
     public static JSONObject putObjetJson() throws Exception{
         JSONObject unjson=new JSONObject();
         unjson.put("assurables", putListe());
+        if(existeJson()){
+             unjson.put("assurables", putListe());
+           FileWriter1.ecrire("json/liste.json", unjson);
+        }else if(Main.tmp[0].equals("-L")){
+            unjson.put("assurables",new JSONArray()); 
+            FileWriter1.ecrire("json/liste.json", unjson);
+        }
         return unjson;
     }
 }

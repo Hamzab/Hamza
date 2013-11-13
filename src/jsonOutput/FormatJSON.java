@@ -1,9 +1,9 @@
-package JSONSortie;
+package jsonOutput;
 
-import JSONEntree.JSONConducteur;
-import JSONEntree.JSONContrat;
-import JSONEntree.JSONMotos;
-import JSONEntree.JSONVoiture;
+import jsonInput.JSONConducteur;
+import jsonInput.JSONContrat;
+import jsonInput.JSONMotos;
+import jsonInput.JSONVoiture;
 import contrat.Contrat;
 import net.sf.json.JSONArray;
 
@@ -102,7 +102,37 @@ public class FormatJSON {
         jscont.getDureeContrat();
         return jscont.getMessagesErreurs();
     }
-
+   public JSONArray getMessagesMotos(){
+      int size=jsmotos.getMotos().size();
+      for(int i=0;i<size;i++){
+          jsmotos.getAnnee(i);
+          jsmotos.getBuriange(i);
+          jsmotos.getGarageInterieur(i);
+          jsmotos.getModele(i);
+          jsmotos.getMarque(i);
+          jsmotos.getSystemeAlarme(i);
+          jsmotos.getValeurDesOptions(i);
+          jsmotos.getValeurCC(i);
+      }
+      return jsmotos.getMessagesErreures();
+   }
+   
+     public JSONArray getMessagesVoitures(){
+      int size=jsvoit.getVoitures().size();
+      for(int i=0;i<size;i++){
+          jsvoit.getAnnee(i);
+          jsvoit.getBuriange(i);
+          jsvoit.getGarageInterieur(i);
+          jsvoit.getModele(i);
+          jsvoit.getMarque(i);
+          jsvoit.getSystemeAlarme(i);
+          jsvoit.getValeurDesOptions(i);
+      }
+      return jsvoit.getMessagesErreures();
+   } 
+   
+   
+   
     public JSONArray ajouter(JSONArray liste, JSONArray listeAjoutee) {
         for (int i = 0; i < listeAjoutee.size(); i++) {
             liste.add(listeAjoutee.get(i));
@@ -114,14 +144,16 @@ public class FormatJSON {
         JSONArray listes = new JSONArray();
         JSONArray messagesCond = getMessagesConducteur();
         JSONArray messagesCont = getMessagesContrat();
-        if (messagesCond.isEmpty() && messagesCont.isEmpty()) {
+        JSONArray messagesMotos=getMessagesMotos();
+        JSONArray messagesVoitures=getMessagesVoitures();
+        if (messagesCond.isEmpty() && messagesCont.isEmpty() && messagesMotos.isEmpty() && messagesVoitures.isEmpty()) {
             ajouter(listes, valider());
         } else {
             ajouter(listes, messagesCond);
             ajouter(listes, messagesCont);
+            ajouter(listes, messagesMotos);
+            ajouter(listes, messagesVoitures);
         }
-
-
         return listes;
     }
 }

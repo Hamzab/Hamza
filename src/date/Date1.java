@@ -2,14 +2,14 @@ package date;
 
 import java.util.Date;
 
-public class LaDate {
+public class Date1 {
 
      Date maintenant;
      int ceMois;
      int cetteAnnee;
      int annees;
     String dateDeNaissance;
-    public LaDate(String dateDeNaissance){
+    public Date1(String dateDeNaissance){
         this.dateDeNaissance=dateDeNaissance;
     }
     public int getAnneeDeNaissance() {

@@ -1,6 +1,6 @@
 package voiture;
 
-import JSONEntree.LesDonnes;
+import jsonInput.Donnes;
 
 public class Voiture implements Vehicule {
 
