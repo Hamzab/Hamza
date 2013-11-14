@@ -26,16 +26,6 @@ public class JSON_Input {
         return jsonTxt;
     }
 
-   /* public String getJsonListe() {
-        String jsonTxt = "";
-        try {
-            jsonTxt = FileReader.loadFileIntoString("json/tmpliste.json", "UTF-8");
-            estValideListe = true;
-        } catch (Exception e) {
-            estValideListe = false;
-        }
-        return jsonTxt;
-    }*/
 
     public JSONObject getJsonStats() {
         JSONObject unObjet = new JSONObject();
