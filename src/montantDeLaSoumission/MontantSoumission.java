@@ -43,8 +43,8 @@ public class MontantSoumission {
         return res;
     }
     /*
-     * . Le pourcentage du montant de base est calculé en fonction de 
-     *      l'âge et du sexe de l'assuré.
+     * . Le pourcentage du montant de base est calculé en fonction de l'âge et
+     * du sexe de l'assuré.
      */
 
     public double getPourcentagePourMontantDeBase(int age, String sexe, String typeVehiCule) {

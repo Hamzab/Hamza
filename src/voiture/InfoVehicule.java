@@ -11,8 +11,8 @@ public interface InfoVehicule {
     public boolean isSystemeAlarme();
 
     public int getValeurCC();
-   
-    public boolean estAssurable(int annee, String marque, String modele,double valeur);
-    
+
+    public boolean estAssurable(int annee, String marque, String modele, double valeur);
+
     public Vehicule getVehicule();
 }

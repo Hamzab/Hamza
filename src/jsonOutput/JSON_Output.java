@@ -41,6 +41,12 @@ public class JSON_Output {
     static int nombreMaserati = 0;
     static int nombreDucati = 0;
     static int nombreFerrari = 0;
+    static int nombreLamborghini = 0;
+    static int nombreKoenigsegg = 0;
+    static int nombreAstonMartin = 0;
+    static int nombrePagani = 0;
+    static int nombreBugatti = 0;
+    static int nombreWMotors = 0;
     static int tmpNombreDeVehicules = 0;
     static int tmpNombreVoituresAssurable = 0;
     static int tmpNombreMotosAssurable = 0;
@@ -48,6 +54,12 @@ public class JSON_Output {
     static int tmpNombreMaserati = 0;
     static int tmpNombreDucati = 0;
     static int tmpNombreFerrari = 0;
+    static int tmpNombreLamborghini = 0;
+    static int tmpNombreKoenigsegg = 0;
+    static int tmpNombreAstonMartin = 0;
+    static int tmpNombrePagani = 0;
+    static int tmpNombreBugatti = 0;
+    static int tmpNombreWMotors = 0;
 
     public JSON_Output() {
     }
@@ -67,7 +79,13 @@ public class JSON_Output {
         nombrePorsche = liste.getJSONObject(0).getInt("nombre");
         nombreMaserati = liste.getJSONObject(1).getInt("nombre");
         nombreFerrari = liste.getJSONObject(2).getInt("nombre");
-        nombreDucati = liste.getJSONObject(3).getInt("nombre");
+        nombreLamborghini = liste.getJSONObject(3).getInt("nombre");
+        nombreKoenigsegg = liste.getJSONObject(4).getInt("nombre");
+        nombreAstonMartin = liste.getJSONObject(5).getInt("nombre");
+        nombrePagani = liste.getJSONObject(6).getInt("nombre");
+        nombreBugatti = liste.getJSONObject(7).getInt("nombre");
+        nombreWMotors = liste.getJSONObject(8).getInt("nombre");
+        nombreDucati = liste.getJSONObject(9).getInt("nombre");
     }
 
     public void initialiser() {
@@ -126,14 +144,46 @@ public class JSON_Output {
         return res;
     }
 
-    public void incrementerNombresParMarque(String marque) {
+    public void incrementerNombresParMarque1(String marque) {
         if (marque.equals("Porsche")) {
             tmpNombrePorsche++;
-        } else if (marque.equals("Maserati")) {
+        }
+        if (marque.equals("Maserati")) {
             tmpNombreMaserati++;
-        } else if (marque.equals("Ferrari")) {
+        }
+        if (marque.equals("Ferrari")) {
             tmpNombreFerrari++;
         }
+    }
+
+    public void incrementerNombresParMarque2(String marque) {
+        if (marque.equals("Lamborghini")) {
+            tmpNombreLamborghini++;
+        }
+        if (marque.equals("Koenigsegg")) {
+            tmpNombreKoenigsegg++;
+        }
+        if (marque.equals("Aston Martin")) {
+            tmpNombreAstonMartin++;
+        }
+    }
+
+    public void incrementerNombresParMarque3(String marque) {
+        if (marque.equals("Pagani")) {
+            tmpNombrePagani++;
+        }
+        if (marque.equals("Bugatti")) {
+            tmpNombreBugatti++;
+        }
+        if (marque.equals("W Motors")) {
+            tmpNombreWMotors++;
+        }
+    }
+
+    public void incrementerNombresParMarque(String marque) {
+        incrementerNombresParMarque1(marque);
+        incrementerNombresParMarque2(marque);
+        incrementerNombresParMarque3(marque);
     }
 
     public boolean estAssurablePlusieursVoitures() throws Exception {
@@ -171,13 +221,27 @@ public class JSON_Output {
         return estAssurablePlusieursVehicules("motos", infomotos);
     }
 
-    public void ajouterStatsVoiture() {
+    public void ajouterStatsVoiture1() {
         nombreVoituresAssurable += tmpNombreVoituresAssurable;
         nombreMotosAssurable += tmpNombreMotosAssurable;
         nombrePorsche += tmpNombrePorsche;
         nombreMaserati += tmpNombreMaserati;
         nombreDucati += tmpNombreDucati;
         nombreFerrari += tmpNombreFerrari;
+        nombreLamborghini += tmpNombreLamborghini;
+    }
+
+    public void ajouterStatsVoiture2() {
+        nombreKoenigsegg += tmpNombreKoenigsegg;
+        nombreAstonMartin += tmpNombreAstonMartin;
+        nombrePagani += tmpNombrePagani;
+        nombreBugatti += tmpNombreBugatti;
+        nombreWMotors += tmpNombreWMotors;
+    }
+
+    public void ajouterStatsVoiture() {
+        ajouterStatsVoiture1();
+        ajouterStatsVoiture2();
     }
 
     public boolean estAssurableToutLesVehicules() throws Exception {
@@ -235,7 +299,8 @@ public class JSON_Output {
         String buriangeVoiture = jsonVoiture.getBuriange(indice);
         boolean garInterVoiture = jsonVoiture.getGarageInterieur(indice);
         boolean sysAlarmVoiture = jsonVoiture.getSystemeAlarme(indice);
-        InfoVehicule infov = new InfoVoiture(v, valOptionVoiture, 0, buriangeVoiture, garInterVoiture, sysAlarmVoiture);
+        InfoVehicule infov = new InfoVoiture(v, valOptionVoiture, 0,
+                buriangeVoiture, garInterVoiture, sysAlarmVoiture);
         return infov;
     }
 
@@ -372,8 +437,8 @@ public class JSON_Output {
         statsModifer.put("nombre_de_motos_assurables", nombreMotosAssurable);
     }
 
-    public void putStatsVehicule(JSONObject porsche, JSONObject maseratie,
-            JSONObject ducati, JSONObject ferrari) {
+    public void putStatsVehicule1(JSONObject porsche, JSONObject maseratie,
+            JSONObject ducati, JSONObject ferrari, JSONObject Lamborghini) {
         porsche.put("marque", "Porsche");
         porsche.put("nombre", nombrePorsche);
         maseratie.put("marque", "Maserati");
@@ -382,23 +447,55 @@ public class JSON_Output {
         ducati.put("nombre", nombreDucati);
         ferrari.put("marque", "Ferrari");
         ferrari.put("nombre", nombreFerrari);
+        Lamborghini.put("marque", "Lamborghini");
+        Lamborghini.put("nombre", nombreLamborghini);
+    }
+
+    public void putStatsVehicule2(JSONObject Koenigsegg, JSONObject AstonMartin,
+            JSONObject Pagani, JSONObject Bugatti, JSONObject WMotors) {
+        Koenigsegg.put("marque", "Koenigsegg");
+        Koenigsegg.put("nombre", nombreKoenigsegg);
+        AstonMartin.put("marque", "Aston Martin");
+        AstonMartin.put("nombre", nombreAstonMartin);
+        Pagani.put("marque", "Pagani");
+        Pagani.put("nombre", nombrePagani);
+        Bugatti.put("marque", "Bugatti");
+        Bugatti.put("nombre", nombreBugatti);
+        WMotors.put("marque", "W Motors");
+        WMotors.put("nombre", nombreWMotors);
+
+    }
+
+    public void putStatsVehicule(JSONObject porsche, JSONObject maseratie,
+            JSONObject ducati, JSONObject ferrari, JSONObject Lamborghini, JSONObject Koenigsegg, JSONObject AstonMartin,
+            JSONObject Pagani, JSONObject Bugatti, JSONObject WMotors) {
+        putStatsVehicule1(porsche, maseratie, ducati, ferrari, Lamborghini);
+        putStatsVehicule2(Koenigsegg, AstonMartin, Pagani, Bugatti, WMotors);
     }
 
     public void putMarquesListe(JSONArray listeMarques, JSONObject porsche,
-            JSONObject maseratie, JSONObject ducati, JSONObject ferrari) {
+            JSONObject maseratie, JSONObject ferrari, JSONObject Lamborghini, JSONObject Koenigsegg, JSONObject AstonMartin, JSONObject Pagani, JSONObject Bugatti, JSONObject WMotors, JSONObject ducati) {
         listeMarques.add(porsche);
         listeMarques.add(maseratie);
         listeMarques.add(ferrari);
+        listeMarques.add(Lamborghini);
+        listeMarques.add(Koenigsegg);
+        listeMarques.add(AstonMartin);
+        listeMarques.add(Pagani);
+        listeMarques.add(Bugatti);
+        listeMarques.add(WMotors);
         listeMarques.add(ducati);
     }
 
     public JSONObject getStats() {
         JSONObject statsModifer = new JSONObject(), porsche = new JSONObject(),
                 maseratie = new JSONObject();
-        JSONObject ducati = new JSONObject(), ferrari = new JSONObject();
+        JSONObject ducati = new JSONObject(), ferrari = new JSONObject(), Lamborghini = new JSONObject(),
+                Koenigsegg = new JSONObject(), AstonMartin = new JSONObject(), Pagani = new JSONObject(),
+                Bugatti = new JSONObject(), WMotors = new JSONObject();
         JSONArray listeMarques = new JSONArray();
-        putStatsVehicule(porsche, maseratie, ducati, ferrari);
-        putMarquesListe(listeMarques, porsche, maseratie, ducati, ferrari);
+        putStatsVehicule(porsche, maseratie, ducati, ferrari, Lamborghini, Koenigsegg, AstonMartin, Pagani, Bugatti, WMotors);
+        putMarquesListe(listeMarques, porsche, maseratie, ferrari, Lamborghini, Koenigsegg, AstonMartin, Pagani, Bugatti, WMotors, ducati);
         putStats(statsModifer);
         statsModifer.put("vehicules_par_marque", listeMarques);
         return statsModifer;

@@ -34,7 +34,7 @@ public class JSONMotos {
         try {
             annee = getMotos().getJSONObject(indice).getInt("annee");
         } catch (Exception e) {
-            messagesErreurs.add("Erreur fromat json ,le moto de l'indice "+indice+" ne contient pas l'annee");
+            messagesErreurs.add("Erreur fromat json ,le moto de l'indice " + indice + " ne contient pas l'annee");
         }
         return annee;
     }
@@ -44,7 +44,7 @@ public class JSONMotos {
         try {
             marque = getMotos().getJSONObject(indice).getString("marque");
         } catch (Exception e) {
-            messagesErreurs.add("Erreur fromat json ,le moto de l'indice "+indice+" ne contient pas la marque");
+            messagesErreurs.add("Erreur fromat json ,le moto de l'indice " + indice + " ne contient pas la marque");
         }
         return marque;
     }
@@ -54,7 +54,7 @@ public class JSONMotos {
         try {
             modele = getMotos().getJSONObject(indice).getString("modele");
         } catch (Exception e) {
-            messagesErreurs.add("Erreur fromat json ,le moto de l'indice "+indice+" ne contient pas le modele");
+            messagesErreurs.add("Erreur fromat json ,le moto de l'indice " + indice + " ne contient pas le modele");
         }
         return modele;
     }
@@ -64,7 +64,7 @@ public class JSONMotos {
         try {
             valeur = getMotos().getJSONObject(indice).getDouble("valeur_des_options");
         } catch (Exception e) {
-            messagesErreurs.add("Erreur fromat json ,le moto de l'indice "+indice+" ne contient pas la valeur des options");
+            messagesErreurs.add("Erreur fromat json ,le moto de l'indice " + indice + " ne contient pas la valeur des options");
         }
         return valeur;
     }
@@ -74,7 +74,7 @@ public class JSONMotos {
         try {
             burinage = getMotos().getJSONObject(indice).getString("burinage");
         } catch (Exception e) {
-            messagesErreurs.add("Erreur fromat json ,le moto de l'indice "+indice+" ne contient pas le burinage");
+            messagesErreurs.add("Erreur fromat json ,le moto de l'indice " + indice + " ne contient pas le burinage");
         }
         return burinage;
     }
@@ -84,7 +84,7 @@ public class JSONMotos {
         try {
             garageInt = getMotos().getJSONObject(indice).getBoolean("garage_interieur");
         } catch (Exception e) {
-            messagesErreurs.add("Erreur fromat json ,le moto de l'indice "+indice+" ne contient pas s'il y a un garage interieur");
+            messagesErreurs.add("Erreur fromat json ,le moto de l'indice " + indice + " ne contient pas s'il y a un garage interieur");
         }
         return garageInt;
     }
@@ -94,11 +94,10 @@ public class JSONMotos {
         try {
             systemAlarm = getMotos().getJSONObject(indice).getBoolean("systeme_alarme");
         } catch (Exception e) {
-            messagesErreurs.add("Erreur fromat json ,le moto de l'indice "+indice+" ne contient pas s'il y a un system d'alarme");
+            messagesErreurs.add("Erreur fromat json ,le moto de l'indice " + indice + " ne contient pas s'il y a un system d'alarme");
         }
         return systemAlarm;
     }
-
 
     public JSONArray getMessagesErreures() {
         JSONArray mes = new JSONArray();

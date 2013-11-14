@@ -1,0 +1,45 @@
+{
+    "voitures": [
+    {
+        "annee": 2012,
+        "marque": "Maserati",
+        "modele": "GranTurismo S - MC SportLine",
+        "valeur_des_options": 10000,
+        "burinage": "MAGIC",
+        "garage_interieur": true,
+        "systeme_alarme": true
+    },		
+    {
+        "annee": 2013,
+        "marque": "Ferrari",
+        "modele": "FF",
+        "valeur_des_options": 10000,
+        "burinage": "MAGIC",
+        "garage_interieur": false,
+        "systeme_alarme": false
+    }      
+    ],
+    "motos": [
+    {
+        "annee": 2013,
+        "marque": "Ducati",
+        "modele": "Monster 1100 Evo",
+        "valeur_des_options": 10000,
+        "burinage": "MAGIC",
+        "garage_interieur": false,
+        "systeme_alarme": false,
+    }
+    ],
+    "conducteur": {
+        "date_de_naissance": "1986-01-15",
+        "province": "Québec",
+        "ville": "Longueuil",
+        "sexe": "M",
+        "date_fin_cours_de_conduite": "2000-12-01",
+        "cours_de_conduite_reconnus_par_CAA": false,
+        "premier_contrat": true,
+        "membre_oiq": false
+    },
+    "duree_contrat": 1,
+    "date_debut": "2013-03-04"
+}

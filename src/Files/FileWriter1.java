@@ -18,7 +18,7 @@ public class FileWriter1 {
 
     public static void ecrire(String path, JSONObject unObjet) throws IOException, Exception {
         try {
-            creerPrinter(path,unObjet);
+            creerPrinter(path, unObjet);
         }//try
         catch (NullPointerException a) {
             System.out.println("Erreur : pointeur null");

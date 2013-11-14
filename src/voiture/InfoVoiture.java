@@ -55,12 +55,13 @@ public class InfoVoiture implements InfoVehicule {
         }
         return res;
     }
-    public boolean estAssurable(int annee, String marque, String modele,double valeur){
-        boolean res=false;
-        if(voiture.estAssurable(annee,marque,modele)&&
-               estAssurableVoiturePlusUnMillion(valeur) ){
-            res=true;
+
+    public boolean estAssurable(int annee, String marque, String modele, double valeur) {
+        boolean res = false;
+        if (voiture.estAssurable(annee, marque, modele)
+                && estAssurableVoiturePlusUnMillion(valeur)) {
+            res = true;
         }
-       return res;
+        return res;
     }
 }

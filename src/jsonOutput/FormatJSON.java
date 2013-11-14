@@ -34,13 +34,37 @@ public class FormatJSON {
         return res;
     }
 
-    public boolean estValideDate(String uneDate) {
+    public boolean verifierBixetille(int annee, int mois, int jour) {
+        boolean log = true;
+        if (mois == 2 && jour > 28) {
+            if (jour == 29) {
+                if (annee % 4 != 0) {
+                    log = false;
+                }
+            } else {
+                log = false;
+            }
+        }
+        return log;
+    }
+
+    public boolean estValideDate1(String date) {
         boolean res = true;
-        if (estRespecterLaNormeISO(uneDate)) {
-            int annee = Integer.parseInt(uneDate.substring(0, 4));
-            int mois = Integer.parseInt(uneDate.substring(5, 7));
-            int jour = Integer.parseInt(uneDate.substring(8, 10));
+        int annee = Integer.parseInt(date.substring(0, 4));
+        int mois = Integer.parseInt(date.substring(5, 7));
+        int jour = Integer.parseInt(date.substring(8, 10));
+        if (verifierBixetille(annee, mois, jour)) {
             res = estValideMoiJour(mois, jour);
+        } else {
+            res = false;
+        }
+        return res;
+    }
+
+    public boolean estValideDate(String date) {
+        boolean res = true;
+        if (estRespecterLaNormeISO(date)) {
+            res = estValideDate1(date);
         } else {
             res = false;
         }

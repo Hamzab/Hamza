@@ -45,8 +45,8 @@ public class Calcules {
         return new MontantSoumission(montant);
     }
     /*
-     * On est dévisé la méthode appliquer en 2 pour réspecter
-     * la norme de la limite des nombres de ligne par méthode
+     * On est dévisé la méthode appliquer en 2 pour réspecter la norme de la
+     * limite des nombres de ligne par méthode
      */
 
     public double appliquer1(String typeVehicule) {
@@ -66,8 +66,8 @@ public class Calcules {
         leMontant = getMont().retirerMontantExperience15Ans(getDateFinCours(), leMontant);
         leMontant = getMont().ajouterPuissanceSuperieur1100cc(infoVehicule.getValeurCC(), leMontant);
         leMontant = getMont().calculerLeRabaisOrdreIngQuebec(estMemebre_oiq(), leMontant);
-        leMontant=getMont().calculerLeRabaisDuNovembre(contrat.getJourDebut(),contrat.getMoisDebut(),leMontant);
-        leMontant=getMont().calculerLeRabaisDuFevrier(contrat.getJourDebut(),contrat.getMoisDebut(),leMontant);
+        leMontant = getMont().calculerLeRabaisDuNovembre(contrat.getJourDebut(), contrat.getMoisDebut(), leMontant);
+        leMontant = getMont().calculerLeRabaisDuFevrier(contrat.getJourDebut(), contrat.getMoisDebut(), leMontant);
         return leMontant;
     }
 }

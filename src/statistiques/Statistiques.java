@@ -31,27 +31,45 @@ public class Statistiques {
         }
         return res;
     }
-
-    public void initialiserNombresMarques(JSONObject o[]) {
+    public void initialiserNombresMarques1(JSONObject o[]) {
         o[0].put("marque", "Porsche");
         o[0].put("nombre", 0);
         o[1].put("marque", "Maserati");
         o[1].put("nombre", 0);
         o[2].put("marque", "Ferrari");
         o[2].put("nombre", 0);
-        o[3].put("marque", "Ducati");
+        o[3].put("marque", "Lamborghini");
         o[3].put("nombre", 0);
+        o[4].put("marque", "Koenigsegg");
+        o[4].put("nombre", 0);  
+    }
+    public void initialiserNombresMarques2(JSONObject o[]) {
+        o[5].put("marque", "Aston Martin");
+        o[5].put("nombre", 0);
+        o[6].put("marque", "Pagani");
+        o[6].put("nombre", 0);       
+        o[7].put("marque", "Bugatti");
+        o[7].put("nombre", 0);         
+        o[8].put("marque", "W Motors");
+        o[8].put("nombre", 0);    
+        o[9].put("marque", "Ducati");
+        o[9].put("nombre", 0); 
+    }
+    public void initialiserNombresMarques(JSONObject o[]) {
+       initialiserNombresMarques1(o);
+       initialiserNombresMarques2(o);
     }
 
     public JSONArray getVehiculeParMarque() {
-        JSONObject o[] = new JSONObject[4];
+        JSONObject o[] = new JSONObject[10];
         JSONArray tab = new JSONArray();
-        for (int i = 0; i < 4; i++) {
+        for (int i = 0; i < 10; i++) {
             o[i] = new JSONObject();
         }
         initialiserNombresMarques(o);
-        for (int i = 0; i < 4; i++) {
+        for (int i = 0; i < 10; i++) {
             tab.add(o[i]);
+           
         }
         return tab;
     }
@@ -65,11 +83,11 @@ public class Statistiques {
         unObjet.put("nombre_de_vehicules", 0);
         unObjet.put("nombre_de_voitures_assurables", 0);
         unObjet.put("nombre_de_motos_assurables", 0);
-        unObjet.put("vehicules_par_marque", getVehiculeParMarque());
+        unObjet.put("vehicules_par_marque", getVehiculeParMarque());       
     }
 
-    public JSONObject creerUnJsonStat() throws IOException, Exception {
-        initialiserStatistiques();
+    public JSONObject creerUnJsonStat() throws IOException, Exception {       
+        initialiserStatistiques();       
         unObjet = unjson.getStats();
         FileWriter1.ecrire("json/tmpstats.json", unObjet);
         return unObjet;
@@ -88,10 +106,10 @@ public class Statistiques {
     }
 
     public JSONObject copier() {
-        JSONObject ob = new JSON_Input().getJsonStats(),ob1 = new JSONObject();
+        JSONObject ob = new JSON_Input().getJsonStats(), ob1 = new JSONObject();
         ob1.put("nombre_de_soumissions", ob.getInt("nombre_de_soumissions"));
         ob1.put("nombre_de_soumissions_non_assurables", ob.getInt("nombre_de_soumissions_non_assurables"));
-        ob1.put("nombre_de_soumissions_assurables",ob.getInt("nombre_de_soumissions_assurables"));
+        ob1.put("nombre_de_soumissions_assurables", ob.getInt("nombre_de_soumissions_assurables"));
         ob1.put("nombre_de_soumissions_hommes", ob.getInt("nombre_de_soumissions_hommes"));
         ob1.put("nombre_de_soumissions_femmes", ob.getInt("nombre_de_soumissions_femmes"));
         ob1.put("nombre_de_vehicules", ob.getInt("nombre_de_vehicules"));
@@ -102,9 +120,9 @@ public class Statistiques {
     }
 
     public void ecrireStats(String path) throws IOException, Exception {
-        JSONObject ob =new JSONObject();
+        JSONObject ob = new JSONObject();
         try {
-            ob =copier(); 
+            ob = copier();
             FileWriter1.ecrire(path, ob);
         } catch (Exception e) {
         }

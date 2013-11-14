@@ -311,6 +311,66 @@
             "marque": "Porsche",
             "modèle": "918 Spyder",
             "valeur_initiale_du_véhicule": 845000
+        },
+        {
+            "année": 2014,
+            "marque": "Ferrari",
+            "modèle": "LaFerrari",
+            "valeur_initiale_du_véhicule": 1300000
+        },
+        {
+            "année": 2014,
+            "marque": "Lamborghini",
+            "modèle": "Reventon",
+            "valeur_initiale_du_véhicule": 1600000
+        },
+        {
+            "année": 2014,
+            "marque": "Lamborghini",
+            "modèle": "Veneno",
+            "valeur_initiale_du_véhicule": 3900000
+        },
+        {
+            "année": 2014,
+            "marque": "Koenigsegg",
+            "modèle": "Agera R",
+            "valeur_initiale_du_véhicule": 1600000
+        },
+        {
+            "année": 2014,
+            "marque": "Aston Martin",
+            "modèle": "One-77",
+            "valeur_initiale_du_véhicule": 1850000
+        },
+        {
+            "année": 2014,
+            "marque": "Pagani",
+            "modèle": "Zonda Cinque Roadster",
+            "valeur_initiale_du_véhicule": 1800000
+        },
+        {
+            "année": 2014,
+            "marque": "Pagani",
+            "modèle": "Huayra",
+            "valeur_initiale_du_véhicule": 1300000
+        },
+        {
+            "année": 2014,
+            "marque": "Bugatti",
+            "modèle": "Veyron Super Sport",
+            "valeur_initiale_du_véhicule": 2400000
+        },
+        {
+            "année": 2014,
+            "marque": "Bugatti",
+            "modèle": "Veyron Grand Sport Vitesse World Record Edition",
+            "valeur_initiale_du_véhicule": 2600000
+        },
+        {
+            "année": 2014,
+            "marque": "W Motors",
+            "modèle": "Lykan HyperSport",
+            "valeur_initiale_du_véhicule": 3400000
         }
     ],
     "motos": [

@@ -9,7 +9,8 @@ public class Moto implements Vehicule {
     double valeurInitial;
     String modele;
     double cc;
-   JSONArray messages=new JSONArray();
+    JSONArray messages = new JSONArray();
+
     public Moto(int annee, String marque, String modele) {
         this.annee = annee;
         this.marque = marque;
@@ -76,5 +77,4 @@ public class Moto implements Vehicule {
         }
         return log;
     }
-  
 }

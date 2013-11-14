@@ -1,6 +1,5 @@
 package jsonInput;
 
-import main.Main;
 import net.sf.json.JSONArray;
 import net.sf.json.JSONObject;
 import net.sf.json.JSONSerializer;
@@ -11,23 +10,21 @@ public class JSONConducteur {
     JSONArray messagesErreurs = new JSONArray();
     JSONArray existeConducteur = new JSONArray();
 
-    public JSONConducteur()  {
-          try{
+    public JSONConducteur() {
+        try {
             unObjet = (JSONObject) JSONSerializer.toJSON((new JSON_Input()).getJsonInfo());
-          }catch(Exception e){
-              
-          }  
+        } catch (Exception e) {
+        }
     }
 
     public JSONObject getConducteur() {
         JSONObject unConducteur = new JSONObject();
         try {
             unConducteur = unObjet.getJSONObject("conducteur");
-           if(unConducteur.isEmpty() && existeConducteur.isEmpty()){
-              existeConducteur.add("Erreur fromat json ,le Conducteur n'existe pas"); 
-          }
+            if (unConducteur.isEmpty() && existeConducteur.isEmpty()) {
+                existeConducteur.add("Erreur fromat json ,le Conducteur n'existe pas");
+            }
         } catch (Exception e) {
-       
         }
 
         return unConducteur;

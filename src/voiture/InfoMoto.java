@@ -46,9 +46,9 @@ public class InfoMoto implements InfoVehicule {
     public boolean isSystemeAlarme() {
         return systemeAlarme;
     }
- 
+
     public boolean estAssurableVoiturePlusUnMillion(double valeur) {
-        boolean res =true;
+        boolean res = true;
         if (valeur > 1000000) {
             if (this.systemeAlarme == false || this.garageInterieur == false) {
                 res = false;
@@ -56,12 +56,13 @@ public class InfoMoto implements InfoVehicule {
         }
         return res;
     }
-   public boolean estAssurable(int annee, String marque, String modele,double valeur){
-        boolean res=false;
-        if(moto.estAssurable(annee,marque,modele)&&
-               estAssurableVoiturePlusUnMillion(valeur) ){
-            res=true;
+
+    public boolean estAssurable(int annee, String marque, String modele, double valeur) {
+        boolean res = false;
+        if (moto.estAssurable(annee, marque, modele)
+                && estAssurableVoiturePlusUnMillion(valeur)) {
+            res = true;
         }
-       return res;
+        return res;
     }
 }

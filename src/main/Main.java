@@ -28,8 +28,8 @@ public class Main {
 
     public static void appliquer(String[] args) throws Exception {
         if (!args[0].equals("-L") && !args[0].equals("-S")) {
-            if(!FileReader.loadFileIntoString(args[0],"UTF-8").equals("")){
-             signerContrat(args[1]);
+            if (!FileReader.loadFileIntoString(args[0], "UTF-8").equals("")) {
+                signerContrat(args[1]);
             }
         } else if (args[0].equals("-L")) {
             new ListeVehicule().ecrireListe(args[1]);
@@ -41,7 +41,6 @@ public class Main {
     public static void main(String[] args) throws Exception {
         tmp = args;
         if (validerArgs(args)) {
-           
             appliquer(args);
         } else {
             System.out.println("Erreur, ce programme doit accepter 2 arguments.");

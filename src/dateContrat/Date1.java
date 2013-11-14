@@ -4,19 +4,21 @@ import java.util.Date;
 
 public class Date1 {
 
-     Date maintenant;
-     int ceMois;
-     int cetteAnnee;
-     int annees;
+    Date maintenant;
+    int ceMois;
+    int cetteAnnee;
+    int annees;
     String dateDeNaissance;
-    public Date1(String dateDeNaissance){
-        this.dateDeNaissance=dateDeNaissance;
+
+    public Date1(String dateDeNaissance) {
+        this.dateDeNaissance = dateDeNaissance;
     }
+
     public int getAnneeDeNaissance() {
         return Integer.parseInt(dateDeNaissance.substring(0, 4));
     }
 
-    public  int getMoisDeNaissance() {
+    public int getMoisDeNaissance() {
         return Integer.parseInt(dateDeNaissance.substring(5, 7));
     }
 
@@ -31,7 +33,7 @@ public class Date1 {
         annees = cetteAnnee - getAnneeDeNaissance();
     }
 
-    public  int getAnnees() {
+    public int getAnnees() {
         getParametreDeDate();
         if (getMoisDeNaissance() > ceMois) {
             annees--;
@@ -43,4 +45,5 @@ public class Date1 {
         }
         return annees;
     }
+   
 }
