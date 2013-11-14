@@ -38,7 +38,7 @@ public class FormatJSON {
         boolean log = true;
         if (mois == 2 && jour > 28) {
             if (jour == 29) {
-                if (annee % 4 != 0) {
+                if (annee % 4 != 0) { 
                     log = false;
                 }
             } else {
