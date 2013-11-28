@@ -1,7 +1,7 @@
 package jsonInput;
 
 import Files.FileReader;
-import main.Main;
+import main1.Main;
 import net.sf.json.JSONObject;
 import net.sf.json.JSONSerializer;
 

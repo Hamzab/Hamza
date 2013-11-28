@@ -23,7 +23,7 @@ public class FileReader {
     public static String loadFileIntoString(String filePath, String fileEncoding) {
         String contenu = "";
         try {
-            contenu = IOUtils.toString(new FileInputStream(filePath), fileEncoding);
+            contenu =IOUtils.toString(new FileInputStream(filePath), fileEncoding);
         } catch (Exception e) {
             if (!filePath.equals("json/tmpstats.json")) {
                 System.out.println("Erreur, le fichier " + filePath + " n'existe pas");
