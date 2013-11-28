@@ -1,4 +1,4 @@
-package jsonInput;
+package main.java.jsonInput;
 
 import net.sf.json.JSONArray;
 import net.sf.json.JSONObject;

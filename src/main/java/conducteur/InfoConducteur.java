@@ -1,4 +1,4 @@
-package conducteur;
+package main.java.conducteur;
 
 public class InfoConducteur {
 

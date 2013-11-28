@@ -1,4 +1,4 @@
-package jsonInput;
+package main.java.jsonInput;
 
 import java.util.ArrayList;
 import java.util.List;

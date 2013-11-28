@@ -87,12 +87,6 @@
         {
             "année": 2014,
             "marque": "Porsche",
-            "modèle": "911 Turbo S",
-            "valeur_initiale_du_véhicule": 207000
-        },
-        {
-            "année": 2014,
-            "marque": "Porsche",
             "modèle": "911 GT3",
             "valeur_initiale_du_véhicule": 149000
         },
@@ -227,12 +221,6 @@
             "marque": "Maserati",
             "modèle": "GranTurismo S Convertible",
             "valeur_initiale_du_véhicule": 127000
-        },
-        {
-            "année": 2013,
-            "marque": "Ferrari",
-            "modèle": "FF",
-            "valeur_initiale_du_véhicule": 340000
         },
         {
             "année": 2013,

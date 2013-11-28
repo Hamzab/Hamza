@@ -1,4 +1,4 @@
-package contrat;
+package main.java.contrat;
 
 public class Contrat {
 

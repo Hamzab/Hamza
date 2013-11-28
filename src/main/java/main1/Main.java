@@ -1,10 +1,10 @@
-package main1;
+package main.java.main1;
 
-import Files.FileReader;
-import Files.FileWriter1;
-import jsonOutput.JSON_Output;
-import statistiques.ListeVehicule;
-import statistiques.Statistiques;
+import main.java.Files.FileReader;
+import main.java.Files.FileWriter1;
+import main.java.jsonOutput.JSON_Output;
+import main.java.statistiques.ListeVehicule;
+import main.java.statistiques.Statistiques;
 
 public class Main {
 

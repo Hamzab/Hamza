@@ -1,10 +1,10 @@
-package jsonOutput;
+package main.java.jsonOutput;
 
-import jsonInput.JSONConducteur;
-import jsonInput.JSONContrat;
-import jsonInput.JSONMotos;
-import jsonInput.JSONVoiture;
-import contrat.Contrat;
+import main.java.jsonInput.JSONConducteur;
+import main.java.jsonInput.JSONContrat;
+import main.java.jsonInput.JSONMotos;
+import main.java.jsonInput.JSONVoiture;
+import main.java.contrat.Contrat;
 import net.sf.json.JSONArray;
 
 public class FormatJSON {

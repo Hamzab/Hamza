@@ -1,24 +1,25 @@
-package jsonOutput;
 
-import jsonInput.JSONConducteur;
-import jsonInput.JSONContrat;
-import jsonInput.JSONVoiture;
-import jsonInput.Donnes;
-import jsonInput.JSON_Input;
-import jsonInput.JSONMotos;
-import conducteur.Conducteur;
-import conducteur.InfoConducteur;
-import contrat.Contrat;
-import dateContrat.Date1;
+package main.java.jsonOutput;
+
+import main.java.jsonInput.JSONConducteur;
+import main.java.jsonInput.JSONContrat;
+import main.java.jsonInput.JSONVoiture;
+import main.java.jsonInput.Donnes;
+import main.java.jsonInput.JSON_Input;
+import main.java.jsonInput.JSONMotos;
+import main.java.conducteur.Conducteur;
+import main.java.conducteur.InfoConducteur;
+import main.java.contrat.Contrat;
+import main.java.dateContrat.Date1;
 import java.text.DecimalFormat;
 import java.text.DecimalFormatSymbols;
 import java.util.ArrayList;
 import java.util.List;
-import montantDeLaSoumission.Calcules;
+import main.java.montantDeLaSoumission.Calcules;
 import net.sf.json.JSONArray;
 import net.sf.json.JSONObject;
-import statistiques.Statistiques;
-import voiture.*;
+import main.java.statistiques.Statistiques;
+import main.java.voiture.*;
 
 public class JSON_Output {
 
@@ -410,6 +411,8 @@ public class JSON_Output {
         } else {
             nombreSoumissionNonAssurable++;
             res.put("assurable", estAssurable);
+            res.put("montant_annuel",0);
+            res.put("mensualite",0);
             res.put("messages", getMessagesAssurable());
         }
         return res;

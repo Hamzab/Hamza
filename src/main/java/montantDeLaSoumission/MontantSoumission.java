@@ -1,6 +1,6 @@
-package montantDeLaSoumission;
+package main.java.montantDeLaSoumission;
 
-import dateContrat.Date1;
+import main.java.dateContrat.Date1;
 
 public class MontantSoumission {
 
@@ -131,7 +131,7 @@ public class MontantSoumission {
     public double retirerMontantExperience15Ans(String dateFinCours, double montantDeSoumission) {
         Date1 date = new Date1(dateFinCours);
         int anneesExperience = date.getAnnees();
-        if (anneesExperience > 15) {
+        if (anneesExperience >= 15) {
             montantDeSoumission -= 400.0;
         }
 

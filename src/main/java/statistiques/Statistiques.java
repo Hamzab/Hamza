@@ -1,8 +1,8 @@
-package statistiques;
+package main.java.statistiques;
 
-import Files.FileWriter1;
-import jsonInput.JSON_Input;
-import jsonOutput.JSON_Output;
+import main.java.Files.FileWriter1;
+import main.java.jsonInput.JSON_Input;
+import main.java.jsonOutput.JSON_Output;
 import java.io.IOException;
 import net.sf.json.JSONArray;
 import net.sf.json.JSONObject;

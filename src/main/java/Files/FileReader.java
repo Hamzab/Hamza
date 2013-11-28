@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package Files;
+package main.java.Files;
 
 import java.io.FileInputStream;
 import org.apache.commons.io.IOUtils;

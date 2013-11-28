@@ -1,7 +1,7 @@
-package jsonInput;
+package main.java.jsonInput;
 
-import Files.FileReader;
-import main1.Main;
+import main.java.Files.FileReader;
+import main.java.main1.Main;
 import net.sf.json.JSONObject;
 import net.sf.json.JSONSerializer;
 

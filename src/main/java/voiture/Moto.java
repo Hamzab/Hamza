@@ -1,4 +1,4 @@
-package voiture;
+package main.java.voiture;
 
 import net.sf.json.JSONArray;
 
