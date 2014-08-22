@@ -1,10 +1,10 @@
-package main.java.main1;
+package main1;
 
-import main.java.Files.FileReader;
-import main.java.Files.FileWriter1;
-import main.java.jsonOutput.JSON_Output;
-import main.java.statistiques.ListeVehicule;
-import main.java.statistiques.Statistiques;
+import Files.FileReader;
+import Files.FileWriter1;
+import jsonOutput.JSON_Output;
+import statistiques.ListeVehicule;
+import statistiques.Statistiques;
 
 public class Main {
 
@@ -18,12 +18,18 @@ public class Main {
         return estValide;
     }
 
-    public static void signerContrat(String path) throws Exception {
+    public static boolean signerContrat(String path){
+        boolean log=true;
+        try{
         Statistiques s = new Statistiques();
         JSON_Output unjson = new JSON_Output();
         unjson.initialiser();
         FileWriter1.ecrire(path, unjson.retournerUnJSON());
         s.creerUnJsonStat();
+        }catch(Exception e){
+            log=false;
+        }
+        return log;
     }
 
     public static void appliquer(String[] args) throws Exception {
@@ -39,7 +45,7 @@ public class Main {
     }
 
     public static void main(String[] args) throws Exception {
-        tmp = args;
+      tmp = args;
         if (validerArgs(args)) {
             appliquer(args);
         } else {

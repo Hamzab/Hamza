@@ -1,25 +1,24 @@
+package jsonOutput;
 
-package main.java.jsonOutput;
-
-import main.java.jsonInput.JSONConducteur;
-import main.java.jsonInput.JSONContrat;
-import main.java.jsonInput.JSONVoiture;
-import main.java.jsonInput.Donnes;
-import main.java.jsonInput.JSON_Input;
-import main.java.jsonInput.JSONMotos;
-import main.java.conducteur.Conducteur;
-import main.java.conducteur.InfoConducteur;
-import main.java.contrat.Contrat;
-import main.java.dateContrat.Date1;
+import jsonInput.JSONConducteur;
+import jsonInput.JSONContrat;
+import jsonInput.JSONVoiture;
+import jsonInput.Donnes;
+import jsonInput.JSON_Input;
+import jsonInput.JSONMotos;
+import conducteur.Conducteur;
+import conducteur.InfoConducteur;
+import contrat.Contrat;
+import dateContrat.Date1;
 import java.text.DecimalFormat;
 import java.text.DecimalFormatSymbols;
 import java.util.ArrayList;
 import java.util.List;
-import main.java.montantDeLaSoumission.Calcules;
+import montantDeLaSoumission.Calcules;
 import net.sf.json.JSONArray;
 import net.sf.json.JSONObject;
-import main.java.statistiques.Statistiques;
-import main.java.voiture.*;
+import statistiques.Statistiques;
+import voiture.*;
 
 public class JSON_Output {
 
@@ -61,6 +60,10 @@ public class JSON_Output {
     static int tmpNombrePagani = 0;
     static int tmpNombreBugatti = 0;
     static int tmpNombreWMotors = 0;
+    static int tmpNombreVehiculesDemiMillion = 0;
+    static int nombreVehiculesDemiMillion = 0;
+    static int tmpNombreVehiculesMillion = 0;
+    static int nombreVehiculesMillion = 0;
 
     public JSON_Output() {
     }
@@ -74,6 +77,8 @@ public class JSON_Output {
         nombreDeVehicules = ob.getInt("nombre_de_vehicules");
         nombreVoituresAssurable = ob.getInt("nombre_de_voitures_assurables");
         nombreMotosAssurable = ob.getInt("nombre_de_motos_assurables");
+        nombreVehiculesDemiMillion = ob.getInt("nombre_vehicules_demi_million");
+        nombreVehiculesMillion = ob.getInt("nombre_vehicules_million");
     }
 
     public void getAncienValeurMarques(JSONArray liste) {
@@ -129,7 +134,6 @@ public class JSON_Output {
                     + " " + v.getVehicule().getAnnee() + " n'est pas assurable");
         }
         return res;
-
     }
 
     public boolean estAssurablePlusieursVehicules(String type, List<InfoVehicule> vehicules) throws Exception {
@@ -138,8 +142,6 @@ public class JSON_Output {
             tmpNombreDeVehicules++;
             if (!estAssurableUneVehicule(type, vehicules.get(i))) {
                 res = false;
-            }
-            if (res == false) {
             }
         }
         return res;
@@ -187,14 +189,24 @@ public class JSON_Output {
         incrementerNombresParMarque3(marque);
     }
 
+    public void verifierMillion(double valeur) {
+        if (valeur >= 500000.0 && valeur <= 1000000.0) {
+            tmpNombreVehiculesDemiMillion++;
+        }
+        if (valeur > 1000000.0) {
+            tmpNombreVehiculesMillion++;
+        }
+
+    }
+
     public boolean estAssurablePlusieursVoitures() throws Exception {
         List<InfoVehicule> infovoitures = new ArrayList<InfoVehicule>();
-        int length = jsonVoiture.getVoitures().size();
-        for (int i = 0; i < length; i++) {
+        for (int i = 0; i < jsonVoiture.getVoitures().size(); i++) {
             Vehicule v = new Voiture(jsonVoiture.getAnnee(i), jsonVoiture.getMarque(i), jsonVoiture.getModele(i));
             InfoVehicule infov = new InfoVoiture(v, jsonVoiture.getValeurDesOptions(i), 0, jsonVoiture.getBuriange(i),
                     jsonVoiture.getGarageInterieur(i), jsonVoiture.getSystemeAlarme(i));
             tmpNombreVoituresAssurable++;
+            verifierMillion(new Donnes().getValeur(jsonVoiture.getModele(i), "voitures"));
             incrementerNombresParMarque(jsonVoiture.getMarque(i));
             infovoitures.add(infov);
         }
@@ -225,6 +237,8 @@ public class JSON_Output {
     public void ajouterStatsVoiture1() {
         nombreVoituresAssurable += tmpNombreVoituresAssurable;
         nombreMotosAssurable += tmpNombreMotosAssurable;
+        nombreVehiculesDemiMillion += tmpNombreVehiculesDemiMillion;
+        nombreVehiculesMillion += tmpNombreVehiculesMillion;
         nombrePorsche += tmpNombrePorsche;
         nombreMaserati += tmpNombreMaserati;
         nombreDucati += tmpNombreDucati;
@@ -238,6 +252,7 @@ public class JSON_Output {
         nombrePagani += tmpNombrePagani;
         nombreBugatti += tmpNombreBugatti;
         nombreWMotors += tmpNombreWMotors;
+
     }
 
     public void ajouterStatsVoiture() {
@@ -272,9 +287,13 @@ public class JSON_Output {
         return cond.estAssurable();
     }
 
-    public boolean estAssurable() throws Exception {
-        boolean estVehicule = estAssurableToutLesVehicules();
-        nombreDeVehicules += tmpNombreDeVehicules;
+    public boolean estAssurable() {
+        boolean estVehicule = false;
+        try {
+            estVehicule = estAssurableToutLesVehicules();
+            nombreDeVehicules += tmpNombreDeVehicules;
+        } catch (Exception e) {
+        }
         return estVehicule;
     }
 
@@ -391,9 +410,12 @@ public class JSON_Output {
         return liste;
     }
 
-    public JSONArray getMessagesAssurable() throws Exception {
-        JSONArray messageCond = getMessagesAssurableConducteur();
-        ajouterMessages(messages, messageCond);
+    public JSONArray getMessagesAssurable() {
+        try {
+            JSONArray messageCond = getMessagesAssurableConducteur();
+            ajouterMessages(messages, messageCond);
+        } catch (Exception e) {
+        }
         return messages;
     }
 
@@ -411,8 +433,8 @@ public class JSON_Output {
         } else {
             nombreSoumissionNonAssurable++;
             res.put("assurable", estAssurable);
-            res.put("montant_annuel",0);
-            res.put("mensualite",0);
+            res.put("montant_annuel", 0);
+            res.put("mensualite", 0);
             res.put("messages", getMessagesAssurable());
         }
         return res;
@@ -438,6 +460,8 @@ public class JSON_Output {
         statsModifer.put("nombre_de_vehicules", nombreDeVehicules);
         statsModifer.put("nombre_de_voitures_assurables", nombreVoituresAssurable);
         statsModifer.put("nombre_de_motos_assurables", nombreMotosAssurable);
+        statsModifer.put("nombre_vehicules_demi_million", nombreVehiculesDemiMillion);
+        statsModifer.put("nombre_vehicules_million", nombreVehiculesMillion);
     }
 
     public void putStatsVehicule1(JSONObject porsche, JSONObject maseratie,
@@ -466,7 +490,6 @@ public class JSON_Output {
         Bugatti.put("nombre", nombreBugatti);
         WMotors.put("marque", "W Motors");
         WMotors.put("nombre", nombreWMotors);
-
     }
 
     public void putStatsVehicule(JSONObject porsche, JSONObject maseratie,

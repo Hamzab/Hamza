@@ -1,10 +1,10 @@
-package main.java.jsonOutput;
+package jsonOutput;
 
-import main.java.jsonInput.JSONConducteur;
-import main.java.jsonInput.JSONContrat;
-import main.java.jsonInput.JSONMotos;
-import main.java.jsonInput.JSONVoiture;
-import main.java.contrat.Contrat;
+import jsonInput.JSONConducteur;
+import jsonInput.JSONContrat;
+import jsonInput.JSONMotos;
+import jsonInput.JSONVoiture;
+import contrat.Contrat;
 import net.sf.json.JSONArray;
 
 public class FormatJSON {
@@ -95,8 +95,10 @@ public class FormatJSON {
     }
 
     public boolean estValide() {
-        return !verifierFormatDate(jscont.getDateDebut()) || !verifierFormatDate(jscond.getDateFinCoursDeConduite())
-                || !verifierFormatDate(jscond.getDateDeNaissance());
+       boolean log=false;
+       log=!verifierFormatDate(jscont.getDateDebut()) || !verifierFormatDate(jscond.getDateFinCoursDeConduite())
+                || !verifierFormatDate(jscond.getDateDeNaissance());  
+        return log;
     }
 
     public JSONArray getMessagesValidation() {

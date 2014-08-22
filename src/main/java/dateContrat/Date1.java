@@ -1,4 +1,4 @@
-package main.java.dateContrat;
+package dateContrat;
 
 import java.util.Date;
 

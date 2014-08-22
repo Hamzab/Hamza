@@ -1,9 +1,9 @@
-package main.java.montantDeLaSoumission;
+package montantDeLaSoumission;
 
-import main.java.conducteur.InfoConducteur;
-import main.java.contrat.Contrat;
-import main.java.voiture.InfoMoto;
-import main.java.voiture.InfoVehicule;
+import conducteur.InfoConducteur;
+import contrat.Contrat;
+import voiture.InfoMoto;
+import voiture.InfoVehicule;
 
 public class Calcules {
 

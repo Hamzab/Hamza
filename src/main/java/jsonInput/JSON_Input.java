@@ -1,7 +1,7 @@
-package main.java.jsonInput;
+package jsonInput;
 
-import main.java.Files.FileReader;
-import main.java.main1.Main;
+import Files.FileReader;
+import main1.Main;
 import net.sf.json.JSONObject;
 import net.sf.json.JSONSerializer;
 
@@ -35,7 +35,6 @@ public class JSON_Input {
             unObjet = (JSONObject) JSONSerializer.toJSON(jsonTxt);
         } catch (Exception e) {
             estValideStats = false;
-
         }
         return unObjet;
     }
@@ -48,12 +47,16 @@ public class JSON_Input {
         return estValideListe;
     }
 
-    public JSONObject getJsonSortie() throws Exception {
+    public JSONObject getJsonSortie() {
         String jsonTxt = "";
         JSONObject unObjet = new JSONObject();
+        try{
         if (!Main.tmp[0].equals("-S") && !Main.tmp[0].equals("-L")) {
             jsonTxt = FileReader.loadFileIntoString(Main.tmp[1], "UTF-8");
             unObjet = (JSONObject) JSONSerializer.toJSON(jsonTxt);
+        }
+        }catch(Exception e){
+            unObjet = new JSONObject();
         }
         return unObjet;
     }

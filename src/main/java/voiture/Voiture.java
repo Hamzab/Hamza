@@ -1,4 +1,4 @@
-package main.java.voiture;
+package voiture;
 
 import net.sf.json.JSONArray;
 
@@ -37,17 +37,6 @@ public class Voiture implements Vehicule {
         return valeurInitial;
     }
 
-    public void setMarque(String marque) {
-        this.marque = marque;
-    }
-
-    public void setAnnee(int annee) {
-        this.annee = annee;
-    }
-
-    public void setModele(String modele) {
-        this.modele = modele;
-    }
 
     @Override
     public boolean estExistAnnee(int annee) {

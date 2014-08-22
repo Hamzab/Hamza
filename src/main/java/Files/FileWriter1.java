@@ -1,6 +1,4 @@
-package main.java.Files;
-
-//import main.java.jsonOutput.JSON_Output;
+package Files;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -16,14 +14,18 @@ public class FileWriter1 {
         write.close();
     }
 
-    public static void ecrire(String path, JSONObject unObjet) throws IOException, Exception {
+    public static boolean ecrire(String path, JSONObject unObjet) throws IOException, Exception {
+        boolean res=false;
         try {
             creerPrinter(path, unObjet);
+            res=true;
         }//try
         catch (NullPointerException a) {
             System.out.println("Erreur : pointeur null");
         } catch (IOException a) {
             System.out.println("Problème d'IO");
         }
+       return res;
     }//ecrire
+    
 }

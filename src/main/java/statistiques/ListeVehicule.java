@@ -1,10 +1,10 @@
-package main.java.statistiques;
+package statistiques;
 
-import main.java.Files.FileWriter1;
+import Files.FileWriter1;
 import java.io.IOException;
-import main.java.jsonInput.Donnes;
-import main.java.jsonInput.JSONMotos;
-import main.java.jsonInput.JSONVoiture;
+import jsonInput.Donnes;
+import jsonInput.JSONMotos;
+import jsonInput.JSONVoiture;
 import net.sf.json.JSONArray;
 import net.sf.json.JSONObject;
 
@@ -114,8 +114,13 @@ public class ListeVehicule {
         return jo;
     }
 
-    public void ecrireListe(String path) throws IOException, Exception {
+    public boolean ecrireListe(String path) throws IOException, Exception {
+        boolean log=false;
+        if(path!=null){
         JSONObject ob = getListeTriee();
         FileWriter1.ecrire(path, ob);
+        log=true;
+        }
+         return log;
     }
-}
+    }

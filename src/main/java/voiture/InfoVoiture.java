@@ -1,4 +1,4 @@
-package main.java.voiture;
+package voiture;
 
 public class InfoVoiture implements InfoVehicule {
 

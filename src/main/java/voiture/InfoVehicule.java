@@ -1,4 +1,4 @@
-package main.java.voiture;
+package voiture;
 
 public interface InfoVehicule {
 
@@ -11,6 +11,8 @@ public interface InfoVehicule {
     public boolean isSystemeAlarme();
 
     public int getValeurCC();
+    
+    public boolean estAssurableVoiturePlusUnMillion(double valeur);
 
     public boolean estAssurable(int annee, String marque, String modele, double valeur);
 

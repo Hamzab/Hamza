@@ -1,6 +1,6 @@
-package main.java.montantDeLaSoumission;
+package montantDeLaSoumission;
 
-import main.java.dateContrat.Date1;
+import dateContrat.Date1;
 
 public class MontantSoumission {
 
@@ -25,7 +25,7 @@ public class MontantSoumission {
         } else if (age >= 36 && age <= 60) {
             res = 0.12;
         } else if (age >= 61 && age <= 75) {
-            res = 0.12;
+            res = 0.135;
         }
 
         return res;
@@ -155,7 +155,6 @@ public class MontantSoumission {
 
     public double calculerLeRabaisDuNovembre(int jour, int mois, double montantDeSoumission) {
         if (mois == 11 && (jour >= 1 && jour <= 15)) {
-
             montantDeSoumission -= montantDeSoumission * 0.1;
         }
         return montantDeSoumission;

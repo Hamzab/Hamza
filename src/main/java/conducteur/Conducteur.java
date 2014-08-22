@@ -1,4 +1,4 @@
-package main.java.conducteur;
+package conducteur;
 
 import net.sf.json.JSONArray;
 

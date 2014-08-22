@@ -1,4 +1,4 @@
-package main.java.conducteur;
+package conducteur;
 
 public class InfoConducteur {
 
@@ -39,10 +39,6 @@ public class InfoConducteur {
 
     public void setDateFinCoursDeConduite(String dateFinCoursDeConduite) {
         this.dateFinCoursDeConduite = dateFinCoursDeConduite;
-    }
-
-    public void estReconnusParCAA(boolean estReconnusParCAA) {
-        this.estReconnusParCAA = estReconnusParCAA;
     }
 
     public void setPremierContrat(boolean premierContrat) {
